@@ -6,7 +6,7 @@ func! CompileRunGcc()
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
-		exec "!g++ -std=c++11 % -Wall -o %<"
+		exec "!g++ -std=c++11 % -o /tmp/a.out && /tmp/a.ou"
 		:sp
 		:res -15
 		:term ./%<
