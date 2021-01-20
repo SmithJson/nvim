@@ -86,12 +86,16 @@
     "javascript": "javascriptreact",
     "typescriptreact": "typescriptreact"
   },
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.optimizeStylesheetParsing": false,
   //imselect
   "imselect.enableStatusItem": false,
   //multiple curssor
   "cursors.nextKey": "<C-n>",
   "cursors.previousKey": "<C-p>",
   "cursors.cancelKey": "<esc>",
+  // coc-pairs
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   //sessions
   "session.directory": "~/.cache/vim/session",
   // coc-explorer
@@ -114,6 +118,9 @@
   "eslint.autoFixOnSave": true,
   // coc-actions
   "coc-actions.hideCursor": false,
+  // coc-css
+  "css.enable": true,
+  "css.trace.server": "verbose",
   // Cspell
   "cSpell.fixSpellingWithRenameProvider": true,
   "cSpell.showStatus": false,
