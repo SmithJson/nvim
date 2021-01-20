@@ -58,6 +58,7 @@ call utils#source_file($VIM_PATH,'/modules/module-floaterm.vim')
 call utils#source_file($VIM_PATH,'/modules/module-dashboard.vim')
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/modules/module-rnvimr.vim')
+call utils#source_file($VIM_PATH,'/modules/module-closetag.vim')
 
 luafile $VIM_PATH/modules/module-indentline.lua
 luafile $VIM_PATH/modules/module-colorizer.lua

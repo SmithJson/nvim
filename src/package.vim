@@ -7,7 +7,7 @@ autocmd VimEnter *
 call plug#begin($VIM_PATH . '/plugged')
 " Beautify
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'glepnir/zephyr-nvim'
+" Plug 'glepnir/zephyr-nvim'
 Plug 'glepnir/oceanic-material'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -38,6 +38,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'alvan/vim-closetag'
 
 " Snipeets
 Plug 'honza/vim-snippets'
@@ -79,7 +80,6 @@ Plug 'mbbill/undotree'
 
 " Other useful utilities
 Plug 'lambdalisue/suda.vim'
-" Plug 'itchyny/screensaver.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'andymass/vim-matchup'
