@@ -1,8 +1,9 @@
+" Theme
+
 function! theme#init()
 	" Load cached colorscheme or hybrid by default
-	let l:default = 'zephyr'
+	let l:default = 'oceanic_material'
 	let l:cache = s:theme_cache_file()
-	lua require('zephyr').get_zephyr_color()
 	if ! exists('g:colors_name')
 		set background=dark
 		let l:scheme = filereadable(l:cache) ? readfile(l:cache)[0] : l:default
@@ -42,4 +43,3 @@ augroup user_theme
 augroup END
 
 " vim: set ts=2 sw=2 tw=80 noet :
-

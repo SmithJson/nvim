@@ -42,4 +42,4 @@ let g:vim_jsx_pretty_colorful_config = 1
 let g:smoothie_no_default_mappings = v:true
 
 " accelerated_jk
-" let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]
+let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]

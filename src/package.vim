@@ -8,6 +8,7 @@ call plug#begin($VIM_PATH . '/plugged')
 " Beautify
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'glepnir/zephyr-nvim'
+Plug 'glepnir/oceanic-material'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
@@ -78,9 +79,10 @@ Plug 'mbbill/undotree'
 
 " Other useful utilities
 Plug 'lambdalisue/suda.vim'
-Plug 'itchyny/screensaver.vim'
+" Plug 'itchyny/screensaver.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
+Plug 'andymass/vim-matchup'
 
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
