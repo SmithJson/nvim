@@ -30,7 +30,6 @@ Plug 'dkarter/bullets.vim'
 Plug 'ferrine/md-img-paste.vim'
 
 " FE
-Plug 'mattn/emmet-vim'
 Plug 'tyru/open-browser.vim', {'on':['<Plug>(openbrowser-smart-search)', '<Plug>(openbrowser-open)']}
 Plug 'othree/html5.vim'
 Plug 'yuezk/vim-js'
@@ -53,7 +52,6 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 Plug 'tpope/vim-surround'
 Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'lyokha/vim-xkbswitch'
 Plug 'psliwka/vim-smoothie'
 Plug 'rhysd/accelerated-jk'
 
@@ -65,8 +63,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'liuchengxu/vista.vim'
 
 " File navigation
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }

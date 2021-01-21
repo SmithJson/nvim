@@ -1,11 +1,8 @@
-
 augroup user_plugin_filetype "{{{
   autocmd!
   " Reload vim config automatically
   autocmd BufWritePost $VIM_PATH/{*.vim,*.yaml,vimrc} nested
         \ source $MYVIMRC | redraw
-
-  set runtimepath^=~/.config/nvim/plugged/bracey.vim
 
   " Reload Vim script automatically if setlocal autoread
   autocmd BufWritePost,FileWritePost *.vim nested
@@ -63,9 +60,6 @@ augroup user_plugin_filetype "{{{
 
   " Make directory automatically.
   autocmd BufWritePre * call s:mkdir_as_necessary(expand('<afile>:p:h'), v:cmdbang)
-
-  " Chinese format
-  autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
