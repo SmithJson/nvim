@@ -198,7 +198,7 @@ let &g:titlestring="
       \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
 
 set showmatch           " Jump to matching bracket
-" set matchpairs+=<:>     " Add HTML brackets to pair matching
+set matchpairs+=<:>     " Add HTML brackets to pair matching
 set matchtime=1         " Tenths of a second to show the matching paren
 
 set showtabline=2       " Always show the tabs line

@@ -121,6 +121,10 @@
   // coc-css
   "css.enable": true,
   "css.trace.server": "verbose",
+  // coc-imselect
+  "imselect.defaultInpu": "com.apple.keylayout.US",
+  "imselect.enableStatusItem": true,
+  "imselect.enableFloating": true,
   // Cspell
   "cSpell.fixSpellingWithRenameProvider": true,
   "cSpell.showStatus": false,
