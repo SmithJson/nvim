@@ -38,6 +38,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'alvan/vim-closetag'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'

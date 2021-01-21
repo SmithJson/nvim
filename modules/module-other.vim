@@ -46,3 +46,7 @@ let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]
 
 " vim-jsdoc
 nmap <silent> <C-l> <Plug>(jsdoc)
+
+" bracey.vim
+let g:bracey_refresh_on_save = 1
+let g:bracey_eval_on_save = 1
