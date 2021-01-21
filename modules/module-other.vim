@@ -10,7 +10,7 @@ let g:bullets_enabled_file_types = [
 let g:rainbow_active = 1
 
 " Xkbswitch
-let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchEnabled = 1
 
 " open-browser.vim
 let g:netrw_nogx = 1
@@ -43,3 +43,6 @@ let g:smoothie_no_default_mappings = v:true
 
 " accelerated_jk
 let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]
+
+" vim-jsdoc
+nmap <silent> <C-l> <Plug>(jsdoc)

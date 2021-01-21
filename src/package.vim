@@ -38,6 +38,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'alvan/vim-closetag'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 
 " Snipeets
 Plug 'honza/vim-snippets'
