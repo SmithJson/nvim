@@ -72,7 +72,6 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
 Plug 'kevinhwang91/rnvimr'
-
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'vn-ki/coc-clap'
 
