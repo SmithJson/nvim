@@ -6,11 +6,12 @@ let g:dashboard_preview_file_height = 10
 let g:dashboard_preview_file_width = 80
 
 let g:dashboard_custom_footer = [
-			\' Nickname: Stone                         ',
+			\'  Nickname: Stone                            ',
 			\'',
-			\' Email   : stone_fe@163.com								 ',
+			\'  Email   : stone_fe@163.com                 ',
 			\'',
-			\' Github  : https://github.com/SmithJson     ',
+			\'  Github  : https://github.com/SmithJson     ',
+      \'',
 			\]
 
 let g:dashboard_custom_section = {

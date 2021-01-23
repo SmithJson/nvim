@@ -77,7 +77,6 @@ call utils#source_file($VIM_PATH,'/_machine_specific.vim')
 call utils#source_file($VIM_PATH,'/modules/module-markdown.vim')
 call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 call utils#source_file($VIM_PATH,'/src/run.vim')
-call utils#source_file($VIM_PATH,'/src/browser.vim')
 
 luafile $VIM_PATH/src/eviline.lua
 
