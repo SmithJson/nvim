@@ -59,6 +59,7 @@ Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'rhysd/accelerated-jk'
+" Plug 'ahonn/vim-fileheader'
 
 " Autoformat
 Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
@@ -83,6 +84,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'andymass/vim-matchup'
+Plug 'kdheepak/lazygit.nvim'
 
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
