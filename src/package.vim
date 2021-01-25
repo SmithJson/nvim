@@ -70,7 +70,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'liuchengxu/vista.vim'
 
 " File navigation
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
 Plug 'kevinhwang91/rnvimr'
