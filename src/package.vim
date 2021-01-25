@@ -10,7 +10,6 @@ autocmd VimEnter *
 call plug#begin($VIM_PATH . '/plugged')
 " Beautify
 Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'glepnir/zephyr-nvim'
 Plug 'glepnir/oceanic-material'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -33,7 +32,6 @@ Plug 'dkarter/bullets.vim'
 Plug 'ferrine/md-img-paste.vim'
 
 " FE
-Plug 'tyru/open-browser.vim', {'on':['<Plug>(openbrowser-smart-search)', '<Plug>(openbrowser-open)']}
 Plug 'othree/html5.vim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -76,7 +74,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
-Plug 'kevinhwang91/rnvimr'
+" Plug 'kevinhwang91/rnvimr'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'vn-ki/coc-clap'
 

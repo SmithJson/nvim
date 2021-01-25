@@ -222,15 +222,6 @@ function! s:load_CompleteParameter() abort
   endif
 endfunction
 
-function! s:load_open_browser() abort
-  if utils#tap('open-browser.vim')
-    nmap gx <Plug>(openbrowser-smart-search)
-    vmap gx <Plug>(openbrowser-smart-search)
-    nmap gu <Plug>(openbrowser-open)
-    vmap gu <Plug>(openbrowser-open)
-  endif
-endfunction
-
 function! s:load_barbar_tabline() abort
   if utils#tap('barbar.nvim')
     " Magic buffer-picking mode
@@ -273,7 +264,6 @@ call s:load_coc_clap()
 call s:load_coc()
 call s:load_clap()
 call s:load_CompleteParameter()
-call s:load_open_browser()
 call s:load_accelerated_jk()
 call s:load_vim_which_key()
 call s:load_barbar_tabline()

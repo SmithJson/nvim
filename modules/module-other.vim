@@ -1,6 +1,3 @@
-" File              : module-other.vim
-" Date              : 25.01.2021
-" Last Modified Date: 25.01.2021
 " Bullets.vim
 let g:bullets_enabled_file_types = [
 			\ 'markdown',
