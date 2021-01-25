@@ -39,6 +39,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'alvan/vim-closetag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -59,7 +60,7 @@ Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'rhysd/accelerated-jk'
-" Plug 'ahonn/vim-fileheader'
+Plug 'ahonn/vim-fileheader'
 
 " Autoformat
 Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
