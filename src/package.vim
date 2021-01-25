@@ -63,7 +63,7 @@ Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'rhysd/accelerated-jk'
-Plug 'ahonn/vim-fileheader'
+Plug 'SmithJson/vim-fileheader'
 
 " Autoformat
 Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
