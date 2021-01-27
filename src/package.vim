@@ -1,7 +1,8 @@
-" File              : package.vim
-" Date              : 25.01.2021
-" Last Modified Date: 25.01.2021
-" Automatically install missing plugins on startup
+" @Author: zhanglei53 <zhanglei53@zuoyebang.com>
+" @Date: 2021-01-27 11:58:30
+" @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
+" @Last Modified time: 2021-01-27 11:58:32
+
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
@@ -61,7 +62,7 @@ Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'rhysd/accelerated-jk'
-Plug 'SmithJson/vim-fileheader'
+Plug 'ahonn/vim-fileheader'
 
 " Autoformat
 Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
