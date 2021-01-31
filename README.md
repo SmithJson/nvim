@@ -7,6 +7,8 @@
 
 > 致力于将 Neovim 打造为用于开发的编辑器
 
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7b4f96270d14ee69df21c49828540a7~tplv-k3u1fbpfcp-watermark.image)
+
 ### 🏠 [Homepage](https://github.com/SmithJson/nvim)
 
 ### ✨ [Demo](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ff7679f79d4344518c1ea2c5c5c4b621~tplv-k3u1fbpfcp-watermark.image)
