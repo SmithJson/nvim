@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
-" @Last Modified time: 2021-01-27 11:58:32
+" @Last Modified time: 2021-02-12 18:17:59
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -80,6 +80,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'vn-ki/coc-clap'
+Plug 'kshenoy/vim-signature'
 
 " " Undo Tree
 Plug 'mbbill/undotree'
