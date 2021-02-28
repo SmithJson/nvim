@@ -68,6 +68,7 @@ call utils#source_file($VIM_PATH,'/modules/module-coc.vim')
 call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')
 call utils#source_file($VIM_PATH,'/modules/module-vim-go.vim')
 call utils#source_file($VIM_PATH,'/modules/module-vista.vim')
+call utils#source_file($VIM_PATH,'/modules/module-defx.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')
 
 call utils#source_file($VIM_PATH,'/src/format.vim')

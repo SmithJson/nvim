@@ -219,7 +219,7 @@ set display=lastline
 if has('folding') && has('vim_starting')
 	set foldenable
 	set foldmethod=indent
-	set foldlevelstart=99
+	set foldlevelstart=10
 endif
 
 if has('nvim-0.4')
