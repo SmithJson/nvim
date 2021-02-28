@@ -1,0 +1,8 @@
+/TODO
+build/
+tmp/
+plugged/
+.DS_Store
+.netrwhist
+.vscode/
+
