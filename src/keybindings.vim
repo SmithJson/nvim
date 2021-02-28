@@ -177,7 +177,7 @@ function! s:load_coc() abort
     vmap ts <Plug>(coc-translator-pv)
 
     " coc-explorer
-    nmap tt :CocCommand explorer<CR>
+    " nmap tt :CocCommand explorer<CR>
     " noremap <silent> tt :execute 'CocCommand explorer'
     "       \ ' --toggle' .
     "       \ ' --position=floating' .
