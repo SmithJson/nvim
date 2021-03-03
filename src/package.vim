@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
-" @Last Modified time: 2021-02-28 19:43:36
+" @Last Modified time: 2021-02-28 21:36:47
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))

@@ -1,16 +1,24 @@
-" let g:dashboard_default_header = 'superman'
+" let g:dashboard_preview_command = 'cat'
+" let g:dashboard_preview_file = '~/.config/nvim/dashboard.cat'
+" let g:dashboard_preview_file_height = 10
+" let g:dashboard_preview_file_width = 80
 
-let g:dashboard_preview_command = 'cat'
-let g:dashboard_preview_file = '~/.config/nvim/dashboard.cat'
-let g:dashboard_preview_file_height = 10
-let g:dashboard_preview_file_width = 80
+" create ascii text：http://www.network-science.de/ascii/
+let g:dashboard_custom_header = [
+      \'███████╗██╗   ██╗ █████╗     ██████╗ ██╗   ██╗ ██████╗██╗  ██╗',
+      \'██╔════╝██║   ██║██╔══██╗    ██╔══██╗██║   ██║██╔════╝██║ ██╔╝',
+      \'█████╗  ██║   ██║███████║    ██║  ██║██║   ██║██║     █████╔╝' ,
+      \'██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║  ██║██║   ██║██║     ██╔═██╗' ,
+      \'███████╗ ╚████╔╝ ██║  ██║    ██████╔╝╚██████╔╝╚██████╗██║  ██╗',
+      \'╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝╚═╝  ╚═╝',
+      \ '',
+      \ '                       [  辩机 ]     ',
+      \ ]
 
 let g:dashboard_custom_footer = [
-			\'  Nickname: Stone                            ',
-			\'',
 			\'  Email   : stone_fe@163.com                 ',
 			\'',
-			\'  Github  : https://github.com/SmithJson     ',
+			\'  Github  : SmithJson     ',
       \'',
 			\]
 
