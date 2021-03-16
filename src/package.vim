@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
-" @Last Modified time: 2021-02-28 21:36:47
+" @Last Modified time: 2021-03-16 21:43:21
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -77,9 +77,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
-" Plug 'kevinhwang91/rnvimr'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'kevinhwang91/rnvimr'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'vn-ki/coc-clap'
 Plug 'kshenoy/vim-signature'
