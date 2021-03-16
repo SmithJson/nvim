@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
-" @Last Modified time: 2021-03-16 21:43:21
+" @Last Modified time: 2021-03-16 22:48:50
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -10,7 +10,7 @@ autocmd VimEnter *
 
 call plug#begin($VIM_PATH . '/plugged')
 " Beautify
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'glepnir/oceanic-material'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'

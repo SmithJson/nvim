@@ -16,13 +16,13 @@
 <!-- vim-markdown-toc Redcarpet -->
 
 * [特性](#特性)
-* [文件目录](#文件目录)
-* [前置准备](#前置准备)
+* [前置依赖](#前置依赖)
 * [安装](#安装)
   * [Python](#python)
+  * [Luajit](#luajit)
   * [Neovim](#neovim)
-  * [luajit](#luajit)
   * [Ranger](#ranger)
+  * [Node](#node)
   * [安装配置](#安装配置)
   * [启动 nvim](#启动-nvim)
 * [插件列表](#插件列表)
@@ -51,15 +51,8 @@
 13. Markdown Table 自动格式化
 14. Git history
 
-## 文件目录
+## 前置依赖
 
-```
-
-```
-
-## 前置准备
-
-- Homebrew
 - Nvim Last release
 - LuaJIT Last release
 - Python v3+
@@ -75,16 +68,16 @@
 brew install python
 ```
 
+### Luajit
+
+```
+brew install luajit --HEAD
+```
+
 ### Neovim
 
 ```
 brew install nevvim --HEAD
-```
-
-### luajit
-
-```
-brew install luajit --HEAD
 ```
 
 ### Ranger
@@ -92,6 +85,13 @@ brew install luajit --HEAD
 ```
 pip3 install ranger-fm
 pip3 install pynvim
+```
+
+### Node
+
+```
+# 官网下载
+http://nodejs.cn/download/
 ```
 
 ### 安装配置
@@ -108,6 +108,28 @@ nvim
 ```
 
 ## 插件列表
+
+| 名称                                                                         | 功能                   |
+| ---------------------------------------------------------------------------- | ---------------------- |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)        | 函数高亮               |
+| [oceanic-material](https://github.com/glepnir/oceanic-material)              | VIM 主题               |
+| [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim)                | 状态栏主题             |
+| [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)         | Icon 字体              |
+| [barbar.nvim](https://github.com/romgrk/barbar.nvim)                         | Tabbar 主题            |
+| [rainbow](https://github.com/luochen1990/rainbow)                            | 彩虹括号               |
+| [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)             | 颜色显示               |
+| [vim-illuminate](https://github.com/RRethy/vim-illuminate)                   | 高亮当前行所在单词     |
+| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                  | Dashboard 欢迎页       |
+| [yajs.vim](https://github.com/othree/yajs-core.vim)                          | JavaScript 高亮        |
+| [yats.vim](https://github.com/HerringtonDarkholme/yats.vim)                  | TypeScript 高亮        |
+| [html5.vim](https://github.com/othree/html5.vim)                             | Html 高亮              |
+| [coc.nvim](https://github.com/neoclide/coc.nvim)                             | 代码片段提示           |
+| [CompleteParameter.vim](https://github.com/tenfyzhong/CompleteParameter.vim) | 代码补全               |
+| [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.vim)      | Markdown 实时预览      |
+| [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)              | Markdown Table 格式化  |
+| [vim-markdown-toc](https://github.com/dhruvasagar/vim-table-mode)            | 创建 Markdown TOC 目录 |
+| [bullets.vim](https://github.com/dkarter/bullets.vim)                        | 创建 Markdown 有序序列 |
+| [md-img-paste.vim](https://github.com/ferrine/md-img-paste.vim)              | 图片粘贴               |
 
 ## TODO
 
