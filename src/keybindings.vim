@@ -43,8 +43,8 @@ function! s:load_default() abort
   inoremap <C-n> <Down>
   inoremap <C-p> <Up>
 
-  noremap 1 0
-  noremap 0 $
+  " noremap 1 0
+  " noremap 0 $
 
   " Open init.vim
   noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
