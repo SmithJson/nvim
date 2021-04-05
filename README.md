@@ -16,15 +16,23 @@
 <!-- vim-markdown-toc Redcarpet -->
 
 * [特性](#特性)
-* [前置依赖](#前置依赖)
-* [安装](#安装)
-  * [Python](#python)
-  * [Luajit](#luajit)
-  * [Neovim](#neovim)
-  * [Ranger](#ranger)
+* [Env](#env)
+* [依赖](#依赖)
+* [Ternimal 配置](#ternimal-配置)
+  * [Homebrew 安装](#homebrew-安装)
+  * [ZSH 安装](#zsh-安装)
+    * [zsh](#zsh)
+    * [修改 paths](#修改-paths)
+    * [修改默认 shell](#修改默认-shell)
+    * [on-my-zsh](#on-my-zsh)
+    * [Neord Font](#neord-font)
+    * [powerlevel9k 主题](#powerlevel9k-主题)
+* [Vim 配置](#vim-配置)
   * [Node](#node)
-  * [安装配置](#安装配置)
-  * [启动 nvim](#启动-nvim)
+  * [Python](#python)
+  * [指令下载](#指令下载)
+  * [Neovim 下载](#neovim-下载)
+  * [My Neovim config](#my-neovim-config)
 * [插件列表](#插件列表)
 * [TODO](#todo)
 * [Author](#author)
@@ -51,60 +59,103 @@
 13. Markdown Table 自动格式化
 14. Git history
 
-## 前置依赖
+## Env
 
-- Nvim Last release
-- LuaJIT Last release
+- macOS Mojave v10.14.0
+- Kitty v0.17.4
+
+## 依赖
+
+- NVIM v0.5.0-dev+ce976bf
+- LuaJIT 2.1.0-beta3
+- Ranger v1.9.3
+- Node v10.12.0+
 - Python v3+
 - pynvim
-- Ranger
-- Node
 
-## 安装
+## Ternimal 配置
 
-### Python
+### [Homebrew 安装](https://brew.idayer.com/)
 
-```
-brew install python
-```
+### ZSH 安装
 
-### Luajit
+#### zsh
 
 ```
-brew install luajit --HEAD
+brew install zsh
 ```
 
-### Neovim
+#### 修改 paths
 
 ```
-brew install nevvim --HEAD
+vim /etc/paths
+
+将/usr/local/bin 放在 /usr/bin前
+/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
 ```
 
-### Ranger
+#### [修改默认 shell](https://www.jianshu.com/p/e328f5d83191)
+
+#### on-my-zsh
 
 ```
-pip3 install ranger-fm
-pip3 install pynvim
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+source ~/.zshrc
 ```
+
+#### [Neord Font](https://github.com/ryanoasis/nerd-fonts#option-3-install-script)
+
+#### powerlevel9k 主题
+
+```
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+
+```
+vim ~/.zshrc
+
+# 下列代码粘贴到 ZSH_THEME
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+source ~/.zshrc
+```
+
+## Vim 配置
 
 ### Node
 
 ```
-# 官网下载
-http://nodejs.cn/download/
+brew install n
+n 10.12.0
 ```
 
-### 安装配置
+### Python
+
+```
+pip3 install ranger-fm pynvim pillow
+```
+
+### 指令下载
+
+```
+brew install fd ripgrep lazygit
+```
+
+### [Neovim 下载](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+### My Neovim config
 
 ```
 git clone https://github.com/SmithJson/nvim.git ~/.config/nvim
-```
-
-### 启动 nvim
-
-```
-# 自动下载依赖插件、下载完毕后重启
-nvim
 ```
 
 ## 插件列表
