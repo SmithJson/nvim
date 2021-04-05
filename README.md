@@ -33,7 +33,9 @@
   * [指令下载](#指令下载)
   * [Neovim 下载](#neovim-下载)
   * [My Neovim config](#my-neovim-config)
+  * [启动 Neovim](#启动-neovim)
 * [插件列表](#插件列表)
+* [好玩的终端工具](#好玩的终端工具)
 * [TODO](#todo)
 * [Author](#author)
 * [🤝 Contributing](#🤝-contributing)
@@ -158,6 +160,13 @@ brew install fd ripgrep lazygit
 git clone https://github.com/SmithJson/nvim.git ~/.config/nvim
 ```
 
+### 启动 Neovim
+
+```
+# 一开始会因为插件缺失而报红，一直按 Enter 就行了，等待自动安装玩插件完毕后，重启 Neovim 即可
+nvim
+```
+
 ## 插件列表
 
 | 名称                                                                         | 功能                   |
@@ -181,6 +190,19 @@ git clone https://github.com/SmithJson/nvim.git ~/.config/nvim
 | [vim-markdown-toc](https://github.com/dhruvasagar/vim-table-mode)            | 创建 Markdown TOC 目录 |
 | [bullets.vim](https://github.com/dkarter/bullets.vim)                        | 创建 Markdown 有序序列 |
 | [md-img-paste.vim](https://github.com/ferrine/md-img-paste.vim)              | 图片粘贴               |
+
+## 好玩的终端工具
+
+| 名称       | 描述                               |
+| ---------- | ---------------------------------- |
+| FZF        | 终端文件查找                       |
+| mdp        | 终端 PPT                           |
+| mpv        | 一个小巧可配置的播放器             |
+| yabai      | Mac 的平铺窗口管理工具             |
+| skhd       | yabai 快捷键管理                   |
+| spacebar   | 和 yabai 配合美化 mac menu bar     |
+| youtube-dl | 视频下载指令                       |
+| ranger     | 终端下的文件管理系系统【五星推荐】 |
 
 ## TODO
 
