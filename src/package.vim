@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-02 23:07:32
+" @Last Modified time: 2021-07-11 16:26:20
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -51,6 +51,7 @@ Plug 'heavenshell/vim-jsdoc', {
 \}
 
 " Snipeets
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Go

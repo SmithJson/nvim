@@ -83,4 +83,4 @@ if utils#tap('vim-jsx-pretty')
 endif
 
 " Atom 百度小程序语法高亮
-au BufReadPost *.atom set filetype=vue
+au BufNewFile,BufRead *.atom set filetype=vue

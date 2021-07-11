@@ -3,7 +3,7 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*]
 indent_style = space
-indent_size = 2
+indent_size = 4
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
@@ -22,9 +22,14 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 max_line_length = 80
 
-[*.{json,yml,toml}]
-indent_size = 2
+[*.{json,yml}]
+indent_size = 4
 indent_style = space
 insert_final_newline = ignore
 
-
+[*.{vue,atom}]
+indent_size = 4
+indent_style = space
+insert_final_newline = ignore
+trim_trailing_whitespace = true
+max_line_length = 120
