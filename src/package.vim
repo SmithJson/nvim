@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
-" @Last Modified by: zhanglei53 <zhanglei53@zuoyebang.com>
-" @Last Modified time: 2021-03-16 22:48:50
+" @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
+" @Last Modified time: 2021-07-02 23:07:32
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -44,6 +44,7 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'alvan/vim-closetag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'posva/vim-vue'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
