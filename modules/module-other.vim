@@ -60,3 +60,4 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " md-img-paste.vim
 let g:mdip_imgdir = 'images'
+

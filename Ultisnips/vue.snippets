@@ -1,0 +1,63 @@
+snippet vue1 "vue-template"
+<template>
+  <el-container class="${1}-container">
+    <div class="${2}-main">
+      <router-view></router-view>
+    </div>
+  </el-container>
+</template>
+<script>
+export default {
+  name: '${3}',
+  components: {},
+  props: {},
+  data() {
+    return {}
+  },
+  methods: {},
+  created() {},
+  mounted() {},
+  watch: {},
+  computed: {},
+}
+</script>
+<style scoped></style>
+endsnippet
+
+snippet atom1 "atom-template"
+<template>
+    <view class="${1}-box"></view>
+</template>
+
+<script type="config">
+    {
+        components: {
+            ${2}
+        },
+        props: {
+            ${3}
+        },
+        data: {
+            ${4}
+        }
+    }
+</script>
+<script>
+import {${5}} from '${6}';
+
+export default {
+    computed: {
+        ${7}
+    },
+    methods: {
+        ${8}
+    },
+    created() {
+        ${9}
+    },
+    mounted() {
+
+    }
+};
+</script>
+endsnippet

@@ -76,9 +76,9 @@ if utils#tap('vim-scala')
 endif
 
 "vue lsp config
-if utils#tap('vim-vue')
-    call coc#add_extension('coc-vetur')
-endif
+" if utils#tap('vim-vue')
+"     call coc#add_extension('coc-vetur')
+" endif
 
 "Dart lsp config
 if utils#tap('dart-vim-plugin')
