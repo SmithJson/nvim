@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-19 23:56:27
+" @Last Modified time: 2021-07-20 01:06:29
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -22,6 +22,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'glepnir/dashboard-nvim'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

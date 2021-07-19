@@ -61,3 +61,4 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 " md-img-paste.vim
 let g:mdip_imgdir = 'images'
 
+let g:indent_guides_enable_on_vim_startup = 1
