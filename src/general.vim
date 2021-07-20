@@ -189,7 +189,8 @@ set scrolloff=2         " Keep at least 2 lines above/below
 set fillchars+=vert:\|  " add a bar for vertical splits
 set fcs=eob:\           " hide ~ tila
 set list
-set listchars=tab:»·,nbsp:+,trail:·,extends:→,precedes:←
+set listchars=tab:»·,nbsp:+,trail:.,extends:→,precedes:←
+
 set title
 " Title length.
 set titlelen=95
@@ -220,7 +221,7 @@ set display=lastline
 if has('folding') && has('vim_starting')
 	set foldenable
 	set foldmethod=indent
-	set foldlevelstart=10
+	set foldlevelstart=30
 endif
 
 if has('nvim-0.4')
