@@ -180,8 +180,16 @@ endif
 " }}
 
 " Editor UI {{{
-set termguicolors       " Enable true color
-colorscheme one
+if (has('termguicolors'))
+  set termguicolors
+endif
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+" colorscheme one
+colorscheme space_vim_theme
+hi Comment ctermfg=0 ctermbg=NONE guifg=gray guibg=NONE gui=NONE
+
 set number              " Show number
 set relativenumber      " Show relative number
 set noshowmode          " Don't show mode on bottom
