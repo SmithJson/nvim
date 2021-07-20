@@ -81,4 +81,4 @@ call utils#source_file($VIM_PATH,'/src/run.vim')
 
 luafile $VIM_PATH/src/eviline.lua
 
-call theme#init()
+" call theme#init()

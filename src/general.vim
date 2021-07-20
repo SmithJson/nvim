@@ -15,6 +15,7 @@ set formatoptions+=1         " Don't break lines after a one-letter word
 set formatoptions-=t         " Don't auto-wrap text
 set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
 set cursorline
+set noro                     " Disable readyonly warning info
 if has('patch-7.3.541')
 	set formatoptions+=j      " Remove comment leader when joining lines
 endif
@@ -180,6 +181,7 @@ endif
 
 " Editor UI {{{
 set termguicolors       " Enable true color
+colorscheme one
 set number              " Show number
 set relativenumber      " Show relative number
 set noshowmode          " Don't show mode on bottom
