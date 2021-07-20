@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-20 18:21:32
+" @Last Modified time: 2021-07-22 00:41:52
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -13,12 +13,11 @@ call plug#begin($VIM_PATH . '/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Theme
-" Plug 'glepnir/oceanic-material'
-" Plug 'liuchengxu/space-vim-theme'
+Plug 'liuchengxu/space-vim-theme'
 Plug 'rakr/vim-one'
-" Plug 'KeitaNakamura/neodark.vim'
-" Plug 'morhetz/gruvbox'
-" Plug 'sainnhe/edge'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/edge'
 
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
