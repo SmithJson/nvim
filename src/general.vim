@@ -179,6 +179,7 @@ endif
 
 " }}
 
+
 " Editor UI {{{
 if (has('termguicolors'))
   set termguicolors
@@ -187,8 +188,8 @@ if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 " colorscheme one
-colorscheme neodark
-hi Comment ctermfg=0 ctermbg=NONE guifg=gray guibg=NONE gui=NONE
+colorscheme zephyr
+" hi Comment ctermfg=0 ctermbg=NONE guifg=gray guibg=NONE gui=NONE
 
 set number              " Show number
 set relativenumber      " Show relative number
