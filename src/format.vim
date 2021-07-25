@@ -5,5 +5,5 @@
 " au BufWrite *.js :Autoformat
 
 " Vim-easy-aligon
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+" xmap ga <Plug>(EasyAlign)
+" nmap ga <Plug>(EasyAlign)

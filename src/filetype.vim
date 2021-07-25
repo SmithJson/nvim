@@ -63,6 +63,8 @@ augroup user_plugin_filetype "{{{
 
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
+  " Atom 百度小程序语法高亮
+  autocmd BufNewFile,BufRead *.atom set filetype=vue
 augroup END "}}}
 
 " Credits: https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/options.rc.vim#L147
@@ -82,5 +84,4 @@ if utils#tap('vim-jsx-pretty')
   let g:vim_jsx_pretty_highlight_close_tag = 1
 endif
 
-" Atom 百度小程序语法高亮
-au BufNewFile,BufRead *.atom set filetype=vue
+

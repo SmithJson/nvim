@@ -4,6 +4,7 @@
 " let g:dashboard_preview_file_width = 80
 
 " create ascii text：http://patorjk.com/software/taag/
+let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_header = [
       \ '',
       \ '',

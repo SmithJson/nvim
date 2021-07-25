@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-22 00:47:13
+" @Last Modified time: 2021-07-26 19:52:28
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -10,28 +10,25 @@ autocmd VimEnter *
 
 call plug#begin($VIM_PATH . '/plugged')
 " Beautify
+Plug 'glepnir/zephyr-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Theme
-Plug 'liuchengxu/space-vim-theme'
-Plug 'rakr/vim-one'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'sainnhe/edge'
 
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
 Plug 'luochen1990/rainbow'
-Plug 'bpietravalle/vim-bolt'
+" Plug 'bpietravalle/vim-bolt'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
 Plug 'glepnir/dashboard-nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " indent & space & trail
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ntpeters/vim-better-whitespace'
+" Plug 'ntpeters/vim-better-whitespace'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -66,10 +63,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Go
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " Python
-Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
+" Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 
 " Edit
 Plug 'tpope/vim-surround'

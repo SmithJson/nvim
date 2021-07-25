@@ -53,3 +53,19 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+"解决coc.nvim大文件卡死状况
+let g:trigger_size = 0.5 * 1048576
+
+augroup hugefile
+  autocmd!
+  autocmd BufReadPre *
+        \ let size = getfsize(expand('<afile>')) |
+        \ if (size > g:trigger_size) || (size == -2) |
+        \   echohl WarningMsg | echomsg 'WARNING: altering options for this huge file!' | echohl None |
+        \   exec 'CocDisable' |
+        \ else |
+        \   exec 'CocEnable' |
+        \ endif |
+        \ unlet size
+augroup END
