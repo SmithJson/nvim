@@ -64,7 +64,7 @@ luafile $VIM_PATH/modules/module-indentline.lua
 luafile $VIM_PATH/modules/module-colorizer.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
-call utils#source_file($VIM_PATH,'/modules/module-coc.vim')
+" call utils#source_file($VIM_PATH,'/modules/module-coc.vim')
 call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')
 " call utils#source_file($VIM_PATH,'/modules/module-vim-go.vim')
 call utils#source_file($VIM_PATH,'/modules/module-vista.vim')

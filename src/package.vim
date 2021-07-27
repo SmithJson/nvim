@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-26 20:35:30
+" @Last Modified time: 2021-07-27 10:52:54
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -31,8 +31,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'ntpeters/vim-better-whitespace'
 
 " Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tenfyzhong/CompleteParameter.vim',{'for':['c', 'h', 'cpp', 'py', 'go', 'java', 'vim', 'json', 'hs', 'javascript', 'typescript']}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'tenfyzhong/CompleteParameter.vim',{'for':['c', 'h', 'cpp', 'py', 'go', 'java', 'vim', 'json', 'hs', 'javascript', 'typescript']}
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -77,7 +77,7 @@ Plug 'rhysd/accelerated-jk'
 Plug 'ahonn/vim-fileheader'
 
 " Autoformat
-Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
+" Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
 Plug 'editorconfig/editorconfig-vim'
 
 " Taglist
@@ -87,9 +87,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
-Plug 'kevinhwang91/rnvimr'
+" Plug 'kevinhwang91/rnvimr'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-Plug 'vn-ki/coc-clap'
+" Plug 'vn-ki/coc-clap'
 Plug 'kshenoy/vim-signature'
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -112,7 +112,7 @@ Plug 'andymass/vim-matchup'
 Plug 'kdheepak/lazygit.nvim'
 
 " CSharp
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
 
 " Terminal
