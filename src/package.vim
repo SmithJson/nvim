@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-27 10:52:54
+" @Last Modified time: 2021-07-28 20:35:12
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -9,15 +9,16 @@ autocmd VimEnter *
   \| endif
 
 call plug#begin($VIM_PATH . '/plugged')
+
 " Beautify
 Plug 'glepnir/zephyr-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/nvim-bufferline.lua'
 Plug 'luochen1990/rainbow'
-" Plug 'bpietravalle/vim-bolt'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
 Plug 'glepnir/dashboard-nvim'
@@ -26,12 +27,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-" indent & space & trail
-Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'ntpeters/vim-better-whitespace'
 
-" Coc
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Indent
+" Plug 'ntpeters/vim-better-whitespace'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Completion
 " Plug 'tenfyzhong/CompleteParameter.vim',{'for':['c', 'h', 'cpp', 'py', 'go', 'java', 'vim', 'json', 'hs', 'javascript', 'typescript']}
 
 " Markdown
@@ -73,7 +74,6 @@ Plug 'tpope/vim-surround'
 Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
-Plug 'rhysd/accelerated-jk'
 Plug 'ahonn/vim-fileheader'
 
 " Autoformat
@@ -87,19 +87,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
-" Plug 'kevinhwang91/rnvimr'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-" Plug 'vn-ki/coc-clap'
 Plug 'kshenoy/vim-signature'
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'kristijanhusak/defx-icons'
-  Plug 'kristijanhusak/defx-git'
-else
-  Plug 'Shougo/defx.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " " Undo Tree
 Plug 'mbbill/undotree'
@@ -108,14 +97,10 @@ Plug 'mbbill/undotree'
 Plug 'lambdalisue/suda.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
-Plug 'andymass/vim-matchup'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'rhysd/accelerated-jk'
 
 " CSharp
-" Plug 'OmniSharp/omnisharp-vim'
 Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
-
-" Terminal
-Plug 'wincent/terminus'
 call plug#end()
 

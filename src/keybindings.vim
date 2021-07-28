@@ -85,113 +85,6 @@ function! s:load_accelerated_jk() abort
   endif
 endfunction
 
-function! s:load_coc_clap() abort
-  if utils#tap('coc-clap')
-    " Show all diagnostics
-    nnoremap <silent> <Leader>ce  :Clap coc_diagnostics<CR>
-    " Manage extensions
-    nnoremap <silent> <Leader>;   :Clap coc_extensions<CR>
-    " Show commands
-    nnoremap <silent> <Leader>,   :Clap coc_commands<CR>
-    " Search workspace symbols
-    nnoremap <silent> <Leader>cs  :Clap coc_symbols<CR>
-    nnoremap <silent> <Leader>cS  :Clap coc_services<CR>
-    nnoremap <silent> <leader>ct  :Clap coc_outline<CR>
-  endif
-endfunction
-
-function! s:load_coc() abort
-  if utils#tap('coc.nvim')
-    " Remap for do codeAction of selected region
-    function! s:cocActionsOpenFromSelected(type) abort
-      execute 'CocCommand actions.open ' . a:type
-    endfunction
-    " Jump definition in other window
-    function! s:definition_other_window() abort
-      if winnr('$') >= 4 || winwidth(0) < 120
-        exec "normal \<Plug>(coc-definition)"
-      else
-        exec 'vsplit'
-        exec "normal \<Plug>(coc-definition)"
-      endif
-    endfunction
-    xmap <silent> <Leader>ca :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-    nmap <silent> <Leader>ca :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-    " Do default action for next item.
-    nmap <silent> [a  :<C-u>CocNext<CR>
-    " Do default action for previous item.
-    nmap <silent> ]a  :<C-u>CocPrev<CR>
-    " Resume latest coc list
-    nnoremap <silent> <Leader>'  :<C-u>CocListResume<CR>
-    " Use `[e` and `]e` for navigate diagnostics
-    nmap <silent> ]e <Plug>(coc-diagnostic-prev)
-    nmap <silent> [e <Plug>(coc-diagnostic-next)
-    " Remap for rename current word
-    nmap <Leader>cn <Plug>(coc-rename)
-    " Remap for format selected region
-    vmap <Leader>cf  <Plug>(coc-format-selected)
-    nmap <Leader>cf  <Plug>(coc-format-selected)
-    " Fix autofix problem of current line
-    nmap <Leader>cF  <Plug>(coc-fix-current)
-    " Remap keys for gotos
-    nmap <silent> gd :<C-u>call <sid>definition_other_window()<CR>
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> <Leader>ci <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-    " Use K for show documentation in float window
-    nnoremap <silent> K :call CocActionAsync('doHover')<CR>
-    nnoremap <silent> <Leader>cd :call CocActionAsync('doHover')<CR>
-    " use <c-space> for trigger completion.
-    inoremap <silent><expr> <c-space> coc#refresh()
-    nmap ]g <Plug>(coc-git-prevchunk)
-    nmap [g <Plug>(coc-git-nextchunk)
-    " show chunk diff at current position
-    nmap <Leader>gi <Plug>(coc-git-chunkinfo)
-    " show commit contains current position
-    nmap <Leader>gm <Plug>(coc-git-commit)
-    " float window scroll
-    nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
-    nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
-    " Add `:OR` command for organize imports of the current buffer.
-    command! -nargs=0 OR  :call CocAction('runCommand', 'editor.action.organizeImport')
-    nnoremap <silent> <Leader>co :<C-u>OR<CR>
-    " multiple cursors
-    nmap <silent><M-s> <Plug>(coc-cursors-position)
-    nmap <expr> <silent><M-d> <SID>select_current_word()
-    xmap <silent><M-d> <Plug>(coc-cursors-range)
-    " use normal command like `<Leader>xi(`
-    nmap <silent><M-c>  <Plug>(coc-cursors-operator)
-
-    function! s:select_current_word()
-      if !get(g:, 'coc_cursors_activated', 0)
-        return "\<Plug>(coc-cursors-word)"
-      endif
-      return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-    endfunc
-    " Use `:Format` for format current buffer
-    command! -nargs=0 Format :call CocAction('format')
-
-    nnoremap  <Leader>fz :<C-u>CocSearch -w<Space>
-    " popup
-    nmap ts <Plug>(coc-translator-p)
-    vmap ts <Plug>(coc-translator-pv)
-
-    " coc-explorer
-    " nmap tt :CocCommand explorer<CR>
-    " noremap <silent> tt :execute 'CocCommand explorer'
-    "       \ ' --toggle' .
-    "       \ ' --position=floating' .
-    "       \ ' --sources=file+'<CR>
-    " Introduce function text object
-    " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-    xmap if <Plug>(coc-funcobj-i)
-    xmap af <Plug>(coc-funcobj-a)
-    omap if <Plug>(coc-funcobj-i)
-    omap af <Plug>(coc-funcobj-a)
-  endif
-  nmap gcj :execute 'CocCommand docthis.documentThis'<CR>
-endfunction
-
 function! s:load_clap() abort
   if utils#tap('vim-clap')
     nnoremap <silent> <Leader>tc :<C-u>Clap colors<CR>
@@ -228,34 +121,6 @@ function! s:load_CompleteParameter() abort
   endif
 endfunction
 
-function! s:load_barbar_tabline() abort
-  if utils#tap('barbar.nvim')
-    " Magic buffer-picking mode
-    nnoremap <silent> <C-s> :BufferPick<CR>
-    " Sort automatically by...
-    nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-    nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
-    " Move to previous/next
-    nnoremap <silent>    <A-,> :BufferPrevious<CR>
-    nnoremap <silent>    <A-.> :BufferNext<CR>
-    " Re-order to previous/next
-    nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-    nnoremap <silent>    <A->> :BufferMoveNext<CR>
-    " Goto buffer in position...
-    " nnoremap <silent>    <A-1> :BufferGoto 1<CR>
-    " nnoremap <silent>    <A-2> :BufferGoto 2<CR>
-    " nnoremap <silent>    <A-3> :BufferGoto 3<CR>
-    " nnoremap <silent>    <A-4> :BufferGoto 4<CR>
-    " nnoremap <silent>    <A-5> :BufferGoto 5<CR>
-    " nnoremap <silent>    <A-6> :BufferGoto 6<CR>
-    " nnoremap <silent>    <A-7> :BufferGoto 7<CR>
-    " nnoremap <silent>    <A-8> :BufferGoto 8<CR>
-    " nnoremap <silent>    <A-9> :BufferLast<CR>
-    " Close buffer
-    nnoremap <silent>    <A-c> :BufferClose<CR>
-  endif
-endfunction
-
 function! s:load_vim_which_key() abort
   if utils#tap('vim-which-key')
     nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
@@ -263,13 +128,19 @@ function! s:load_vim_which_key() abort
   endif
 endfunction
 
+function! s:load_nvim_tree() abort
+  if utils#tap('nvim-tree.lua')
+    nnoremap <leader>e :NvimTreeToggle<CR>
+    nnoremap <leader>r  :NvimTreeRefresh<CR>
+    nnoremap <leader>f  :NvimTreeFindFile<CR>
+  endif
+endfunction
+
 
 call s:load_default()
 call s:load_dashboard()
-call s:load_coc_clap()
-call s:load_coc()
+call s:load_accelerated_jk()
 call s:load_clap()
 call s:load_CompleteParameter()
-call s:load_accelerated_jk()
 call s:load_vim_which_key()
-call s:load_barbar_tabline()
+call s:load_nvim_tree()

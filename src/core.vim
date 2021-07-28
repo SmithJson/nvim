@@ -55,23 +55,21 @@ call utils#source_file($VIM_PATH,'/src/general.vim')
 call utils#source_file($VIM_PATH,'/src/filetype.vim')
 
 call utils#source_file($VIM_PATH,'/modules/module-floaterm.vim')
-call utils#source_file($VIM_PATH,'/modules/module-dashboard.vim')
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
-call utils#source_file($VIM_PATH,'/modules/module-rnvimr.vim')
 call utils#source_file($VIM_PATH,'/modules/module-closetag.vim')
 
-luafile $VIM_PATH/modules/module-indentline.lua
-luafile $VIM_PATH/modules/module-colorizer.lua
+luafile $VIM_PATH/modules/dashboard-nvim.lua
+luafile $VIM_PATH/modules/nvim-colorizer.lua
+luafile $VIM_PATH/modules/nvim-bufferline.lua
+luafile $VIM_PATH/modules/indent-blackline.lua
+luafile $VIM_PATH/modules/nvim-tree.lua
+luafile $VIM_PATH/modules/eviline.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
-" call utils#source_file($VIM_PATH,'/modules/module-coc.vim')
 call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')
-" call utils#source_file($VIM_PATH,'/modules/module-vim-go.vim')
 call utils#source_file($VIM_PATH,'/modules/module-vista.vim')
-call utils#source_file($VIM_PATH,'/modules/module-defx.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')
 
-call utils#source_file($VIM_PATH,'/src/format.vim')
 call utils#source_file($VIM_PATH,'/md-snippets.vim')
 
 call utils#source_file($VIM_PATH,'/_machine_specific.vim')
@@ -79,6 +77,3 @@ call utils#source_file($VIM_PATH,'/modules/module-markdown.vim')
 call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 call utils#source_file($VIM_PATH,'/src/run.vim')
 
-luafile $VIM_PATH/src/eviline.lua
-
-" call theme#init()
