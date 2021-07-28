@@ -141,6 +141,14 @@ function! s:load_nvim_bufferline() abort
   endif
 endfunction
 
+function! s:load_operator_surround() abort
+  if utils#tap('vim-operator-surround')
+    map <silent>sa <Plug>(operator-surround-append)
+    map <silent>sd <Plug>(operator-surround-delete)
+    map <silent>sr <Plug>(operator-surround-replace)
+  endif
+endfunction
+
 call s:load_default()
 call s:load_dashboard()
 call s:load_accelerated_jk()
@@ -149,3 +157,4 @@ call s:load_CompleteParameter()
 call s:load_vim_which_key()
 call s:load_nvim_tree()
 call s:load_nvim_bufferline()
+call s:load_operator_surround()

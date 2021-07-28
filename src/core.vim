@@ -59,16 +59,17 @@ call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/modules/module-closetag.vim')
 
 luafile $VIM_PATH/modules/dashboard-nvim.lua
-luafile $VIM_PATH/modules/nvim-colorizer.lua
 luafile $VIM_PATH/modules/nvim-bufferline.lua
 luafile $VIM_PATH/modules/indent-blackline.lua
 luafile $VIM_PATH/modules/nvim-tree.lua
 luafile $VIM_PATH/modules/eviline.lua
 luafile $VIM_PATH/modules/gitsigns-nvim.lua
+luafile $VIM_PATH/modules/delimimate.lua
+luafile $VIM_PATH/modules/cursorword.lua
+luafile $VIM_PATH/modules/vista.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
 call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')
-call utils#source_file($VIM_PATH,'/modules/module-vista.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')
 
 call utils#source_file($VIM_PATH,'/md-snippets.vim')

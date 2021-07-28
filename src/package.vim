@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-28 23:27:18
+" @Last Modified time: 2021-07-29 01:21:01
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -13,24 +13,19 @@ call plug#begin($VIM_PATH . '/plugged')
 " Beautify
 Plug 'glepnir/zephyr-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'luochen1990/rainbow'
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'RRethy/vim-illuminate'
 Plug 'glepnir/dashboard-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'othree/yajs.vim'
-Plug 'HerringtonDarkholme/yats.vim'
 
 " Indent
-" Plug 'ntpeters/vim-better-whitespace'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Completion
@@ -64,21 +59,17 @@ Plug 'heavenshell/vim-jsdoc', {
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Go
-" Plug 'fatih/vim-go'
-
-" Python
-" Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
-
 " Edit
-Plug 'tpope/vim-surround'
+Plug  'kana/vim-operator-user'
+Plug  'rhysd/vim-operator-surround'
+Plug  'Raimondi/delimitMate'
 Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'ahonn/vim-fileheader'
+Plug 'itchyny/vim-cursorword'
 
 " Autoformat
-" Plug 'junegunn/vim-easy-align', {'on':'<Plug>(EasyAlign)'}
 Plug 'editorconfig/editorconfig-vim'
 
 " Taglist
@@ -95,7 +86,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'mbbill/undotree'
 
 " Other useful utilities
-Plug 'lambdalisue/suda.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
