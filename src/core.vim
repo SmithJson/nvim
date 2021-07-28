@@ -64,6 +64,7 @@ luafile $VIM_PATH/modules/nvim-bufferline.lua
 luafile $VIM_PATH/modules/indent-blackline.lua
 luafile $VIM_PATH/modules/nvim-tree.lua
 luafile $VIM_PATH/modules/eviline.lua
+luafile $VIM_PATH/modules/gitsigns-nvim.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
 call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')

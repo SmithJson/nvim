@@ -91,10 +91,7 @@ function! s:load_clap() abort
     nnoremap <silent> <Leader>bb :<C-u>Clap buffers<CR>
     nnoremap <silent> <Leader>fa :<C-u>Clap grep<CR>
     " nnoremap <silent> <Leader>fb :<C-u>Clap marks<CR>
-    "like emacs counsel-find-file
     nnoremap <silent> <C-x><C-f> :<C-u>Clap filer<CR>
-    " nnoremap <silent> <Leader>ff :<C-u>Clap files ++finder=rg --ignore --hidden --files<cr>
-    " nnoremap <silent> <Leader>fg :<C-u>Clap gfiles<CR>
     nnoremap <silent> <Leader>fw :<C-u>Clap grep ++query=<cword><cr>
     " nnoremap <silent> <Leader>fh :<C-u>Clap history<CR>
     nnoremap <silent> <Leader>fW :<C-u>Clap windows<CR>
@@ -136,6 +133,13 @@ function! s:load_nvim_tree() abort
   endif
 endfunction
 
+function! s:load_nvim_bufferline() abort
+  if utils#tap('nvim-bufferline.lua')
+    nnoremap <silent>[b :BufferLineCycleNext<CR>
+    nnoremap <silent>b] :BufferLineCyclePrev<CR>
+    nnoremap <silent> gb :BufferLinePick<CR>
+  endif
+endfunction
 
 call s:load_default()
 call s:load_dashboard()
@@ -144,3 +148,4 @@ call s:load_clap()
 call s:load_CompleteParameter()
 call s:load_vim_which_key()
 call s:load_nvim_tree()
+call s:load_nvim_bufferline()
