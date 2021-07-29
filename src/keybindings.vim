@@ -108,16 +108,6 @@ function! s:load_clap() abort
   endif
 endfunction
 
-function! s:load_CompleteParameter() abort
-  if utils#tap('CompleteParameter.vim')
-    inoremap <silent><expr> ( complete_parameter#pre_complete("()")
-    smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-    imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
-    smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-    imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-  endif
-endfunction
-
 function! s:load_vim_which_key() abort
   if utils#tap('vim-which-key')
     nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
@@ -149,12 +139,30 @@ function! s:load_operator_surround() abort
   endif
 endfunction
 
+function! s:load_lspsaga_nvim() abort
+  if utils#tap('lspsaga.nvim')
+    nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+    nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+    vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+    nnoremap <silent>K :Lspsaga hover_doc<CR>
+    nnoremap <silent> gs :Lspsaga signature_help<CR>
+    nnoremap <silent>gr :Lspsaga rename<CR>
+    nnoremap <silent> gd :Lspsaga preview_definition<CR>
+    nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+    nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+    nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+    nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
+    tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+    highlight link LspSagaFinderSelection Search
+  endif
+endfunction
+
 call s:load_default()
 call s:load_dashboard()
 call s:load_accelerated_jk()
 call s:load_clap()
-call s:load_CompleteParameter()
 call s:load_vim_which_key()
 call s:load_nvim_tree()
 call s:load_nvim_bufferline()
 call s:load_operator_surround()
+call s:load_lspsaga_nvim()

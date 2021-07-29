@@ -1,6 +1,6 @@
 if &compatible
 	" vint: -ProhibitSetNoCompatible
-	set nocompatible
+	set nonocompatible
 	" vint: +ProhibitSetNoCompatible
 endif
 
@@ -49,14 +49,23 @@ if has('vim_starting')
 
 endif
 
-
 call utils#source_file($VIM_PATH,'/src/package.vim')
 call utils#source_file($VIM_PATH,'/src/general.vim')
 call utils#source_file($VIM_PATH,'/src/filetype.vim')
+call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 
 call utils#source_file($VIM_PATH,'/modules/module-floaterm.vim')
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/modules/module-closetag.vim')
+
+call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
+call utils#source_file($VIM_PATH,'/modules/module-other.vim')
+
+call utils#source_file($VIM_PATH,'/md-snippets.vim')
+
+call utils#source_file($VIM_PATH,'/_machine_specific.vim')
+call utils#source_file($VIM_PATH,'/modules/module-markdown.vim')
+call utils#source_file($VIM_PATH,'/src/run.vim')
 
 luafile $VIM_PATH/modules/dashboard-nvim.lua
 luafile $VIM_PATH/modules/nvim-bufferline.lua
@@ -67,15 +76,6 @@ luafile $VIM_PATH/modules/gitsigns-nvim.lua
 luafile $VIM_PATH/modules/delimimate.lua
 luafile $VIM_PATH/modules/cursorword.lua
 luafile $VIM_PATH/modules/vista.lua
+luafile $VIM_PATH/modules/lsp.lua
 
-call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
-call utils#source_file($VIM_PATH,'/modules/module-lsp.vim')
-call utils#source_file($VIM_PATH,'/modules/module-other.vim')
-
-call utils#source_file($VIM_PATH,'/md-snippets.vim')
-
-call utils#source_file($VIM_PATH,'/_machine_specific.vim')
-call utils#source_file($VIM_PATH,'/modules/module-markdown.vim')
-call utils#source_file($VIM_PATH,'/src/keybindings.vim')
-call utils#source_file($VIM_PATH,'/src/run.vim')
 

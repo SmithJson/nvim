@@ -31,19 +31,8 @@ set viewoptions=folds,cursor,curdir,slash,unix
 set sessionoptions=curdir,help,tabpages,winsize
 
 " Wildmenu
-if has('wildmenu')
-	if ! has('nvim')
-		set wildmode=list:longest
-	endif
-
-	set wildignorecase
-	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
-	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
-	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
-	set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
-	set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
-	set wildcharm=<C-z>  " substitue for 'wildchar' (<Tab>) in macros
-endif
+set wildignorecase
+set wildignore=.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**
 
 " Vim Directories
 silent !mkdir -p $VIM_PATH/tmp/backup
@@ -92,7 +81,6 @@ augroup END
 " Tabs and Indents {{{
 " ----------------
 set textwidth=120    " Text width maximum chars before wrapping
-" set noexpandtab     " Don't expand tabs to spaces
 set expandtab
 set tabstop=4       " The number of spaces a tab is
 set shiftwidth=4    " Number of spaces to use in auto(indent)
@@ -130,17 +118,12 @@ set splitbelow splitright       " Splits open bottom right
 set switchbuf=useopen,vsplit    " Jump to the first open window
 set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
-set completeopt=menu,menuone    " Always show menu, even for one item
-set completeopt+=noselect,noinsert
+set completeopt=menuone,noselect
 set autochdir
 set confirm
 set guioptions-=*
 set lazyredraw
 set inde=
-if exists('+completepopup')
-	set completeopt+=popup
-	set completepopup=height:4,width:60,highlight:InfoPopup
-endif
 
 " Use the new Neovim :h jumplist-stack
 if has('nvim-0.5')
@@ -243,13 +226,8 @@ endif
 
 if has('conceal') && v:version >= 703
 	" For snippet_complete marker
-	set conceallevel=2 concealcursor=niv
+	set conceallevel=0 concealcursor=niv
 endif
-
-if exists('+previewpopup')
-	set previewpopup=height:10,width:60
-endif
-
 " Pseudo-transparency for completion menu and floating windows
 if &termguicolors
 	if exists('&pumblend')

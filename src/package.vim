@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-29 01:21:01
+" @Last Modified time: 2021-07-29 17:47:02
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -20,8 +20,8 @@ Plug 'akinsho/nvim-bufferline.lua'
 Plug 'luochen1990/rainbow'
 Plug 'RRethy/vim-illuminate'
 Plug 'glepnir/dashboard-nvim'
-Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
@@ -29,14 +29,17 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Completion
-" Plug 'tenfyzhong/CompleteParameter.vim',{'for':['c', 'h', 'cpp', 'py', 'go', 'java', 'vim', 'json', 'hs', 'javascript', 'typescript']}
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/nvim-compe'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim'
-Plug 'ferrine/md-img-paste.vim'
 
 " FE
 Plug 'othree/html5.vim'
@@ -63,7 +66,6 @@ Plug 'honza/vim-snippets'
 Plug  'kana/vim-operator-user'
 Plug  'rhysd/vim-operator-surround'
 Plug  'Raimondi/delimitMate'
-Plug  'gcmt/wildfire.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'ahonn/vim-fileheader'
@@ -91,7 +93,5 @@ Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'rhysd/accelerated-jk'
 
-" CSharp
 Plug 'ctrlpvim/ctrlp.vim' , { 'for': ['cs', 'vim-plug'] } " omnisharp-vim dependency
 call plug#end()
-
