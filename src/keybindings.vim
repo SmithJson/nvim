@@ -9,6 +9,8 @@ function! s:load_default() abort
 
   " Disable the default s key
   noremap s <nop>
+  noremap < <nop>
+  noremap > <nop>
 
   " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
   noremap sj :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
@@ -53,8 +55,8 @@ function! s:load_default() abort
   vnoremap Y "+y
 
   " Indentation
-  noremap < <<
-  noremap > >>
+  noremap <C-\> <<
+  noremap <C-A-\> >>
 
   " Search
   noremap <LEADER><CR> :nohlsearch<CR>
