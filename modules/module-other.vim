@@ -30,3 +30,6 @@ let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " cust
 let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
+" compe-tabnine
+" let g:compe.source.tabnine = v:true
+

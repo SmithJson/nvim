@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-30 22:05:24
+" @Last Modified time: 2021-07-31 00:11:55
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -22,7 +22,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'lewis6991/gitsigns.nvim'
+" Plug 'lewis6991/gitsigns.nvim'
 
 " Indent
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -32,10 +32,12 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/completion-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'windwp/nvim-autopairs'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Snipeets
 Plug 'SirVer/ultisnips'
