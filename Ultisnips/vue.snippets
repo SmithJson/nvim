@@ -1,63 +1,69 @@
 snippet vue1 "vue-template"
 <template>
-  <el-container class="${1}-container">
-    <div class="${2}-main">
-      <router-view></router-view>
-    </div>
-  </el-container>
+    <el-container class="${1}-container">
+        <div class="${2}-main">
+            <router-view></router-view>
+        </div>
+    </el-container>
 </template>
 <script>
 export default {
-  name: '${3}',
-  components: {},
-  props: {},
-  data() {
-    return {}
-  },
-  methods: {},
-  created() {},
-  mounted() {},
-  watch: {},
-  computed: {},
+    name: '${3}',
+    components: {},
+    props: {},
+    data() {
+        return {}
+    },
+    methods: {},
+    created() {},
+    mounted() {},
+    watch: {},
+    computed: {},
 }
 </script>
-<style scoped></style>
+<style scoped>
+</style>
 endsnippet
 
 snippet atom1 "atom-template"
 <template>
-    <view class="${1}-box"></view>
+    <view class="container">
+        <text>Hello World</text>
+    </view>
 </template>
 
 <script type="config">
-    {
-        components: {
-            ${2}
-        },
-        props: {
-            ${3}
-        },
-        data: {
-            ${4}
-        }
-    }
+{
+    components: {},
+    props: {},
+    data: {}
+}
 </script>
+
 <script>
-import {${5}} from '${6}';
+import {atom, dcs, executeSwanCode} from '@baidu/swan-ui';
+import mixin from 'src/mixins/base';
 
 export default {
+    mixins: [mixin],
     computed: {
-        ${7}
+        payload() {
+            return this.result.resource.payload;
+        }
     },
     methods: {
-        ${8}
-    },
-    created() {
-        ${9}
     },
     mounted() {
-
+        console.error('--------------');
+        console.error(JSON.stringify(this.payload));
+        console.error('--------------');
     }
 };
 </script>
+
+<style lang="less" scoped>
+.container {
+    flex: 1;
+}
+</style>
 endsnippet

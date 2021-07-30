@@ -41,6 +41,7 @@ if has('vim_starting')
 
 	" Release keymappings prefixes, evict entirely for use of plug-ins.
 	nnoremap <Space>  <Nop>
+	inoremap <Tab>  <Nop>
 	xnoremap <Space>  <Nop>
 	nnoremap ,        <Nop>
 	xnoremap ,        <Nop>
@@ -77,5 +78,5 @@ luafile $VIM_PATH/modules/delimimate.lua
 luafile $VIM_PATH/modules/cursorword.lua
 luafile $VIM_PATH/modules/vista.lua
 luafile $VIM_PATH/modules/lsp.lua
-
-
+luafile $VIM_PATH/modules/nvim-treesitter.lua
+luafile $VIM_PATH/modules/autopairs.lua

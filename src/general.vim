@@ -31,6 +31,7 @@ set viewoptions=folds,cursor,curdir,slash,unix
 set sessionoptions=curdir,help,tabpages,winsize
 
 " Wildmenu
+set wildmenu
 set wildignorecase
 set wildignore=.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**
 
@@ -118,7 +119,7 @@ set splitbelow splitright       " Splits open bottom right
 set switchbuf=useopen,vsplit    " Jump to the first open window
 set backspace=indent,eol,start  " Intuitive backspacing in insert mode
 set diffopt=filler,iwhite       " Diff mode: show fillers, ignore whitespace
-set completeopt=menuone,noselect
+set completeopt=menuone,noselect,noinsert
 set autochdir
 set confirm
 set guioptions-=*

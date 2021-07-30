@@ -1,13 +1,6 @@
-" rainbow
-let g:rainbow_active = 1
-
 " vim-rooter
 let g:rooter_patterns = ['__vim_project_root', '.git/']
 let g:rooter_silent_chdir = 1
-
-" | CTRLP (Dependency for omnisharp) |
-let g:ctrlp_map = ''
-let g:ctrlp_cmd = 'CtrlP'
 
 " vim-illuminate
 let g:Illuminate_delay = 750
