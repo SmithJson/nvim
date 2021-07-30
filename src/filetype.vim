@@ -64,7 +64,7 @@ augroup user_plugin_filetype "{{{
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
   " Atom 百度小程序语法高亮
-  autocmd BufNewFile,BufRead *.atom set filetype=html
+  " autocmd BufNewFile,BufRead *.atom set filetype=html
 augroup END "}}}
 
 " Credits: https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/options.rc.vim#L147
@@ -75,13 +75,3 @@ function! s:mkdir_as_necessary(dir, force) abort
     call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
   endif
 endfunction
-
-
-" FileType plugin config
-
-"MaxMEllon/vim-jsx-pretty
-if utils#tap('vim-jsx-pretty')
-  let g:vim_jsx_pretty_highlight_close_tag = 1
-endif
-
-

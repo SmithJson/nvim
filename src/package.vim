@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-30 11:02:03
+" @Last Modified time: 2021-07-30 16:07:35
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -37,6 +37,11 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'windwp/nvim-autopairs'
 
+" Snipeets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'mlaursen/vim-react-snippets'
+
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
@@ -46,19 +51,14 @@ Plug 'dkarter/bullets.vim'
 " FE
 Plug 'othree/html5.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'windwp/nvim-ts-autotag'
 " Plug 'alvan/vim-closetag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'AndrewRadev/tagalong.vim'
-Plug 'posva/vim-vue'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
-
-" Snipeets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mlaursen/vim-react-snippets'
 
 " Edit
 Plug  'kana/vim-operator-user'
@@ -78,7 +78,6 @@ Plug 'liuchengxu/vista.vim'
 " File navigation
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
-Plug 'voldikss/vim-floaterm', { 'on': 'FloatermNew' }
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'kshenoy/vim-signature'
 

@@ -8,6 +8,7 @@ hi illuminatedWord cterm=undercurl gui=undercurl
 
 " vim jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_highlight_close_tag = 1
 
 " vim-smoothie
 let g:smoothie_no_default_mappings = v:true
@@ -28,4 +29,3 @@ let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
 let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
 nnoremap <silent> <leader>lg :LazyGit<CR>
-
