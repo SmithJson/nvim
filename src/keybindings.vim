@@ -159,6 +159,29 @@ function! s:load_lspsaga_nvim() abort
   endif
 endfunction
 
+function! s:load_vim_eft() abort
+  if utils#tap('vim-eft')
+    nmap ; <Plug>(eft-repeat)
+    xmap ; <Plug>(eft-repeat)
+
+    nmap f <Plug>(eft-f)
+    xmap f <Plug>(eft-f)
+    omap f <Plug>(eft-f)
+    nmap F <Plug>(eft-F)
+    xmap F <Plug>(eft-F)
+    omap F <Plug>(eft-F)
+
+    nmap t <Plug>(eft-t)
+    xmap t <Plug>(eft-t)
+    omap t <Plug>(eft-t)
+    nmap T <Plug>(eft-T)
+    xmap T <Plug>(eft-T)
+    omap T <Plug>(eft-T)
+  endif
+endfunction
+
+
+
 call s:load_default()
 call s:load_dashboard()
 call s:load_accelerated_jk()
@@ -168,3 +191,4 @@ call s:load_nvim_tree()
 call s:load_nvim_bufferline()
 call s:load_operator_surround()
 call s:load_lspsaga_nvim()
+call s:load_vim_eft()

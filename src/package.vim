@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-07-30 16:07:35
+" @Last Modified time: 2021-07-30 22:05:24
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -52,7 +52,6 @@ Plug 'dkarter/bullets.vim'
 Plug 'othree/html5.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'windwp/nvim-ts-autotag'
-" Plug 'alvan/vim-closetag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'heavenshell/vim-jsdoc', {
@@ -73,7 +72,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'editorconfig/editorconfig-vim'
 
 " Taglist
-Plug 'liuchengxu/vista.vim'
+Plug 'simrat39/symbols-outline.nvim'
 
 " File navigation
 Plug 'tomtom/tcomment_vim'
@@ -89,4 +88,5 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'rhysd/accelerated-jk'
+Plug 'hrsh7th/vim-eft'
 call plug#end()
