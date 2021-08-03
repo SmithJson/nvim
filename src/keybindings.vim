@@ -9,8 +9,6 @@ function! s:load_default() abort
 
   " Disable the default s key
   noremap s <nop>
-  noremap < <nop>
-  noremap > <nop>
 
   " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
   noremap sj :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
@@ -34,9 +32,9 @@ function! s:load_default() abort
   noremap srv <C-w>b<C-w>H
 
   " Save & quit
-  noremap S :w<CR>
-  noremap Q :q<CR>
-
+  " noremap S :w<CR>
+  " noremap Q :q<CR>
+  "
   " Emacs keymap (insert mode cursor move)
   inoremap <C-a> <Home>
   inoremap <C-e> <End>
@@ -45,9 +43,6 @@ function! s:load_default() abort
   inoremap <C-n> <Down>
   inoremap <C-p> <Up>
 
-  " noremap 1 0
-  " noremap 0 $
-
   " Open init.vim
   noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
@@ -55,8 +50,8 @@ function! s:load_default() abort
   vnoremap Y "+y
 
   " Indentation
-  noremap <C-\> <<
-  noremap <C-A-\> >>
+  noremap < <<
+  noremap > >>
 
   " Search
   noremap <LEADER><CR> :nohlsearch<CR>
@@ -71,7 +66,6 @@ function! s:load_default() abort
   inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
   " Unotree
   noremap L :UndotreeToggle<CR>
-
 endfunction
 
 function! s:load_dashboard() abort
@@ -181,7 +175,6 @@ function! s:load_vim_eft() abort
     omap T <Plug>(eft-T)
   endif
 endfunction
-
 
 
 call s:load_default()

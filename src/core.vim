@@ -41,13 +41,11 @@ if has('vim_starting')
 
 	" Release keymappings prefixes, evict entirely for use of plug-ins.
 	nnoremap <Space>  <Nop>
-	inoremap <Tab>  <Nop>
 	xnoremap <Space>  <Nop>
 	nnoremap ,        <Nop>
 	xnoremap ,        <Nop>
 	nnoremap ;        <Nop>
 	xnoremap ;        <Nop>
-
 endif
 
 call utils#source_file($VIM_PATH,'/src/package.vim')
@@ -56,6 +54,7 @@ call utils#source_file($VIM_PATH,'/src/filetype.vim')
 call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 
 call utils#source_file($VIM_PATH,'/src/run.vim')
+call utils#source_file($VIM_PATH,'/src/auto_save_session.vim')
 
 luafile $VIM_PATH/modules/dashboard-nvim.lua
 luafile $VIM_PATH/modules/nvim-bufferline.lua
