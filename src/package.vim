@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-08-03 23:58:54
+" @Last Modified time: 2021-08-04 01:05:57
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -38,14 +38,11 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'windwp/nvim-autopairs'
 Plug 'ray-x/lsp_signature.nvim'
+
+" Snipeets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
-
-" Snipeets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-" Plug 'mlaursen/vim-react-snippets'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
