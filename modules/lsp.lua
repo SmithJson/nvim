@@ -1,3 +1,8 @@
+local function vim_vsnip()
+  vim.g.vsnip_snippet_dir = os.getenv('HOME') .. '/.config/nvim/snippets'
+end
+
+
 local cfg = {
   bind = true, -- This is mandatory, otherwise border config won't get registered.
                -- If you want to hook lspsaga or other signature handler, pls set to false
@@ -114,6 +119,7 @@ local function setup_servers()
   end
 end
 setup_servers()
+vim_vsnip()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 require'lspinstall'.post_install_hook = function ()

@@ -17,7 +17,7 @@ let g:smoothie_no_default_mappings = v:true
 let g:accelerated_jk_acceleration_table = [2, 4, 7, 15]
 
 " vim-jsdoc
-nmap <silent> <C-l> <Plug>(jsdoc)
+" nmap <silent> <C-l> <Plug>(jsdoc)
 
 " bracey.vim
 let g:bracey_refresh_on_save = 1
