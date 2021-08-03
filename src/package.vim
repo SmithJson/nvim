@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-08-03 15:40:31
+" @Last Modified time: 2021-08-03 18:23:19
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -91,4 +91,6 @@ Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'rhysd/accelerated-jk'
 Plug 'hrsh7th/vim-eft'
+
+" auto save sessions
 call plug#end()
