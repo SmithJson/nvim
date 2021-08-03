@@ -155,8 +155,8 @@ function! s:load_lspsaga_nvim() abort
     nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
     nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
     nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-    nnoremap <silent> <S-A-d> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>
-    tnoremap <silent> <S-A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
+    nnoremap <silent> <C-c> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>
+    tnoremap <silent> <C-c> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
     highlight link LspSagaFinderSelection Search
   endif
 endfunction

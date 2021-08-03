@@ -1,5 +1,6 @@
 
 "General settins{{{
+set termguicolors
 set mouse=nv                 " Disable mouse in command-line mode
 set report=0                 " Don't report on line changes
 set errorbells               " Trigger bell on error
@@ -11,14 +12,9 @@ set path+=**                 " Directories to search when using gf and friends
 set isfname-==               " Remove =, detects filename in var=/foo/bar
 set virtualedit=block        " Position cursor anywhere in visual block
 set synmaxcol=2500           " Don't syntax highlight long lines
-set formatoptions+=1         " Don't break lines after a one-letter word
-set formatoptions-=t         " Don't auto-wrap text
-set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
+set formatoptions=1jcroql    " Don't break lines after a one-letter word
 set cursorline
 set noro                     " Disable readyonly warning info
-if has('patch-7.3.541')
-	set formatoptions+=j      " Remove comment leader when joining lines
-endif
 
 if has('vim_starting')
 	set encoding=utf-8
@@ -36,47 +32,35 @@ set wildignorecase
 set wildignore=.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**
 
 " Vim Directories
-silent !mkdir -p $VIM_PATH/tmp/backup
-silent !mkdir -p $VIM_PATH/tmp/undo
-set backupdir=$VIM_PATH/tmp/backup,.
-set directory=$VIM_PATH/tmp/backup,.
-if has('persistent_undo')
-	set undofile
-	set undodir=$VIM_PATH/tmp/undo,.
-endif
+silent !mkdir -p $HOME/.cache/nvim/swap
+silent !mkdir -p $HOME/.cache/nvim/undo
+silent !mkdir -p $HOME/.cache/nvim/backup
+silent !mkdir -p $HOME/.cache/nvim/view
+
+set nobackup
+set nowritebackup
+set noswapfile
+set undofile
+set directory=$HOME/.cache/nvim/swap/
+set undodir=$HOME/.cache/nvim/undo/
+set backupdir=$HOME/.cache/nvim/backup/
+set viewdir=$HOME/.cache/nvim/view/
+
+augroup user_persistent_undo
+  autocmd!
+  au BufWritePre /tmp/*          setlocal noundofile
+  au BufWritePre COMMIT_EDITMSG  setlocal noundofile
+  au BufWritePre MERGE_MSG       setlocal noundofile
+  au BufWritePre *.tmp           setlocal noundofile
+  au BufWritePre *.bak           setlocal noundofile
+augroup END
 
 " History saving
 set history=2000
-
-if has('nvim') && ! has('win32') && ! has('win64')
-	set shada=!,'300,<50,@100,s10,h
-else
-	set viminfo='300,<10,@50,h,n$VIM_PATH/viminfo
-endif
-
-augroup user_persistent_undo
-	autocmd!
-	au BufWritePre /tmp/*          setlocal noundofile
-	au BufWritePre COMMIT_EDITMSG  setlocal noundofile
-	au BufWritePre MERGE_MSG       setlocal noundofile
-	au BufWritePre *.tmp           setlocal noundofile
-	au BufWritePre *.bak           setlocal noundofile
-augroup END
-
-" Secure sensitive information, disable backup files in temp directories
-if exists('&backupskip')
-	set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
-	set backupskip+=.vault.vim
-endif
+set shada=!,'300,<50,@100,s10,h
 
 " Disable swap/undo/viminfo/shada files in temp directories or shm
-augroup user_secure
-	autocmd!
-	silent! autocmd BufNewFile,BufReadPre
-		\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
-		\ setlocal noswapfile noundofile nobackup nowritebackup viminfo= shada=
-augroup END
-
+set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
 " }}}
 
 " Tabs and Indents {{{
@@ -112,7 +96,7 @@ set redrawtime=1500  " Time in milliseconds for stopping display redraw
 set autoread                    " Auto readfile
 set nowrap                      " No wrap by default
 set linebreak                   " Break long lines at 'breakat'
-set breakat=\ \	;:,!?           " Long lines break chars
+set breakat=[[\ \	;:,!?]]           " Long lines break chars
 set nostartofline               " Cursor in same column for few commands
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 set splitbelow splitright       " Splits open bottom right
@@ -163,17 +147,8 @@ endif
 
 " }}
 
-
 " Editor UI {{{
-if (has('termguicolors'))
-  set termguicolors
-endif
-if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
-" colorscheme one
 colorscheme zephyr
-" hi Comment ctermfg=0 ctermbg=NONE guifg=gray guibg=NONE gui=NONE
 
 set number              " Show number
 set relativenumber      " Show relative number
@@ -185,14 +160,6 @@ set fillchars+=vert:\|  " add a bar for vertical splits
 set fcs=eob:\           " hide ~ tila
 set list
 set listchars=tab:»·,nbsp:+,trail:.,extends:→,precedes:←
-
-set title
-" Title length.
-set titlelen=95
-" Title string.
-let &g:titlestring="
-      \ %{expand('%:p:~:.')}%(%m%r%w%)
-      \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
 
 set showmatch           " Jump to matching bracket
 set matchpairs+=<:>     " Add HTML brackets to pair matching

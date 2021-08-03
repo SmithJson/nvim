@@ -64,7 +64,7 @@ augroup user_plugin_filetype "{{{
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
   " Atom 百度小程序语法高亮
-  " autocmd BufNewFile,BufRead *.atom set filetype=html
+  autocmd BufNewFile,BufRead *.atom set filetype=html
 augroup END "}}}
 
 " Credits: https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/options.rc.vim#L147
