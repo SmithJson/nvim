@@ -68,6 +68,7 @@ luafile $VIM_PATH/modules/lsp.lua
 luafile $VIM_PATH/modules/nvim-treesitter.lua
 luafile $VIM_PATH/modules/autopairs.lua
 luafile $VIM_PATH/modules/closetag.lua
+luafile $VIM_PATH/modules/emmet-vim.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/modules/module-clap.vim')

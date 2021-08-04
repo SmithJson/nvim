@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-08-04 16:41:54
+" @Last Modified time: 2021-08-04 18:17:03
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -51,7 +51,8 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 Plug 'dkarter/bullets.vim'
 
 " FE
-Plug 'othree/html5.vim'
+" Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
