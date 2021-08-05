@@ -81,26 +81,13 @@ function! s:load_accelerated_jk() abort
   endif
 endfunction
 
-function! s:load_clap() abort
-  if utils#tap('vim-clap')
-    nnoremap <silent> <Leader>tc :<C-u>Clap colors<CR>
-    nnoremap <silent> <Leader>bb :<C-u>Clap buffers<CR>
-    nnoremap <silent> <Leader>fa :<C-u>Clap grep<CR>
-    " nnoremap <silent> <Leader>fb :<C-u>Clap marks<CR>
-    nnoremap <silent> <C-x><C-f> :<C-u>Clap filer<CR>
-    nnoremap <silent> <Leader>fw :<C-u>Clap grep ++query=<cword><cr>
-    " nnoremap <silent> <Leader>fh :<C-u>Clap history<CR>
-    nnoremap <silent> <Leader>fW :<C-u>Clap windows<CR>
-    nnoremap <silent> <Leader>fl :<C-u>Clap loclist<CR>
-    nnoremap <silent> <Leader>fu :<C-u>Clap git_diff_files<CR>
-    nnoremap <silent> <Leader>fv :<C-u>Clap grep ++query=@visual<CR>
-    nnoremap <silent> <Leader>oc :<C-u>Clap personalconf<CR>
-  endif
+function! s:telescope() abort
   if utils#tap('telescope.nvim')
     nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+    nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
+    nnoremap <leader>fv <cmd>Telescope vim_options<cr>
   endif
 endfunction
 
@@ -202,7 +189,7 @@ endfunction
 call s:load_default()
 call s:load_dashboard()
 call s:load_accelerated_jk()
-call s:load_clap()
+call s:telescope()
 call s:load_vim_which_key()
 call s:load_nvim_tree()
 call s:load_nvim_bufferline()

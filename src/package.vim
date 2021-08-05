@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-08-04 18:17:03
+" @Last Modified time: 2021-08-05 11:33:59
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -80,7 +80,6 @@ Plug 'simrat39/symbols-outline.nvim'
 " File navigation
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'kshenoy/vim-signature'
 
 " " Undo Tree
