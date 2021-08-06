@@ -1,7 +1,7 @@
 -- create ascii text：http://patorjk.com/software/taag/
 local home = os.getenv('HOME')
 vim.g.dashboard_preview_command = 'cat'
-vim.g.dashboard_preview_file = home .. '/.config/nvim/static/neovim.cat'
+vim.g.dashboard_preview_file = home .. '/.config/nvim/static/dashboard.cat'
 vim.g.dashboard_preview_file_height = 20
 vim.g.dashboard_preview_file_width = 40
 -- vim.g.dashboard_preview_pipeline = 'lolcat'
