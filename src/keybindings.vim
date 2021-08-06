@@ -108,11 +108,12 @@ endfunction
 
 function! s:load_nvim_bufferline() abort
   if utils#tap('nvim-bufferline.lua')
-    nnoremap <silent>[b :BufferLineCycleNext<CR>
-    nnoremap <silent>b] :BufferLineCyclePrev<CR>
+    nnoremap <silent>[n :BufferLineCycleNext<CR>
+    nnoremap <silent>p] :BufferLineCyclePrev<CR>
     nnoremap <silent> <C-s> :BufferLinePick<CR>
-    nnoremap <silent> <C-x><C-l> :BufferLineCloseLeft<CR>
-    nnoremap <silent> <C-x><C-r> :BufferLineCloseRight<CR>
+    nnoremap <silent> <C-k> :BufferLinePickClose<CR>
+    " nnoremap <silent> <C-x><C-l> :BufferLineCloseLeft<CR>
+    " nnoremap <silent> <C-x><C-r> :BufferLineCloseRight<CR>
   endif
 endfunction
 
