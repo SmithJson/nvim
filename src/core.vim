@@ -71,8 +71,6 @@ luafile $VIM_PATH/modules/closetag.lua
 luafile $VIM_PATH/modules/emmet-vim.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
-call utils#source_file($VIM_PATH,'/modules/module-clap.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')
 call utils#source_file($VIM_PATH,'/md-snippets.vim')
 call utils#source_file($VIM_PATH,'/_machine_specific.vim')
-call utils#source_file($VIM_PATH,'/modules/module-markdown.vim')
