@@ -6,10 +6,6 @@ let g:rooter_silent_chdir = 1
 let g:Illuminate_delay = 750
 hi illuminatedWord cterm=undercurl gui=undercurl
 
-" vim jsx-pretty
-let g:vim_jsx_pretty_colorful_config = 1
-let g:vim_jsx_pretty_highlight_close_tag = 1
-
 " vim-smoothie
 let g:smoothie_no_default_mappings = v:true
 
