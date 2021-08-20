@@ -111,7 +111,7 @@ function! s:load_nvim_bufferline() abort
     nnoremap <silent>[n :BufferLineCycleNext<CR>
     nnoremap <silent>p] :BufferLineCyclePrev<CR>
     nnoremap <silent> <C-s> :BufferLinePick<CR>
-    nnoremap <silent> <C-k> :BufferLinePickClose<CR>
+    nnoremap <silent> <C-w> :BufferLinePickClose<CR>
     " nnoremap <silent> <C-x><C-l> :BufferLineCloseLeft<CR>
     " nnoremap <silent> <C-x><C-r> :BufferLineCloseRight<CR>
   endif
