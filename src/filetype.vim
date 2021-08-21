@@ -60,6 +60,7 @@ augroup user_plugin_filetype "{{{
 
   " Make directory automatically.
   autocmd BufWritePre * call s:mkdir_as_necessary(expand('<afile>:p:h'), v:cmdbang)
+  autocmd BufWritePre * execute "normal! %s/\\s\\+$//g"
 
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
