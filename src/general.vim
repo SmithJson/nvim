@@ -18,6 +18,7 @@ set noro                     " Disable readyonly warning info
 
 if has('vim_starting')
 	set encoding=utf-8
+	set helplang=cn
 	set fileencodings=utf-8,gbk,gb18030,gk2312
 	scriptencoding utf-8
 endif
