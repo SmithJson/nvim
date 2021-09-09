@@ -105,6 +105,9 @@ require('lspkind').init({
     }
 }
 
+
+-- local required_servers = {"tailwindcss",  "go", "python", "vue", "json", "lua", "vim", "typescript", "html", "css", "php", "bash", "java", "cpp"}
+
 local function setup_servers()
   require'lspinstall'.setup{
     on_attach = require'completion'.on_attach
@@ -118,6 +121,7 @@ local function setup_servers()
     }
   end
 end
+
 setup_servers()
 vim_vsnip()
 
