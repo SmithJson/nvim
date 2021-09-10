@@ -137,8 +137,8 @@ function! s:load_lspsaga_nvim() abort
     nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
     nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
     nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-    nnoremap <silent> <C-c> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>
-    tnoremap <silent> <C-c> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
+    nnoremap <silent> <C-k> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>
+    tnoremap <silent> <C-k> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
     highlight link LspSagaFinderSelection Search
   endif
 endfunction
@@ -197,4 +197,4 @@ call s:load_nvim_bufferline()
 call s:load_operator_surround()
 call s:load_lspsaga_nvim()
 call s:load_vim_eft()
-call s:load_vim_vsnip()
+" call s:load_vim_vsnip()
