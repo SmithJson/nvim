@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-08 19:41:01
+" @Last Modified time: 2021-09-10 19:01:48
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -33,7 +33,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/completion-nvim'
 Plug 'p00f/nvim-ts-rainbow'
@@ -43,7 +42,6 @@ Plug 'ray-x/lsp_signature.nvim'
 " Snipeets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
