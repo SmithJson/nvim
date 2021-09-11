@@ -31,6 +31,11 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 
+let g:python3_host_skip_check=1
+let g:python3_host_prog='/usr/local/bin/python3'
+let g:python_host_skip_check=1
+let g:python_host_prog='/usr/bin/python'
+
 " Initialize base requirements
 if has('vim_starting')
 	" Global Mappings "{{{
@@ -72,6 +77,5 @@ luafile $VIM_PATH/modules/emmet-vim.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/md-snippets.vim')
-call utils#source_file($VIM_PATH,'/_machine_specific.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')
 
