@@ -150,7 +150,7 @@ endif
 " }}
 
 " Editor UI {{{
-" colorscheme zephyr
+colorscheme zephyr
 
 set number              " Show number
 set relativenumber      " Show relative number
