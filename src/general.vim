@@ -109,6 +109,7 @@ set autochdir
 set confirm
 set guioptions-=*
 set lazyredraw
+set ttyfast
 set inde=
 
 " Use the new Neovim :h jumplist-stack
@@ -149,7 +150,7 @@ endif
 " }}
 
 " Editor UI {{{
-colorscheme zephyr
+" colorscheme zephyr
 
 set number              " Show number
 set relativenumber      " Show relative number
