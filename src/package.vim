@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-11 22:42:18
+" @Last Modified time: 2021-09-12 17:54:54
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -23,7 +23,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'skywind3000/vim-quickui'
+" Plug 'skywind3000/vim-quickui'
 
 " Indent
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -86,7 +86,7 @@ Plug 'mbbill/undotree'
 Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
-Plug 'rhysd/accelerated-jk'
+Plug 'PHSix/faster.nvim'
 Plug 'hrsh7th/vim-eft'
 
 " auto save sessions

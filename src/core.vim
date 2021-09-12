@@ -74,6 +74,7 @@ luafile $VIM_PATH/modules/nvim-treesitter.lua
 luafile $VIM_PATH/modules/autopairs.lua
 luafile $VIM_PATH/modules/closetag.lua
 luafile $VIM_PATH/modules/emmet-vim.lua
+luafile $VIM_PATH/modules/faster-nvim.lua
 
 call utils#source_file($VIM_PATH,'/modules/module-undotree.vim')
 call utils#source_file($VIM_PATH,'/modules/module-other.vim')

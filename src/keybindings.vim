@@ -92,13 +92,6 @@ function! s:load_dashboard() abort
   endif
 endfunction
 
-function! s:load_accelerated_jk() abort
-  if utils#tap('accelerated-jk')
-    nmap j <Plug>(accelerated_jk_gj)
-    nmap k <Plug>(accelerated_jk_gk)
-  endif
-endfunction
-
 function! s:telescope() abort
   if utils#tap('telescope.nvim')
     nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
@@ -207,7 +200,6 @@ endfunction
 
 call s:load_default()
 call s:load_dashboard()
-call s:load_accelerated_jk()
 call s:telescope()
 call s:load_vim_which_key()
 call s:load_nvim_tree()
@@ -215,4 +207,4 @@ call s:load_nvim_bufferline()
 call s:load_operator_surround()
 call s:load_lspsaga_nvim()
 call s:load_vim_eft()
-" call s:load_vim_vsnip()
+call s:load_vim_vsnip()
