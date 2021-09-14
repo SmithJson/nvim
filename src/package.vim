@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-12 17:54:54
+" @Last Modified time: 2021-09-14 23:42:32
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -62,7 +62,6 @@ Plug 'heavenshell/vim-jsdoc', {
 " Edit
 Plug  'kana/vim-operator-user'
 Plug  'rhysd/vim-operator-surround'
-Plug  'Raimondi/delimitMate'
 Plug 'AndrewRadev/switch.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'ahonn/vim-fileheader'

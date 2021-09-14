@@ -43,13 +43,6 @@ augroup user_plugin_filetype "{{{
   " https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
   autocmd FileType css,javascript,javascriptreact setlocal backupcopy=yes
 
-  " Go (Google)
-  autocmd FileType go
-                     \  let b:coc_pairs_disabled = ['<']
-                     \ | let b:coc_root_patterns = ['.git', 'go.mod']
-
-  autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-
   " Python
   autocmd FileType python
         \ setlocal expandtab smarttab nosmartindent

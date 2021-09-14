@@ -66,7 +66,6 @@ luafile $VIM_PATH/modules/indent-blackline.lua
 luafile $VIM_PATH/modules/nvim-tree.lua
 luafile $VIM_PATH/modules/eviline.lua
 luafile $VIM_PATH/modules/gitsigns-nvim.lua
-luafile $VIM_PATH/modules/delimimate.lua
 luafile $VIM_PATH/modules/cursorword.lua
 luafile $VIM_PATH/modules/vista.lua
 luafile $VIM_PATH/modules/lsp.lua

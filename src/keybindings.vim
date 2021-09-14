@@ -64,8 +64,6 @@ function! s:load_default() abort
 
   " Press space twice to jump to the next '<++>' and edit it
   inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
-  " Unotree
-  noremap L :UndotreeToggle<CR>
 
   "Markdown"
   autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
