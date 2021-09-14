@@ -60,6 +60,7 @@ call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 
 call utils#source_file($VIM_PATH,'/src/run.vim')
 
+luafile $VIM_PATH/modules/init.lua
 luafile $VIM_PATH/modules/dashboard-nvim.lua
 luafile $VIM_PATH/modules/nvim-bufferline.lua
 luafile $VIM_PATH/modules/indent-blackline.lua

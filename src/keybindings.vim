@@ -44,7 +44,7 @@ function! s:load_default() abort
   inoremap <C-p> <Up>
 
   " Open init.vim
-  noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
+  noremap <LEADER>rc :%!python -m json.tool<CR>
 
   " Copy to system clipboard
   vnoremap Y "+y

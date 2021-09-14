@@ -6,9 +6,6 @@ let g:rooter_silent_chdir = 1
 let g:Illuminate_delay = 750
 hi illuminatedWord cterm=undercurl gui=undercurl
 
-" vim-smoothie
-let g:smoothie_no_default_mappings = v:true
-
 " vim-jsdoc
 " nmap <silent> <C-l> <Plug>(jsdoc)
 

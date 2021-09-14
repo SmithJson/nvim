@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-14 23:42:32
+" @Last Modified time: 2021-09-15 03:11:58
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -12,7 +12,8 @@ call plug#begin($VIM_PATH . '/plugged')
 
 " Beautify
 Plug 'glepnir/zephyr-nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'romgrk/nvim-treesitter-context'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -23,7 +24,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-" Plug 'skywind3000/vim-quickui'
+Plug 'Pocco81/AutoSave.nvim'
 
 " Indent
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -63,7 +64,7 @@ Plug 'heavenshell/vim-jsdoc', {
 Plug  'kana/vim-operator-user'
 Plug  'rhysd/vim-operator-surround'
 Plug 'AndrewRadev/switch.vim'
-Plug 'psliwka/vim-smoothie'
+Plug 'karb94/neoscroll.nvim'
 Plug 'ahonn/vim-fileheader'
 Plug 'itchyny/vim-cursorword'
 
