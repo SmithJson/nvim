@@ -1,3 +1,4 @@
+local gps = require("nvim-gps")
 local gl = require('galaxyline')
 local colors = require('galaxyline.theme').default
 local condition = require('galaxyline.condition')
@@ -100,6 +101,16 @@ gls.left[11] = {
 }
 
 gls.mid[1] = {
+    nvimGPS = {
+        provider = function()
+            return gps.get_location()
+        end,
+        condition = function()
+            return gps.is_available()
+        end
+    }
+}
+gls.right[1] = {
   ShowLspClient = {
     provider = 'GetLspClient',
     condition = function ()
@@ -109,12 +120,12 @@ gls.mid[1] = {
       end
       return true
     end,
-    icon = ' LSP:',
+    -- icon = ' LSP:',
     highlight = {colors.yellow,colors.bg,'bold'}
   }
 }
 
-gls.right[1] = {
+gls.right[2] = {
   FileEncode = {
     provider = 'FileEncode',
     condition = condition.hide_in_width,
@@ -124,7 +135,7 @@ gls.right[1] = {
   }
 }
 
-gls.right[2] = {
+gls.right[3] = {
   FileFormat = {
     provider = 'FileFormat',
     condition = condition.hide_in_width,
@@ -134,7 +145,7 @@ gls.right[2] = {
   }
 }
 
-gls.right[3] = {
+gls.right[4] = {
   GitIcon = {
     provider = function() return '  ' end,
     condition = condition.check_git_workspace,
@@ -144,7 +155,7 @@ gls.right[3] = {
   }
 }
 
-gls.right[4] = {
+gls.right[5] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
@@ -152,7 +163,7 @@ gls.right[4] = {
   }
 }
 
-gls.right[5] = {
+gls.right[6] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
@@ -160,7 +171,7 @@ gls.right[5] = {
     highlight = {colors.green,colors.bg},
   }
 }
-gls.right[6] = {
+gls.right[7] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = condition.hide_in_width,
@@ -168,7 +179,7 @@ gls.right[6] = {
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.right[7] = {
+gls.right[8] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
@@ -177,7 +188,7 @@ gls.right[7] = {
   }
 }
 
-gls.right[8] = {
+gls.right[9] = {
   RainbowBlue = {
     provider = function() return ' ▊' end,
     highlight = {colors.blue,colors.bg}

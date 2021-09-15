@@ -60,19 +60,19 @@ call utils#source_file($VIM_PATH,'/src/keybindings.vim')
 
 call utils#source_file($VIM_PATH,'/src/run.vim')
 
-luafile $VIM_PATH/modules/init.lua
 luafile $VIM_PATH/modules/dashboard-nvim.lua
+luafile $VIM_PATH/modules/nvim-treesitter.lua
 luafile $VIM_PATH/modules/nvim-bufferline.lua
 luafile $VIM_PATH/modules/indent-blackline.lua
 luafile $VIM_PATH/modules/nvim-tree.lua
-luafile $VIM_PATH/modules/eviline.lua
 luafile $VIM_PATH/modules/gitsigns-nvim.lua
 luafile $VIM_PATH/modules/cursorword.lua
 luafile $VIM_PATH/modules/vista.lua
-luafile $VIM_PATH/modules/lsp.lua
-luafile $VIM_PATH/modules/nvim-treesitter.lua
+luafile $VIM_PATH/modules/init.lua
+luafile $VIM_PATH/modules/eviline.lua
 luafile $VIM_PATH/modules/autopairs.lua
 luafile $VIM_PATH/modules/closetag.lua
+luafile $VIM_PATH/modules/lsp.lua
 luafile $VIM_PATH/modules/emmet-vim.lua
 luafile $VIM_PATH/modules/faster-nvim.lua
 
