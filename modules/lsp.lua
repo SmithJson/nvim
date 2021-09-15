@@ -107,6 +107,7 @@ require('lspkind').init({
 
 -- local required_servers = {"tailwindcss",  "go", "python", "vue", "json", "lua", "vim", "typescript", "html", "css", "php", "bash", "java", "cpp"}
 
+
 local function setup_servers()
   require'lspinstall'.setup{
     on_attach = require'completion'.on_attach
@@ -170,4 +171,11 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
+require'lspconfig'.gopls.setup {
+    on_attach = function(client)
+        -- [[ other on_attach code ]]
+        require 'illuminate'.on_attach(client)
+    end,
+}
+vim.api.nvim_command [[ hi illuminatedWord cterm=underline gui=underline ]]
 

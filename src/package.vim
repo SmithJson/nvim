@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-15 03:11:58
+" @Last Modified time: 2021-09-15 11:28:39
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -24,7 +24,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'Pocco81/AutoSave.nvim'
 
 " Indent
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -55,15 +54,10 @@ Plug 'mattn/emmet-vim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'AndrewRadev/tagalong.vim'
-Plug 'heavenshell/vim-jsdoc', {
-  \ 'for': ['javascript', 'javascript.jsx','typescript'],
-  \ 'do': 'make install'
-\}
 
 " Edit
 Plug  'kana/vim-operator-user'
 Plug  'rhysd/vim-operator-surround'
-Plug 'AndrewRadev/switch.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'ahonn/vim-fileheader'
 Plug 'itchyny/vim-cursorword'
@@ -88,6 +82,4 @@ Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'PHSix/faster.nvim'
 Plug 'hrsh7th/vim-eft'
-
-" auto save sessions
 call plug#end()
