@@ -11,7 +11,9 @@ require'nvim-treesitter.configs'.setup {
         "bash",
         "lua",
         "toml",
-        "yaml","java","php",
+        "yaml",
+        "java",
+        "php",
         "css",
         "typescript",
         "tsx",
@@ -21,7 +23,8 @@ require'nvim-treesitter.configs'.setup {
         "comment",
         "javascript",
         "json",
-        "html"
+        "html",
+        "query"
     },
     ignore_install = {
         "beancount",
@@ -44,7 +47,6 @@ require'nvim-treesitter.configs'.setup {
         "ocaml",
         "ocaml_interface",
         "ql",
-        "query",
         "r",
         "rst",
         "ruby",

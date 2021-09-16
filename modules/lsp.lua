@@ -121,6 +121,8 @@ local function setup_servers()
     }
   end
 end
+vim.api.nvim_set_keymap('n', '<leader>;', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '<leader>,', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { noremap=true, silent=true })
 
 setup_servers()
 vim_vsnip()
