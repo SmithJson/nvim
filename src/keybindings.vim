@@ -82,6 +82,15 @@ function! s:load_default() abort
   autocmd Filetype markdown inoremap <buffer> ,3 ###<Space><Enter><++><Esc>kA
   autocmd Filetype markdown inoremap <buffer> ,4 ####<Space><Enter><++><Esc>kA
   autocmd Filetype markdown inoremap <buffer> ,l --------<Enter>
+
+  " a little more informative version of the above
+  nmap <Leader>sI :call <SID>SynStack()<CR>
+  function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunc
 endfunction
 
 function! s:load_dashboard() abort
