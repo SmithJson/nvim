@@ -213,6 +213,6 @@ call s:load_nvim_tree()
 call s:load_nvim_bufferline()
 call s:load_operator_surround()
 call s:load_lspsaga_nvim()
-call s:load_vim_eft()
+" call s:load_vim_eft()
 call s:load_vim_vsnip()
 
