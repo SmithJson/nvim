@@ -110,6 +110,7 @@ set confirm
 set guioptions-=*
 set lazyredraw
 set ttyfast
+set regexpengine=1
 set inde=
 
 " Use the new Neovim :h jumplist-stack

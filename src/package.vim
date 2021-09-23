@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-23 00:47:10
+" @Last Modified time: 2021-09-23 02:16:43
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -63,7 +63,7 @@ Plug 'ahonn/vim-fileheader'
 Plug 'itchyny/vim-cursorword'
 
 " Autoformat
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Taglist
 Plug 'simrat39/symbols-outline.nvim'
@@ -72,6 +72,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-rooter'
 Plug 'kshenoy/vim-signature'
+Plug 'rking/ag.vim'
 
 " " Undo Tree
 Plug 'mbbill/undotree'
