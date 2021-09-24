@@ -1,7 +1,7 @@
 " @Author: zhanglei53 <zhanglei53@zuoyebang.com>
 " @Date: 2021-01-27 11:58:30
 " @Last Modified by: zhanglei103 <zhanglei103@baidu.com>
-" @Last Modified time: 2021-09-23 02:16:43
+" @Last Modified time: 2021-09-24 23:52:38
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -13,7 +13,6 @@ call plug#begin($VIM_PATH . '/plugged')
 " Beautify
 Plug 'glepnir/zephyr-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'romgrk/nvim-treesitter-context'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -82,7 +81,9 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'hotoo/pangu.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'PHSix/faster.nvim'
-" Plug 'hrsh7th/vim-eft'
+Plug 'hrsh7th/vim-eft'
 Plug 'SmiteshP/nvim-gps'
 Plug 'skywind3000/vim-terminal-help'
+Plug 'easymotion/vim-easymotion'
+Plug 'ybian/smartim', {'do': 'curl -Ls https:\/\/raw.githubusercontent.com\/daipeihust\/im-select\/master\/install_mac.sh \| sh'}
 call plug#end()
