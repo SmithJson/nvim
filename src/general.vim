@@ -17,10 +17,10 @@ set cursorline
 set noro                     " Disable readyonly warning info
 
 if has('vim_starting')
-	set encoding=utf-8
-	set helplang=cn
-	set fileencodings=utf-8,gbk,gb18030,gk2312
-	scriptencoding utf-8
+    set encoding=utf-8
+    set helplang=cn
+    set fileencodings=utf-8,gbk,gb18030,gk2312
+    scriptencoding utf-8
 endif
 
 " What to save for views and sessions:
@@ -77,7 +77,7 @@ set smartindent     " Smart autoindenting on new lines
 set shiftround      " Round indent to multiple of 'shiftwidth'
 
 if exists('&breakindent')
-	set breakindentopt=shift:2,min:20
+    set breakindentopt=shift:2,min:20
 endif
 
 " }}}
@@ -115,11 +115,11 @@ set inde=
 
 " Use the new Neovim :h jumplist-stack
 if has('nvim-0.5')
-	set jumpoptions=stack
+    set jumpoptions=stack
 endif
 
 if has('patch-8.1.0360') || has('nvim-0.4')
-	set diffopt+=internal,algorithm:patience
+    set diffopt+=internal,algorithm:patience
 	" set diffopt=indent-heuristic,algorithm:patience
 endif
 
@@ -137,15 +137,15 @@ set hlsearch      " Highlight search results
 set complete=.,w,b,k  " C-n completion: Scan buffers, windows and dictionary
 
 if exists('+inccommand')
-	set inccommand=nosplit
+    set inccommand=nosplit
 endif
 
 if executable('rg')
-	set grepformat=%f:%l:%m
-	let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '')
+    set grepformat=%f:%l:%m
+    let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '')
 elseif executable('ag')
-	set grepformat=%f:%l:%m
-	let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
+    set grepformat=%f:%l:%m
+    let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
 endif
 
 " }}
@@ -184,28 +184,28 @@ set laststatus=2        " Always show a status line
 set display=lastline
 
 if has('folding') && has('vim_starting')
-	set foldenable
-	set foldmethod=indent
-	set foldlevelstart=30
+    set foldenable
+    set foldmethod=indent
+    set foldlevelstart=30
 endif
 
 if has('nvim-0.4')
-	set signcolumn=yes:1
+    set signcolumn=yes:1
 else
-	set signcolumn=yes           " Always show signs column
+    set signcolumn=yes           " Always show signs column
 endif
 
 if has('conceal') && v:version >= 703
 	" For snippet_complete marker
-	set conceallevel=0 concealcursor=niv
+    set conceallevel=0 concealcursor=niv
 endif
 " Pseudo-transparency for completion menu and floating windows
 if &termguicolors
 	if exists('&pumblend')
-		set pumblend=10
-	endif
+        set pumblend=10
+    endif
 	if exists('&winblend')
-		set winblend=10
-	endif
+        set winblend=10
+    endif
 endif
 " }}}
