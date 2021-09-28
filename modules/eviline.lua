@@ -1,4 +1,4 @@
-local gps = require("nvim-gps")
+-- local gps = require("nvim-gps")
 local gl = require('galaxyline')
 local colors = require('galaxyline.theme').default
 local condition = require('galaxyline.condition')
@@ -100,16 +100,16 @@ gls.left[11] = {
   }
 }
 
-gls.mid[1] = {
-    nvimGPS = {
-        provider = function()
-            return gps.get_location()
-        end,
-        condition = function()
-            return gps.is_available()
-        end
-    }
-}
+-- gls.mid[1] = {
+--     nvimGPS = {
+--         provider = function()
+--             return gps.get_location()
+--         end,
+--         condition = function()
+--             return gps.is_available()
+--         end
+--     }
+-- }
 gls.right[1] = {
   ShowLspClient = {
     provider = 'GetLspClient',
