@@ -62,7 +62,4 @@ tools['skywind3000/vim-terminal-help'] = {
 tools['ahonn/vim-fileheader'] = {
 }
 
-tools['airblade/vim-rooter'] = {
-}
-
 return tools

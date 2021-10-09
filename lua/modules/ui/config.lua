@@ -180,6 +180,12 @@ function config.galaxyline()
     require('modules.ui.eviline')
 end
 
+function config.rooter()
+    vim.g.rooter_patterns = {'node_modules', '__vim_project_root', '.git/'}
+    vim.g.rooter_silent_chdir = 1
+    vim.g.rooter_cd_cmd = 'lcd'
+end
+
 function config.dashboard()
     vim.g.dashboard_footer_icon = '🐬 '
     vim.g.dashboard_default_executive ='telescope'
