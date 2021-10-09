@@ -29,6 +29,5 @@ require("bufferline").setup{
                 return result
             end,
         }
-
     }
 }
