@@ -60,20 +60,42 @@ end
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
     require("nvim-tree.events").on_nvim_tree_ready(
-        function()
-            vim.cmd("NvimTreeRefresh")
-        end
+    function()
+        vim.cmd("NvimTreeRefresh")
+    end
     )
-    require'nvim-tree'.setup {}
+    require'nvim-tree'.setup {
+        disable_netrw       = true,
+        hijack_netrw        = true,
+        open_on_setup       = false,
+        ignore_ft_on_setup  = {},
+        auto_close          = true,
+        open_on_tab         = false,
+        hijack_cursor       = false,
+        update_cwd          = true,
+        lsp_diagnostics     = false,
+        update_focused_file = {
+            enable      = true,
+            update_cwd  = true,
+            ignore_list = {}
+        },
+        system_open = {
+            cmd  = nil,
+            args = {}
+        },
+        view = {
+            width = 30,
+            side = 'left',
+            auto_resize = false,
+            mappings = {
+                custom_only = false,
+                list = {}
+            }
+        }
+    }
 
-    vim.g.nvim_tree_follow = 1
     vim.g.nvim_tree_hide_dotfiles = 1
     vim.g.nvim_tree_indent_markers = 1
-    vim.g.nvim_tree_bindings = {
-        ["l"] = ":lua require'nvim-tree'.on_keypress('edit')<CR>",
-        ["s"] = ":lua require'nvim-tree'.on_keypress('vsplit')<CR>",
-        ["i"] = ":lua require'nvim-tree'.on_keypress('split')<CR>",
-    }
     vim.g.nvim_tree_icons = {
         default =  '',
         symlink =  '',
@@ -133,19 +155,19 @@ function config.nvim_bufferline()
                     local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
 
                     if error ~= 0 then
-                    table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
+                        table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
                     end
 
                     if warning ~= 0 then
-                    table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
+                        table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
                     end
 
                     if hint ~= 0 then
-                    table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
+                        table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
                     end
 
                     if info ~= 0 then
-                    table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
+                        table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
                     end
                     return result
                 end,

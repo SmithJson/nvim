@@ -28,6 +28,9 @@ editor['tpope/vim-commentary'] = {
     cmd = 'Commentary'
 }
 
+editor['Chiel92/vim-autoformat'] = {
+}
+
 editor['w0rp/ale'] = {
 }
 
