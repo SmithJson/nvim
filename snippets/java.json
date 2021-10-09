@@ -1,0 +1,9 @@
+{
+	"'appletResize' - 'Method in interface java.applet.AppletStub'": {
+		"description": "Takes 2 args. Method in interface java.applet.AppletStub  Called when the applet wants to be resized. ",
+		"prefix": "appletResize",
+		"body": [
+			"appletResize(${1:int}, ${2:int})"
+		]
+	}
+}
