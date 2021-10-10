@@ -2,7 +2,7 @@ local tools = {}
 local conf = require('modules.tools.config')
 
 tools['editorconfig/editorconfig-vim'] = {
-  ft = { 'go','typescript','javascript','vim','vue','rust','zig','c','cpp' }
+    ft = { 'go','typescript','javascript','vim','vue','rust','zig','c','cpp' }
 }
 
 tools['nvim-telescope/telescope.nvim'] = {
@@ -39,7 +39,7 @@ tools['liuchengxu/vim-which-key'] = {
 }
 
 tools['rhysd/accelerated-jk'] = {
-  opt = true
+    opt = true
 }
 
 tools['turbio/bracey.vim'] = {
@@ -47,10 +47,10 @@ tools['turbio/bracey.vim'] = {
 }
 
 tools['hrsh7th/vim-eft'] = {
-  opt = true,
-  config = function()
-    vim.g.eft_ignorecase = true
-  end
+    opt = true,
+    config = function()
+        vim.g.eft_ignorecase = true
+    end
 }
 
 tools['easymotion/vim-easymotion'] = {
@@ -60,6 +60,12 @@ tools['skywind3000/vim-terminal-help'] = {
 }
 
 tools['ahonn/vim-fileheader'] = {
+}
+
+tools['skywind3000/asynctasks.vim'] = {
+    opt = true,
+    cmd = {'AsyncRun', 'AsyncStop'},
+    requires = {{'skywind3000/asyncrun.vim', opt = true}}
 }
 
 return tools
