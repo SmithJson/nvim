@@ -65,9 +65,6 @@ local plug_map = {
     ["t|<C-k>"] = map_cu([[<C-\><C-n>:Lspsaga close_floaterm<CR>]]):with_noremap():with_silent(),
     -- SymbolOutline
     ["n|<leader>v"] = map_cr('SymbolsOutline'):with_noremap():with_silent(),
-    -- Commentary
-    ["n|gcc"] = map_cu("Commentary"):with_noremap():with_silent(),
-    ["v|gc"] = map_cu("Commentary"):with_noremap():with_silent(),
     -- Easymotion
     ["n|<Leader>s"] = map_cmd("<Plug>(easymotion-s2)"),
 }

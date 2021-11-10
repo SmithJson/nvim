@@ -73,7 +73,6 @@ function config.nvim_tree()
         open_on_tab         = false,
         hijack_cursor       = false,
         update_cwd          = true,
-        lsp_diagnostics     = false,
         update_focused_file = {
             enable      = true,
             update_cwd  = true,
@@ -94,7 +93,7 @@ function config.nvim_tree()
         }
     }
 
-    vim.g.nvim_tree_hide_dotfiles = 1
+    -- vim.g.nvim_tree_hide_dotfiles = 1
     vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_icons = {
         default =  '',

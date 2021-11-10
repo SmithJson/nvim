@@ -1290,6 +1290,10 @@
     "prefix": "cmmb",
     "body": ["/**", " * ${0}", " */"]
   },
+  "Comment Jsx": {
+    "prefix": "cjsx",
+    "body": ["{/*", "${0}", "*/}"]
+  },
   "describeBlock": {
     "prefix": "desc",
     "body": ["describe('$1', () => {", "\t$0", "})", ""],
