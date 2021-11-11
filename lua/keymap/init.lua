@@ -12,9 +12,9 @@ local plug_map = {
     ["n|<Leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),
     ["n|<Leader>pc"] = map_cr("PackerCompile"):with_silent():with_noremap():with_nowait(),
     -- Nvim-tree
-    ["n|<Leader>e"] = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
-    -- ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
-    ["n|<Leader>F"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
+    -- ["n|<Leader>e"] = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
+    ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
+    ["n|<Leader>e"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
     -- Dashboard
     ['n|<Leader>os'] = map_cu('Dashboard'):with_noremap():with_silent(),
     ["n|<Leader>cn"] = map_cu('DashboardNewFile'):with_noremap():with_silent(),
