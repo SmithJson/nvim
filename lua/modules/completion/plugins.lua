@@ -2,10 +2,10 @@ local completion = {}
 local conf = require('modules.completion.config')
 
 completion['neovim/nvim-lspconfig'] = {
-  config = conf.nvim_lsp,
+  config = conf.nvim_lsp
 }
 
-completion['kabouzeid/nvim-lspinstall'] = {
+completion['williamboman/nvim-lsp-installer'] = {
     opt = true,
     cmd = {'LspInstall', 'LspUninstall'}
 }
