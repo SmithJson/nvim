@@ -57,6 +57,7 @@ function config.gitsigns()
 
 end
 
+-- discard(*)
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
     require("nvim-tree.events").on_nvim_tree_ready(
