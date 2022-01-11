@@ -109,8 +109,6 @@ function config.nvim_tree()
 end
 
 function config.indent_blakline()
-    vim.g.indent_blankline_char = "│"
-    vim.g.indent_blankline_show_first_indent_level = true
     vim.g.indent_blankline_filetype_exclude = {
         "startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
         "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
@@ -119,22 +117,25 @@ function config.indent_blakline()
     }
     vim.g.indent_blankline_buftype_exclude = {"terminal", "nofile"}
     vim.g.indent_blankline_show_trailing_blankline_indent = false
-    vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent1 guibg=#40433d gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent2 guibg=#384341 gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent3 guibg=#3e3a4b gui=nocombine]]
+    vim.cmd [[highlight IndentBlanklineIndent4 guibg=#3b4852 gui=nocombine]]
     require("indent_blankline").setup {
-        space_char_blankline = " ",
+        char = "",
         char_highlight_list = {
             "IndentBlanklineIndent1",
             "IndentBlanklineIndent2",
             "IndentBlanklineIndent3",
             "IndentBlanklineIndent4",
-            "IndentBlanklineIndent5",
-            "IndentBlanklineIndent6",
         },
+        space_char_highlight_list = {
+            "IndentBlanklineIndent1",
+            "IndentBlanklineIndent2",
+            "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4",
+        },
+        show_trailing_blankline_indent = false,
     }
     -- because lazy load indent-blankline so need readd this autocmd
     vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')

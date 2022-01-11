@@ -42,9 +42,9 @@ tools['rhysd/accelerated-jk'] = {
     opt = true
 }
 
-tools['turbio/bracey.vim'] = {
-    run = 'npm install --prefix server'
-}
+-- tools['turbio/bracey.vim'] = {
+--     run = 'npm install --prefix server'
+-- }
 
 tools['hrsh7th/vim-eft'] = {
     opt = true,

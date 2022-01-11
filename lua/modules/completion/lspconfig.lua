@@ -14,7 +14,7 @@ if not packer_plugins['lsp_signature.nvim'].loaded then
     vim.cmd [[packadd lsp_signature.nvim]]
 end
 
-local nvim_lsp = require('lspconfig')
+-- local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -34,7 +34,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 local function setup_servers()
     local lsp_installer_servers = require'nvim-lsp-installer.servers'
-    local lsp_servers = {"clangd", "cssls", "dockerls", "eslint", "html", "jsonls", "tsserver", "sumneko_lua", "intelephense", "jedi_language_server", "rust_analyzer", "vuels"}
+    local lsp_servers = {"clangd", "cssls", "dockerls", "html", "jsonls", "tsserver", "sumneko_lua", "intelephense", "jedi_language_server", "rust_analyzer", "vuels"}
 
     for _, lsp in ipairs(lsp_servers) do
         local server_available, requested_server = lsp_installer_servers.get_server(lsp)
@@ -42,6 +42,9 @@ local function setup_servers()
             requested_server:on_ready(function ()
                 local opts = {
                     capabilities = capabilities,
+                    flags = {
+                        debounce_text_changes = 0,
+                    },
                     on_attach = function()
                         require('lsp_signature').on_attach({
                             bind = true,

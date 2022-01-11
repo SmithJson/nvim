@@ -46,11 +46,6 @@ completion['hrsh7th/vim-vsnip-integ'] = {
     requires = {'hrsh7th/vim-vsnip', opt = true, event = 'InsertCharPre' }
 }
 
-completion['rafamadriz/friendly-snippets'] = {
-    opt = true,
-    after = 'nvim-compe'
-}
-
 completion['windwp/nvim-autopairs'] = {
     opt = true,
     event = 'InsertCharPre',
