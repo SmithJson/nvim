@@ -38,8 +38,7 @@ ui['akinsho/nvim-bufferline.lua'] = {
 
 ui['kyazdani42/nvim-tree.lua'] = {
   -- cmd = {'NvimTreeToggle','NvimTreeOpen'},
-  -- config = conf.nvim_tree,
-  config = function() require'nvim-tree'.setup {} end,
+  config = conf.nvim_tree,
   requires = 'yamatsum/nvim-nonicons'
 }
 

@@ -57,14 +57,9 @@ function config.gitsigns()
 
 end
 
--- discard(*)
+-- discard()
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
-    require("nvim-tree.events").on_nvim_tree_ready(
-    function()
-        vim.cmd("NvimTreeRefresh")
-    end
-    )
     require'nvim-tree'.setup {
         disable_netrw       = true,
         hijack_netrw        = true,
@@ -97,15 +92,27 @@ function config.nvim_tree()
     -- vim.g.nvim_tree_hide_dotfiles = 1
     vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_icons = {
-        default =  '',
-        symlink =  '',
+        default = '',
+        symlink = '',
         git = {
-            unstaged = "✚",
-            staged =  "✚",
-            unmerged =  "≠",
-            renamed =  "≫",
+            unstaged = "✗",
+            staged = "✓",
+            unmerged = "",
+            renamed = "➜",
             untracked = "★",
+            deleted = "",
+            ignored = "◌"
         },
+        folder = {
+            arrow_open = "",
+            arrow_closed = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = "",
+        }
     }
 end
 
