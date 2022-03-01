@@ -71,7 +71,7 @@ _G.nvim_tree_toggle = function ()
 
     if is_nvim_tree_loaded then
         if is_nvim_tree_open then
-            nvim_tree.close()
+            require("nvim-tree.view").close()
             require('nvim-tree.lib').collapse_all()
             is_nvim_tree_open = false
         else

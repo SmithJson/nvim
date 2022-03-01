@@ -15,7 +15,7 @@ end
 function config.lspkind()
     require('lspkind').init({
         -- enables text annotations
-        with_text = true,
+        mode = 'with_text',
         -- can be either 'default' or
         -- 'codicons' for codicon preset (requires vscode-codicons font installed)
         -- default: 'default'
