@@ -38,13 +38,12 @@ tools['simrat39/symbols-outline.nvim'] = {
 tools['liuchengxu/vim-which-key'] = {
 }
 
-tools['rhysd/accelerated-jk'] = {
-    opt = true
+tools['liuchengxu/vim-which-key'] = {
 }
 
--- tools['turbio/bracey.vim'] = {
---     run = 'npm install --prefix server'
--- }
+tools['turbio/bracey.vim'] = {
+    run = 'npm install --prefix server'
+}
 
 tools['hrsh7th/vim-eft'] = {
     opt = true,
@@ -60,6 +59,9 @@ tools['skywind3000/vim-terminal-help'] = {
 }
 
 tools['ahonn/vim-fileheader'] = {
+}
+
+tools['AndrewRadev/tagalong.vim'] = {
 }
 
 tools['skywind3000/asynctasks.vim'] = {

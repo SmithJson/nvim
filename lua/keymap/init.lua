@@ -12,7 +12,6 @@ local plug_map = {
     ["n|<Leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),
     ["n|<Leader>pc"] = map_cr("PackerCompile"):with_silent():with_noremap():with_nowait(),
     -- Nvim-tree
-    -- ["n|<Leader>e"] = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
     ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
     ["n|<Leader>e"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
     -- Dashboard
@@ -29,9 +28,6 @@ local plug_map = {
     ["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
     -- which-key-map
     ["n|<Leader>"] = map_cu([[WhichKey '<Space>']]):with_noremap():with_silent(),
-    -- Acceleratedjk
-    ["n|j"] = map_cmd('v:lua.enhance_jk_move("j")'):with_silent():with_expr(),
-    ["n|k"] = map_cmd('v:lua.enhance_jk_move("k")'):with_silent():with_expr(),
     -- VimEft
     ["n|;"]= map_cmd("v:lua.enhance_ft_move(';')"):with_expr(),
     ["x|;"]= map_cmd("v:lua.enhance_ft_move(';')"):with_expr(),
