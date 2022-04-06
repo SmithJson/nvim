@@ -22,26 +22,26 @@ function config.lspkind()
         preset = 'codicons',
         -- override preset symbols
         symbol_map = {
-            Text = '',
+            Text = ' ',
             Method = 'ƒ',
             Function = '',
-            Constructor = '',
-            Variable = '',
-            Class = '',
+            Constructor = ' ',
+            Variable = ' ',
+            Class = ' ',
             Interface = 'ﰮ',
-            Module = '',
-            Property = '',
-            Unit = '',
-            Value = '',
+            Module = ' ',
+            Property = ' ',
+            Unit = ' ',
+            Value = ' ',
             Enum = '了',
-            Keyword = '',
+            Keyword = ' ',
             Snippet = '﬌',
-            Color = '',
-            File = '',
-            Folder = '',
-            EnumMember = '',
-            Constant = '',
-            Struct = ''
+            Color = ' ',
+            File = ' ',
+            Folder = ' ',
+            EnumMember = ' ',
+            Constant = ' ',
+            Struct = ' '
         }
     })
 end

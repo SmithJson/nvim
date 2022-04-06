@@ -15,6 +15,14 @@ tools['nvim-telescope/telescope.nvim'] = {
     }
 }
 
+tools['folke/todo-comments.nvim'] = {
+    config = conf.todo_comments,
+    requires = {
+        {'nvim-lua/popup.nvim', opt = true},
+        {'nvim-lua/plenary.nvim', opt = true}
+    }
+}
+
 tools['nvim-telescope/telescope-fzy-native.nvim'] = {
     opt = true,
     after = 'telescope.nvim'
@@ -33,9 +41,6 @@ tools['nvim-telescope/telescope-frecency.nvim'] = {
 
 tools['simrat39/symbols-outline.nvim'] = {
     config = conf.symbols_outline,
-}
-
-tools['liuchengxu/vim-which-key'] = {
 }
 
 tools['liuchengxu/vim-which-key'] = {

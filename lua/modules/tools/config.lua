@@ -37,9 +37,9 @@ function config.telescope()
             },
             file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
             grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep
-                .new,
+            .new,
             qflist_previewer = require'telescope.previewers'.vim_buffer_qflist
-                .new,
+            .new,
             file_sorter = require("telescope.sorters").get_fuzzy_file,
             file_ignore_patterns = {},
             generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
@@ -88,45 +88,98 @@ function config.symbols_outline()
         show_symbol_details = true,
         preview_bg_highlight = 'Pmenu',
         keymaps = { -- These keymaps can be a string or a table for multiple keys
-            close = {"<Esc>", "q"},
-            goto_location = "<Cr>",
-            focus_location = "o",
-            hover_symbol = "<C-space>",
-            toggle_preview = "K",
-            rename_symbol = "r",
-            code_actions = "a",
-        },
-        lsp_blacklist = {},
-        symbol_blacklist = {},
-        symbols = {
-            File = {icon = "", hl = "TSURI"},
-            Module = {icon = "", hl = "TSNamespace"},
-            Namespace = {icon = "", hl = "TSNamespace"},
-            Package = {icon = "", hl = "TSNamespace"},
-            Class = {icon = "𝓒", hl = "TSType"},
-            Method = {icon = "ƒ", hl = "TSMethod"},
-            Property = {icon = "", hl = "TSMethod"},
-            Field = {icon = "", hl = "TSField"},
-            Constructor = {icon = "", hl = "TSConstructor"},
-            Enum = {icon = "ℰ", hl = "TSType"},
-            Interface = {icon = "ﰮ", hl = "TSType"},
-            Function = {icon = "", hl = "TSFunction"},
-            Variable = {icon = "", hl = "TSConstant"},
-            Constant = {icon = "", hl = "TSConstant"},
-            String = {icon = "𝓐", hl = "TSString"},
-            Number = {icon = "#", hl = "TSNumber"},
-            Boolean = {icon = "⊨", hl = "TSBoolean"},
-            Array = {icon = "", hl = "TSConstant"},
-            Object = {icon = "⦿", hl = "TSType"},
-            Key = {icon = "🔐", hl = "TSType"},
-            Null = {icon = "NULL", hl = "TSType"},
-            EnumMember = {icon = "", hl = "TSField"},
-            Struct = {icon = "𝓢", hl = "TSType"},
-            Event = {icon = "🗲", hl = "TSType"},
-            Operator = {icon = "+", hl = "TSOperator"},
-            TypeParameter = {icon = "𝙏", hl = "TSParameter"}
-        }
+        close = {"<Esc>", "q"},
+        goto_location = "<Cr>",
+        focus_location = "o",
+        hover_symbol = "<C-space>",
+        toggle_preview = "K",
+        rename_symbol = "r",
+        code_actions = "a",
+    },
+    lsp_blacklist = {},
+    symbol_blacklist = {},
+    symbols = {
+        File = {icon = "", hl = "TSURI"},
+        Module = {icon = "", hl = "TSNamespace"},
+        Namespace = {icon = "", hl = "TSNamespace"},
+        Package = {icon = "", hl = "TSNamespace"},
+        Class = {icon = "𝓒", hl = "TSType"},
+        Method = {icon = "ƒ", hl = "TSMethod"},
+        Property = {icon = "", hl = "TSMethod"},
+        Field = {icon = "", hl = "TSField"},
+        Constructor = {icon = "", hl = "TSConstructor"},
+        Enum = {icon = "ℰ", hl = "TSType"},
+        Interface = {icon = "ﰮ", hl = "TSType"},
+        Function = {icon = "", hl = "TSFunction"},
+        Variable = {icon = "", hl = "TSConstant"},
+        Constant = {icon = "", hl = "TSConstant"},
+        String = {icon = "𝓐", hl = "TSString"},
+        Number = {icon = "#", hl = "TSNumber"},
+        Boolean = {icon = "⊨", hl = "TSBoolean"},
+        Array = {icon = "", hl = "TSConstant"},
+        Object = {icon = "⦿", hl = "TSType"},
+        Key = {icon = "🔐", hl = "TSType"},
+        Null = {icon = "NULL", hl = "TSType"},
+        EnumMember = {icon = "", hl = "TSField"},
+        Struct = {icon = "𝓢", hl = "TSType"},
+        Event = {icon = "🗲", hl = "TSType"},
+        Operator = {icon = "+", hl = "TSOperator"},
+        TypeParameter = {icon = "𝙏", hl = "TSParameter"}
     }
+}
+end
+
+function config.todo_comments()
+    local status_ok, todo_comments = pcall(require, "todo-comments")
+    if not status_ok then
+        return
+    end
+
+    local error_red = "#DB4B4B"
+    local warning_orange = "#ff8800"
+    local info_yellow = "#FFCC66"
+    local hint_blue = "#4FC1FF"
+    local perf_purple = "#BB9AF7"
+    local note_green = "#10B981"
+
+    todo_comments.setup({
+        signs = true, -- show icons in the signs column
+        sign_priority = 8, -- sign priority
+        -- keywords recognized as todo comments
+        keywords = {
+            FIX = {
+                icon = " ", -- icon used for the sign, and in search results
+                color = error_red, -- can be a hex color, or a named color (see below)
+                alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+                -- signs = false, -- configure signs for some keywords individually
+            },
+            TODO = { icon = " ", color = hint_blue },
+            HACK = { icon = " ", color = info_yellow },
+            WARN = { icon = " ", color = warning_orange, alt = { "WARNING", "XXX" } },
+            PERF = { icon = " ", color = perf_purple, alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+            NOTE = { icon = " ", color = note_green, alt = { "INFO" } },
+        },
+        highlight = {
+            before = "", -- "fg" or "bg" or empty
+            keyword = "wide", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+            after = "fg", -- "fg" or "bg" or empty
+            pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
+            comments_only = true, -- uses treesitter to match keywords in comments only
+            max_line_len = 400, -- ignore lines longer than this
+            exclude = {}, -- list of file types to exclude highlighting
+        },
+        search = {
+            command = "rg",
+            args = {
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+            },
+            pattern = [[\b(KEYWORDS):]], -- ripgrep regex
+        },
+    })
 end
 
 return config
