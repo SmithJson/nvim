@@ -10,7 +10,7 @@ completion['williamboman/nvim-lsp-installer'] = {
     cmd = {'LspInstall', 'LspUninstall'}
 }
 
-completion['glepnir/lspsaga.nvim'] = {
+completion['tami5/lspsaga.nvim'] = {
     opt = true,
     cmd = 'Lspsaga',
     config = conf.saga
