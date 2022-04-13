@@ -5,8 +5,6 @@
 " let g:neovide_input_use_logo=v:false
 set guifont=Jetbrainsmono\ Nerd\ Font\ Mono:h14
 
-let g:terminal_key = '``'
-
 " System clipboard All System
 vmap <c-c> "+y
 " nmap <c-v> "+p

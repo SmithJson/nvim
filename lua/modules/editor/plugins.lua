@@ -33,7 +33,7 @@ editor['terrortylor/nvim-comment'] = {
 editor['Chiel92/vim-autoformat'] = {
 }
 
-editor['w0rp/ale'] = {
+editor['dense-analysis/ale'] = {
 }
 
 return editor

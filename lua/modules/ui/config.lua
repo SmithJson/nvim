@@ -77,6 +77,11 @@ function config.nvim_tree()
             cmd  = nil,
             args = {}
         },
+        renderer = {
+            indent_markers = {
+                enable = true
+            }
+        },
         view = {
             width = 30,
             side = 'left',
@@ -89,7 +94,8 @@ function config.nvim_tree()
     }
 
     -- vim.g.nvim_tree_hide_dotfiles = 1
-    vim.g.nvim_tree_indent_markers = 1
+    -- vim.g.nvim_tree_indent_markers = 1
+    -- vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_icons = {
         default = '',
         symlink = '',

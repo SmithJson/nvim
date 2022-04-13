@@ -1,15 +1,18 @@
 local ui = {}
 local conf = require('modules.ui.config')
 
--- ui['glepnir/zephyr-nvim'] = {
--- }
-
-ui['ayu-theme/ayu-vim'] = {
+ui['SmithJson/zephyr-nvim'] = {
   config = function ()
-      vim.cmd('let ayucolor="mirage"')
-      vim.cmd('colorscheme ayu')
+      vim.cmd('colorscheme zephyr')
   end
 }
+
+-- ui['ayu-theme/ayu-vim'] = {
+--   config = function ()
+--       vim.cmd('let ayucolor="mirage"')
+--       vim.cmd('colorscheme ayu')
+--   end
+-- }
 
 ui['glepnir/dashboard-nvim'] = {
   config = conf.dashboard
