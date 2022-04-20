@@ -52,7 +52,7 @@ function autocmd.load_autocmds()
         },
 
         filetype = {
-            {"FileType", "dashboard", "set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}
+            {"FileType", "dashboard", "set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2"}
         },
 
         yank = {
