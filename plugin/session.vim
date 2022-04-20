@@ -1,6 +1,3 @@
-let g:bracey_refresh_on_save = 1
-let g:bracey_eval_on_save = 1
-
 function! MakeSession()
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
   if (filewritable(b:sessiondir) != 2)
@@ -22,3 +19,7 @@ function! LoadSession()
 endfunction
 
 au VimLeave * :call MakeSession()
+
+if(argc() == 0)
+  au VimEnter * nested :call LoadSession()
+endif

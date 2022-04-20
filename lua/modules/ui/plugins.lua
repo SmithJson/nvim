@@ -1,6 +1,13 @@
 local ui = {}
 local conf = require('modules.ui.config')
 
+
+-- ui['liuchengxu/space-vim-theme'] = {
+--   config = function ()
+--       vim.cmd('colorscheme space_vim_theme')
+--   end
+-- }
+
 ui['SmithJson/zephyr-nvim'] = {
   config = function ()
       vim.cmd('colorscheme zephyr')
