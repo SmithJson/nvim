@@ -23,11 +23,16 @@ editor['rhysd/vim-operator-surround'] = {
     requires = 'kana/vim-operator-user'
 }
 
-editor['terrortylor/nvim-comment'] = {
-    config = function ()
-        require('nvim_comment').setup()
-    end
+editor['numToStr/Comment.nvim'] = {
+    config = conf.comment,
+    requires = {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
 }
+
+-- editor['terrortylor/nvim-comment'] = {
+--     config = function ()
+--         require('nvim_comment').setup()
+--     end
+-- }
 
 
 editor['Chiel92/vim-autoformat'] = {
