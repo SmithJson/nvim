@@ -5,8 +5,6 @@ local map_cmd = bind.map_cmd
 require('keymap.config')
 
 local plug_map = {
-    ["i|<TAB>"]      = map_cmd('v:lua.tab_complete()'):with_expr():with_silent(),
-    ["i|<S-TAB>"]    = map_cmd('v:lua.s_tab_complete()'):with_silent():with_expr(),
     -- Packer
     ["n|<Leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
     ["n|<Leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),

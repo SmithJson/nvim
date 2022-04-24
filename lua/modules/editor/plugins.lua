@@ -28,13 +28,6 @@ editor['numToStr/Comment.nvim'] = {
     requires = {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
 }
 
--- editor['terrortylor/nvim-comment'] = {
---     config = function ()
---         require('nvim_comment').setup()
---     end
--- }
-
-
 editor['Chiel92/vim-autoformat'] = {
 }
 

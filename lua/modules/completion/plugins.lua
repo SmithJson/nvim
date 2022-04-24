@@ -2,7 +2,7 @@ local completion = {}
 local conf = require('modules.completion.config')
 
 completion['neovim/nvim-lspconfig'] = {
-  config = conf.nvim_lsp
+    config = conf.nvim_lsp
 }
 
 completion['williamboman/nvim-lsp-installer'] = {
@@ -16,34 +16,32 @@ completion['tami5/lspsaga.nvim'] = {
     config = conf.saga
 }
 
-completion['ray-x/lsp_signature.nvim'] = {
-    opt = true,
-    after = 'nvim-lspconfig'
-}
-
-completion['hrsh7th/nvim-compe'] = {
+completion['hrsh7th/nvim-cmp'] = {
     opt = true,
     event = 'InsertEnter',
-    after = 'nvim-lspconfig',
-    config = conf.compe
+    config = conf.compe,
+    requires = {
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'hrsh7th/cmp-cmdline'},
+
+        {'hrsh7th/cmp-vsnip'},
+        {'hrsh7th/vim-vsnip'},
+        {'petertriho/cmp-git'},
+        {'hrsh7th/cmp-nvim-lsp-signature-help'},
+        {'onsails/lspkind-nvim'}
+    }
 }
 
-completion['onsails/lspkind-nvim'] = {
-    opt = true,
-    event = 'BufRead',
-    config = conf.lspkind
-}
-
-completion['ray-x/lsp_signature.nvim'] = {
-    opt = true,
-    after = 'nvim-lspconfig'
-}
 
 completion['hrsh7th/vim-vsnip-integ'] = {
     opt = true,
-    after = 'nvim-compe',
+    after = 'nvim-cmp',
     config=conf.vsnip,
-    requires = {'hrsh7th/vim-vsnip', opt = true, event = 'InsertCharPre' }
+    requires = {
+        {'rafamadriz/friendly-snippets', opt = true, event = 'InsertCharPre'},
+    }
 }
 
 completion['windwp/nvim-autopairs'] = {
