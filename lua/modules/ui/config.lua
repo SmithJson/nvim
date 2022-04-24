@@ -61,20 +61,20 @@ end
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
     require'nvim-tree'.setup {
-        disable_netrw       = true,
-        hijack_netrw        = true,
-        open_on_setup       = false,
-        ignore_ft_on_setup  = {},
-        open_on_tab         = false,
-        hijack_cursor       = false,
-        update_cwd          = true,
+        disable_netrw = true,
+        hijack_netrw = true,
+        open_on_setup = false,
+        ignore_ft_on_setup = {},
+        open_on_tab = false,
+        hijack_cursor = false,
+        update_cwd = true,
         update_focused_file = {
-            enable      = true,
-            update_cwd  = true,
+            enable = true,
+            update_cwd = true,
             ignore_list = {}
         },
         system_open = {
-            cmd  = nil,
+            cmd = nil,
             args = {}
         },
         renderer = {
@@ -116,17 +116,16 @@ function config.nvim_tree()
             empty = "",
             empty_open = "",
             symlink = "",
-            symlink_open = "",
+            symlink_open = ""
         }
     }
 end
 
 function config.indent_blakline()
-    vim.g.indent_blankline_filetype_exclude = {
-        "startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
-        "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
-        "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
-        "flutterToolsOutline", "" -- for all buffers without a file type
+    vim.g.indent_blankline_filetype_exclude = {"startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
+                                               "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
+                                               "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
+                                               "flutterToolsOutline", "" -- for all buffers without a file type
     }
     vim.g.indent_blankline_buftype_exclude = {"terminal", "nofile"}
     vim.g.indent_blankline_show_trailing_blankline_indent = false
@@ -136,26 +135,18 @@ function config.indent_blakline()
     vim.cmd [[highlight IndentBlanklineIndent4 guibg=#3b4852 gui=nocombine]]
     require("indent_blankline").setup {
         char = "",
-        char_highlight_list = {
-            "IndentBlanklineIndent1",
-            "IndentBlanklineIndent2",
-            "IndentBlanklineIndent3",
-            "IndentBlanklineIndent4",
-        },
-        space_char_highlight_list = {
-            "IndentBlanklineIndent1",
-            "IndentBlanklineIndent2",
-            "IndentBlanklineIndent3",
-            "IndentBlanklineIndent4",
-        },
-        show_trailing_blankline_indent = false,
+        char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+                               "IndentBlanklineIndent4"},
+        space_char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+                                     "IndentBlanklineIndent4"},
+        show_trailing_blankline_indent = false
     }
     -- because lazy load indent-blankline so need readd this autocmd
     vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
 end
 
 function config.nvim_bufferline()
-    require("bufferline").setup{
+    require("bufferline").setup {
         options = {
             separator_style = "slant",
             show_close_icon = false,
@@ -168,29 +159,45 @@ function config.nvim_bufferline()
                     local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
 
                     if error ~= 0 then
-                        table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
+                        table.insert(result, {
+                            text = "  " .. error,
+                            guifg = "#EC5241"
+                        })
                     end
 
                     if warning ~= 0 then
-                        table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
+                        table.insert(result, {
+                            text = "  " .. warning,
+                            guifg = "#EFB839"
+                        })
                     end
 
                     if hint ~= 0 then
-                        table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
+                        table.insert(result, {
+                            text = "  " .. hint,
+                            guifg = "#A3BA5E"
+                        })
                     end
 
                     if info ~= 0 then
-                        table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
+                        table.insert(result, {
+                            text = "  " .. info,
+                            guifg = "#7EA9A7"
+                        })
                     end
                     return result
-                end,
+                end
             }
         }
     }
 end
 
-function config.galaxyline()
-    require('modules.ui.eviline')
+-- function config.galaxyline()
+--     require('modules.ui.eviline')
+-- end
+
+function config.feline()
+    require('modules.ui.feline')
 end
 
 function config.rooter()
@@ -201,20 +208,16 @@ end
 
 function config.dashboard()
     vim.g.dashboard_footer_icon = '🐬 '
-    vim.g.dashboard_default_executive ='telescope'
+    vim.g.dashboard_default_executive = 'telescope'
     vim.g.dashboard_footer_icon = '🦸 '
-    vim.g.dashboard_custom_header = {
-        '',
-        '',
-        '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
-        '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
-        '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
-        '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
-        '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
-        '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
-        '',
-        '                           [  辩机 ]     ',
-    }
+    vim.g.dashboard_custom_header = {'', '',
+                                     '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
+                                     '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
+                                     '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
+                                     '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
+                                     '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
+                                     '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
+                                     '', '                           [  辩机 ]     '}
 end
 
 return config
