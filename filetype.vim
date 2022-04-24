@@ -31,6 +31,7 @@ augroup filetypedetect
     autocmd BufNewFile,BufRead Brewfile             setfiletype ruby
 
     autocmd BufNewFile,BufRead *.html,*.htm,*.gohtml,*.tpl setfiletype html
+    autocmd BufNewFile,BufRead *.vue,*.atom setfiletype html
 
 augroup END
 

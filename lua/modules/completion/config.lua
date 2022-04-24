@@ -12,8 +12,6 @@ function config.vsnip()
     vim.g.vsnip_snippet_dir = os.getenv('HOME') .. '/.config/nvim/snippets'
 end
 
-
-
 function config.compe()
     local cmp_kinds = {
         Text = ' ',
