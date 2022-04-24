@@ -50,6 +50,10 @@ tools['turbio/bracey.vim'] = {
     run = 'npm install --prefix server'
 }
 
+tools['segeljakt/vim-silicon'] = {
+    run = 'cargo install silicon'
+}
+
 tools['hrsh7th/vim-eft'] = {
     opt = true,
     config = function()
