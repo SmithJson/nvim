@@ -31,12 +31,6 @@ ui['yamatsum/nvim-nonicons'] = {
   requires = 'kyazdani42/nvim-web-devicons'
 }
 
--- ui['glepnir/galaxyline.nvim'] = {
---   branch = 'main',
---   config = conf.galaxyline,
---   requires = 'yamatsum/nvim-nonicons'
--- }
-
 ui['feline-nvim/feline.nvim'] = {
   config = conf.feline,
   requires = 'yamatsum/nvim-nonicons'

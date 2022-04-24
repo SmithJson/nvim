@@ -46,6 +46,11 @@ tools['simrat39/symbols-outline.nvim'] = {
 tools['liuchengxu/vim-which-key'] = {
 }
 
+tools["dstein64/vim-startuptime"] = {
+    opt = true,
+    cmd = "StartupTime"
+}
+
 tools['turbio/bracey.vim'] = {
     run = 'npm install --prefix server'
 }

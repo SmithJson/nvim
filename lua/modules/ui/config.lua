@@ -192,10 +192,6 @@ function config.nvim_bufferline()
     }
 end
 
--- function config.galaxyline()
---     require('modules.ui.eviline')
--- end
-
 function config.feline()
     require('modules.ui.feline')
 end
