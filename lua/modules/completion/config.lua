@@ -84,7 +84,8 @@ function config.compe()
             { name = 'vsnip' },
         }, {
             { name = 'buffer' },
-            { name = 'nvim_lsp_signature_help' }
+            { name = 'nvim_lsp_signature_help' },
+            { name = 'rg' },
         }),
         formatting = {
             format = function(_, vim_item)

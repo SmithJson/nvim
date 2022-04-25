@@ -46,6 +46,11 @@ tools['simrat39/symbols-outline.nvim'] = {
 tools['liuchengxu/vim-which-key'] = {
 }
 
+tools["dstein64/vim-startuptime"] = {
+    opt = true,
+    cmd = "StartupTime"
+}
+
 tools['turbio/bracey.vim'] = {
     run = 'npm install --prefix server'
 }
@@ -64,8 +69,14 @@ tools['hrsh7th/vim-eft'] = {
 tools['easymotion/vim-easymotion'] = {
 }
 
-tools['skywind3000/vim-terminal-help'] = {
+tools["akinsho/toggleterm.nvim"] = {
+	opt = true,
+	event = "BufRead",
+	config = conf.toggleterm,
 }
+
+-- tools['skywind3000/vim-terminal-help'] = {
+-- }
 
 tools['ahonn/vim-fileheader'] = {
 }

@@ -22,7 +22,8 @@ ui['SmithJson/zephyr-nvim'] = {
 -- }
 
 ui['glepnir/dashboard-nvim'] = {
-  config = conf.dashboard
+  config = conf.dashboard,
+  run = 'cargo install ripgrep'
 }
 
 ui['yamatsum/nvim-nonicons'] = {
@@ -30,9 +31,8 @@ ui['yamatsum/nvim-nonicons'] = {
   requires = 'kyazdani42/nvim-web-devicons'
 }
 
-ui['glepnir/galaxyline.nvim'] = {
-  branch = 'main',
-  config = conf.galaxyline,
+ui['feline-nvim/feline.nvim'] = {
+  config = conf.feline,
   requires = 'yamatsum/nvim-nonicons'
 }
 
@@ -47,7 +47,6 @@ ui['akinsho/nvim-bufferline.lua'] = {
 }
 
 ui['kyazdani42/nvim-tree.lua'] = {
-  -- cmd = {'NvimTreeToggle','NvimTreeOpen'},
   config = conf.nvim_tree,
   requires = 'yamatsum/nvim-nonicons'
 }
@@ -61,5 +60,14 @@ ui['lewis6991/gitsigns.nvim'] = {
   config = conf.gitsigns,
   requires = {'nvim-lua/plenary.nvim',opt=true}
 }
+
+-- ui['sindrets/diffview.nvim'] = {
+--   event = {'BufRead','BufNewFile'},
+--   config = conf.diffview,
+--   requires = {
+--     {'nvim-lua/plenary.nvim'},
+--     {'kyazdani42/nvim-web-devicons'}
+--   }
+-- }
 
 return ui
