@@ -75,9 +75,6 @@ tools["akinsho/toggleterm.nvim"] = {
 	config = conf.toggleterm,
 }
 
--- tools['skywind3000/vim-terminal-help'] = {
--- }
-
 tools['ahonn/vim-fileheader'] = {
 }
 
