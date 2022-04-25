@@ -61,4 +61,13 @@ ui['lewis6991/gitsigns.nvim'] = {
   requires = {'nvim-lua/plenary.nvim',opt=true}
 }
 
+-- ui['sindrets/diffview.nvim'] = {
+--   event = {'BufRead','BufNewFile'},
+--   config = conf.diffview,
+--   requires = {
+--     {'nvim-lua/plenary.nvim'},
+--     {'kyazdani42/nvim-web-devicons'}
+--   }
+-- }
+
 return ui
