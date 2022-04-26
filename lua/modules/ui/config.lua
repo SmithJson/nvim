@@ -60,7 +60,7 @@ end
 -- discard()
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
-    require 'nvim-tree'.setup {
+    require'nvim-tree'.setup {
         disable_netrw = true,
         hijack_netrw = true,
         open_on_setup = false,
@@ -122,89 +122,74 @@ function config.nvim_tree()
 end
 
 function config.indent_blakline()
-    vim.g.indent_blankline_filetype_exclude = { "startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
-        "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
-        "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
-        "flutterToolsOutline", "" -- for all buffers without a file type
-    }
-    vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
-    vim.g.indent_blankline_show_trailing_blankline_indent = false
-    vim.cmd [[highlight IndentBlanklineIndent1 guibg=#40433d gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent2 guibg=#384341 gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent3 guibg=#3e3a4b gui=nocombine]]
-    vim.cmd [[highlight IndentBlanklineIndent4 guibg=#3b4852 gui=nocombine]]
-    require("indent_blankline").setup {
-        char = "",
-        char_highlight_list = { "IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
-            "IndentBlanklineIndent4" },
-        space_char_highlight_list = { "IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
-            "IndentBlanklineIndent4" },
-        show_trailing_blankline_indent = false
-    }
-    -- because lazy load indent-blankline so need readd this autocmd
-    vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
+    vim.g.indent_blankline_filetype_exclude = {"startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
+    "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
+    "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
+    "flutterToolsOutline", "" -- for all buffers without a file type
+}
+vim.g.indent_blankline_buftype_exclude = {"terminal", "nofile"}
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.cmd [[highlight IndentBlanklineIndent1 guibg=#40433d gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guibg=#384341 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guibg=#3e3a4b gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guibg=#3b4852 gui=nocombine]]
+require("indent_blankline").setup {
+    char = "",
+    char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+    "IndentBlanklineIndent4"},
+    space_char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+    "IndentBlanklineIndent4"},
+    show_trailing_blankline_indent = false
+}
+-- because lazy load indent-blankline so need readd this autocmd
+vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
 end
 
 function config.nvim_bufferline()
-    require("bufferline").setup({
+    require("bufferline").setup {
         options = {
-            buffer_close_icon = "",
-            close_command = "Bdelete %d",
-            close_icon = "",
-            indicator_icon = " ",
-            left_trunc_marker = "",
-            modified_icon = "●",
-            offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
-            right_mouse_command = "Bdelete! %d",
-            right_trunc_marker = "",
+            separator_style = "slant",
             show_close_icon = false,
-            show_tab_indicators = true,
-        },
-        highlights = {
-            fill = {
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "StatusLineNC" },
-            },
-            background = {
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "StatusLine" },
-            },
-            buffer_visible = {
-                gui = "",
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "Normal" },
-            },
-            buffer_selected = {
-                gui = "",
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "Normal" },
-            },
-            separator = {
-                guifg = { attribute = "bg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "StatusLine" },
-            },
-            separator_selected = {
-                guifg = { attribute = "fg", highlight = "Special" },
-                guibg = { attribute = "bg", highlight = "Normal" },
-            },
-            separator_visible = {
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "StatusLineNC" },
-            },
-            close_button = {
-                guifg = { attribute = "fg", highlight = "Normal" },
-                guibg = { attribute = "bg", highlight = "StatusLine" },
-            },
-            close_button_selected = {
-                guifg = { attribute = "fg", highlight = "normal" },
-                guibg = { attribute = "bg", highlight = "normal" },
-            },
-            close_button_visible = {
-                guifg = { attribute = "fg", highlight = "normal" },
-                guibg = { attribute = "bg", highlight = "normal" },
-            },
-        },
-    })
+            custom_areas = {
+                right = function()
+                    local result = {}
+                    local error = vim.diagnostic.get(0, [[Error]])
+                    local warning = vim.diagnostic.get(0, [[Warning]])
+                    local info = vim.diagnostic.get(0, [[Information]])
+                    local hint = vim.diagnostic.get(0, [[Hint]])
+
+                    if error ~= 0 then
+                        table.insert(result, {
+                            text = "  " .. error,
+                            guifg = "#EC5241"
+                        })
+                    end
+
+                    if warning ~= 0 then
+                        table.insert(result, {
+                            text = "  " .. warning,
+                            guifg = "#EFB839"
+                        })
+                    end
+
+                    if hint ~= 0 then
+                        table.insert(result, {
+                            text = "  " .. hint,
+                            guifg = "#A3BA5E"
+                        })
+                    end
+
+                    if info ~= 0 then
+                        table.insert(result, {
+                            text = "  " .. info,
+                            guifg = "#7EA9A7"
+                        })
+                    end
+                    return result
+                end
+            }
+        }
+    }
 end
 
 function config.feline()
@@ -212,7 +197,7 @@ function config.feline()
 end
 
 function config.rooter()
-    vim.g.rooter_patterns = { 'node_modules', '__vim_project_root', '.git/' }
+    vim.g.rooter_patterns = {'node_modules', '__vim_project_root', '.git/'}
     vim.g.rooter_silent_chdir = 1
     vim.g.rooter_cd_cmd = 'lcd'
 end
@@ -221,58 +206,58 @@ function config.dashboard()
     vim.g.dashboard_footer_icon = '🐬 '
     vim.g.dashboard_default_executive = 'telescope'
     vim.g.dashboard_footer_icon = '🦸 '
-    vim.g.dashboard_custom_header = { '', '',
-        '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
-        '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
-        '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
-        '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
-        '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
-        '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
-        '', '                           [  辩机 ]     ' }
+    vim.g.dashboard_custom_header = {'', '',
+    '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
+    '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
+    '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
+    '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
+    '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
+    '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
+    '', '                           [  辩机 ]     '}
 end
 
 function config.diffview()
     -- Lua
-    local cb = require 'diffview.config'.diffview_callback
+    local cb = require'diffview.config'.diffview_callback
 
-    require 'diffview'.setup {
+    require'diffview'.setup {
         diff_binaries = false, -- Show diffs for binaries
         enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
         use_icons = true, -- Requires nvim-web-devicons
         icons = { -- Only applies when use_icons is true.
-            folder_closed = "",
-            folder_open = ""
-        },
-        signs = {
-            fold_closed = "",
-            fold_open = ""
-        },
-        file_panel = {
-            position = "left", -- One of 'left', 'right', 'top', 'bottom'
-            width = 35, -- Only applies when position is 'left' or 'right'
-            height = 10, -- Only applies when position is 'top' or 'bottom'
-            listing_style = "tree", -- One of 'list' or 'tree'
-            tree_options = { -- Only applies when listing_style is 'tree'
-                flatten_dirs = true, -- Flatten dirs that only contain one single dir
-                folder_statuses = "only_folded" -- One of 'never', 'only_folded' or 'always'.
-            }
-        },
-        file_history_panel = {
-            position = "bottom",
-            width = 35,
-            height = 16,
-            log_options = {
-                max_count = 256, -- Limit the number of commits
-                follow = false, -- Follow renames (only for single file)
-                all = false, -- Include all refs under 'refs/' including HEAD
-                merges = false, -- List only merge commits
-                no_merges = false, -- List no merge commits
-                reverse = false -- List commits in reverse order
-            }
-        },
-        default_args = { -- Default args prepended to the arg-list for the listed commands
-            DiffviewOpen = {},
-            DiffviewFileHistory = {}
+        folder_closed = "",
+        folder_open = ""
+    },
+    signs = {
+        fold_closed = "",
+        fold_open = ""
+    },
+    file_panel = {
+        position = "left", -- One of 'left', 'right', 'top', 'bottom'
+        width = 35, -- Only applies when position is 'left' or 'right'
+        height = 10, -- Only applies when position is 'top' or 'bottom'
+        listing_style = "tree", -- One of 'list' or 'tree'
+        tree_options = { -- Only applies when listing_style is 'tree'
+        flatten_dirs = true, -- Flatten dirs that only contain one single dir
+        folder_statuses = "only_folded" -- One of 'never', 'only_folded' or 'always'.
+    }
+},
+file_history_panel = {
+    position = "bottom",
+    width = 35,
+    height = 16,
+    log_options = {
+        max_count = 256, -- Limit the number of commits
+        follow = false, -- Follow renames (only for single file)
+        all = false, -- Include all refs under 'refs/' including HEAD
+        merges = false, -- List only merge commits
+        no_merges = false, -- List no merge commits
+        reverse = false -- List commits in reverse order
+    }
+},
+default_args = { -- Default args prepended to the arg-list for the listed commands
+DiffviewOpen = {},
+DiffviewFileHistory = {}
         },
         hooks = {}, -- See ':h diffview-config-hooks'
         key_bindings = {
@@ -340,24 +325,41 @@ function config.diffview()
     }
 end
 
--- function config.bubbly()
---     vim.g.bubbly_tabline = 0;
---     vim.g.bubbly_palette = {
---         background = "#34343c",
---         foreground = "#c5cdd9",
---         black = "#3e4249",
---         red = "#ec7279",
---         green = "#a0c980",
---         yellow = "#deb974",
---         blue = "#6cb6eb",
---         purple = "#d38aea",
---         cyan = "#5dbbc1",
---         white = "#c5cdd9",
---         lightgrey = "#57595e",
---         darkgrey = "#404247"
---     }
---     vim.g.bubbly_statusline = {'mode', 'truncate', 'path', 'branch', 'gitsigns', 'divisor', 'total_buffer_number',
---                                'lsp_status.diagnostics', 'lsp_status.messages', 'filetype', 'progress'}
--- end
+function config.bubbly()
+    vim.g.bubbly_tabline = 0;
+    vim.g.bubbly_palette = {
+        background = "#34343c",
+        foreground = "#c5cdd9",
+        black = "#3e4249",
+        red = "#ec7279",
+        green = "#a0c980",
+        yellow = "#deb974",
+        blue = "#6cb6eb",
+        purple = "#d38aea",
+        cyan = "#5dbbc1",
+        white = "#c5cdd9",
+        lightgrey = "#57595e",
+        darkgrey = "#404247"
+    }
+    vim.g.bubbly_statusline = {
+        'mode',
+        'truncate',
+        'path',
+        'branch',
+
+        'divisor',
+        'lsp_status.messages',
+        'divisor',
+
+        'gitsigns',
+        'filetype',
+        'progress'
+    }
+    vim.g.bubbly_colors = {
+        lsp_status = {
+            messages = 'cyan'
+        }
+    }
+end
 
 return config

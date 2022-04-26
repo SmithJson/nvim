@@ -6,7 +6,8 @@ require('keymap.config')
 
 local plug_map = {
     -- toggleterm
-    ["n|<Leader>tt"] = map_cmd("<cmd>exe v:count.'ToggleTerm'<CR>"):with_silent():with_silent(),
+    ["n|<Leader>tt"] = map_cmd("<cmd>exe v:count.'ToggleTerm'<CR>"):with_silent(),
+    ["n|<Leader>q"] = map_cu("ToggleTermToggleAll"):with_silent(),
     -- Packer
     ["n|<Leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
     ["n|<Leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),
