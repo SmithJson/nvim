@@ -146,51 +146,113 @@ function config.indent_blakline()
 end
 
 function config.nvim_bufferline()
-    require("bufferline").setup {
-        options = {
-            separator_style = "slant",
-            show_close_icon = false,
-            custom_areas = {
-                right = function()
-                    local result = {}
-                    local error = vim.diagnostic.get(0, [[Error]])
-                    local warning = vim.diagnostic.get(0, [[Warning]])
-                    local info = vim.diagnostic.get(0, [[Information]])
-                    local hint = vim.diagnostic.get(0, [[Hint]])
-
-                    if error ~= 0 then
-                        table.insert(result, {
-                            text = "  " .. error,
-                            guifg = "#EC5241"
-                        })
-                    end
-
-                    if warning ~= 0 then
-                        table.insert(result, {
-                            text = "  " .. warning,
-                            guifg = "#EFB839"
-                        })
-                    end
-
-                    if hint ~= 0 then
-                        table.insert(result, {
-                            text = "  " .. hint,
-                            guifg = "#A3BA5E"
-                        })
-                    end
-
-                    if info ~= 0 then
-                        table.insert(result, {
-                            text = "  " .. info,
-                            guifg = "#7EA9A7"
-                        })
-                    end
-                    return result
-                end
-            }
-        }
-    }
+    require("bufferline").setup({
+    options = {
+        buffer_close_icon = "",
+        close_command = "Bdelete %d",
+        close_icon = "",
+        indicator_icon = " ",
+        left_trunc_marker = "",
+        modified_icon = "●",
+        offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+        right_mouse_command = "Bdelete! %d",
+        right_trunc_marker = "",
+        show_close_icon = false,
+        show_tab_indicators = true,
+    },
+    highlights = {
+        fill = {
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        background = {
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        buffer_visible = {
+            gui = "",
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "Normal" },
+        },
+        buffer_selected = {
+            gui = "",
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "Normal" },
+        },
+        separator = {
+            guifg = { attribute = "bg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        separator_selected = {
+            guifg = { attribute = "fg", highlight = "Special" },
+            guibg = { attribute = "bg", highlight = "Normal" },
+        },
+        separator_visible = {
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        close_button = {
+            guifg = { attribute = "fg", highlight = "Normal" },
+            guibg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        close_button_selected = {
+            guifg = { attribute = "fg", highlight = "normal" },
+            guibg = { attribute = "bg", highlight = "normal" },
+        },
+        close_button_visible = {
+            guifg = { attribute = "fg", highlight = "normal" },
+            guibg = { attribute = "bg", highlight = "normal" },
+        },
+    },
+})
 end
+
+-- function config.nvim_bufferline()
+--     require("bufferline").setup {
+--         options = {
+--             separator_style = "slant",
+--             show_close_icon = false,
+--             custom_areas = {
+--                 right = function()
+--                     local result = {}
+--                     local error = vim.diagnostic.get(0, [[Error]])
+--                     local warning = vim.diagnostic.get(0, [[Warning]])
+--                     local info = vim.diagnostic.get(0, [[Information]])
+--                     local hint = vim.diagnostic.get(0, [[Hint]])
+--
+--                     if error ~= 0 then
+--                         table.insert(result, {
+--                             text = "  " .. error,
+--                             guifg = "#EC5241"
+--                         })
+--                     end
+--
+--                     if warning ~= 0 then
+--                         table.insert(result, {
+--                             text = "  " .. warning,
+--                             guifg = "#EFB839"
+--                         })
+--                     end
+--
+--                     if hint ~= 0 then
+--                         table.insert(result, {
+--                             text = "  " .. hint,
+--                             guifg = "#A3BA5E"
+--                         })
+--                     end
+--
+--                     if info ~= 0 then
+--                         table.insert(result, {
+--                             text = "  " .. info,
+--                             guifg = "#7EA9A7"
+--                         })
+--                     end
+--                     return result
+--                 end
+--             }
+--         }
+--     }
+-- end
 
 function config.feline()
     require('modules.ui.feline')
@@ -324,5 +386,25 @@ function config.diffview()
         }
     }
 end
+
+-- function config.bubbly()
+--     vim.g.bubbly_tabline = 0;
+--     vim.g.bubbly_palette = {
+--         background = "#34343c",
+--         foreground = "#c5cdd9",
+--         black = "#3e4249",
+--         red = "#ec7279",
+--         green = "#a0c980",
+--         yellow = "#deb974",
+--         blue = "#6cb6eb",
+--         purple = "#d38aea",
+--         cyan = "#5dbbc1",
+--         white = "#c5cdd9",
+--         lightgrey = "#57595e",
+--         darkgrey = "#404247"
+--     }
+--     vim.g.bubbly_statusline = {'mode', 'truncate', 'path', 'branch', 'gitsigns', 'divisor', 'total_buffer_number',
+--                                'lsp_status.diagnostics', 'lsp_status.messages', 'filetype', 'progress'}
+-- end
 
 return config

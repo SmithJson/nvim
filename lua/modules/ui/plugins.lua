@@ -8,11 +8,11 @@ local conf = require('modules.ui.config')
 --   end
 -- }
 
-ui['SmithJson/zephyr-nvim'] = {
-  config = function ()
-      vim.cmd('colorscheme zephyr')
-  end
-}
+-- ui['SmithJson/zephyr-nvim'] = {
+--   config = function ()
+--       vim.cmd('colorscheme zephyr')
+--   end
+-- }
 
 -- ui['ayu-theme/ayu-vim'] = {
 --   config = function ()
@@ -20,6 +20,20 @@ ui['SmithJson/zephyr-nvim'] = {
 --       vim.cmd('colorscheme ayu')
 --   end
 -- }
+--
+ui['Mofiqul/vscode.nvim'] = {
+  config = function ()
+vim.g.vscode_style = "dark"
+-- Enable transparent background
+vim.g.vscode_transparent = 1
+-- Enable italic comment
+vim.g.vscode_italic_comment = 1
+-- Disable nvim-tree background color
+vim.g.vscode_disable_nvimtree_bg = true
+vim.cmd([[colorscheme vscode]])
+  end
+}
+
 
 ui['glepnir/dashboard-nvim'] = {
   config = conf.dashboard,
@@ -29,11 +43,6 @@ ui['glepnir/dashboard-nvim'] = {
 ui['yamatsum/nvim-nonicons'] = {
   branch = 'main',
   requires = 'kyazdani42/nvim-web-devicons'
-}
-
-ui['feline-nvim/feline.nvim'] = {
-  config = conf.feline,
-  requires = 'yamatsum/nvim-nonicons'
 }
 
 ui['lukas-reineke/indent-blankline.nvim'] = {
@@ -54,6 +63,19 @@ ui['kyazdani42/nvim-tree.lua'] = {
 ui['airblade/vim-rooter'] = {
   config = conf.rooter,
 }
+
+ui['nvim-lualine/lualine.nvim'] = {
+  config = function ()
+      require('lualine').setup({
+          options = { theme = "vscode" }
+      })
+  end,
+}
+
+-- ui['datwaft/bubbly.nvim'] = {
+--   config = conf.bubbly,
+--   requires = 'nvim-lua/lsp-status.nvim'
+-- }
 
 ui['lewis6991/gitsigns.nvim'] = {
   event = {'BufRead','BufNewFile'},
