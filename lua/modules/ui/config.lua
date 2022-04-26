@@ -60,7 +60,7 @@ end
 -- discard()
 function config.nvim_tree()
     -- On Ready Event for Lazy Loading work
-    require'nvim-tree'.setup {
+    require 'nvim-tree'.setup {
         disable_netrw = true,
         hijack_netrw = true,
         open_on_setup = false,
@@ -122,12 +122,12 @@ function config.nvim_tree()
 end
 
 function config.indent_blakline()
-    vim.g.indent_blankline_filetype_exclude = {"startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
-                                               "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
-                                               "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
-                                               "flutterToolsOutline", "" -- for all buffers without a file type
+    vim.g.indent_blankline_filetype_exclude = { "startify", "dashboard", "dotooagenda", "log", "fugitive", "gitcommit",
+        "packer", "vimwiki", "markdown", "json", "txt", "vista", "help",
+        "todoist", "NvimTree", "peekaboo", "git", "TelescopePrompt", "undotree",
+        "flutterToolsOutline", "" -- for all buffers without a file type
     }
-    vim.g.indent_blankline_buftype_exclude = {"terminal", "nofile"}
+    vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
     vim.g.indent_blankline_show_trailing_blankline_indent = false
     vim.cmd [[highlight IndentBlanklineIndent1 guibg=#40433d gui=nocombine]]
     vim.cmd [[highlight IndentBlanklineIndent2 guibg=#384341 gui=nocombine]]
@@ -135,10 +135,10 @@ function config.indent_blakline()
     vim.cmd [[highlight IndentBlanklineIndent4 guibg=#3b4852 gui=nocombine]]
     require("indent_blankline").setup {
         char = "",
-        char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
-                               "IndentBlanklineIndent4"},
-        space_char_highlight_list = {"IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
-                                     "IndentBlanklineIndent4"},
+        char_highlight_list = { "IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4" },
+        space_char_highlight_list = { "IndentBlanklineIndent1", "IndentBlanklineIndent2", "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4" },
         show_trailing_blankline_indent = false
     }
     -- because lazy load indent-blankline so need readd this autocmd
@@ -147,119 +147,72 @@ end
 
 function config.nvim_bufferline()
     require("bufferline").setup({
-    options = {
-        buffer_close_icon = "",
-        close_command = "Bdelete %d",
-        close_icon = "",
-        indicator_icon = " ",
-        left_trunc_marker = "",
-        modified_icon = "●",
-        offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
-        right_mouse_command = "Bdelete! %d",
-        right_trunc_marker = "",
-        show_close_icon = false,
-        show_tab_indicators = true,
-    },
-    highlights = {
-        fill = {
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "StatusLineNC" },
+        options = {
+            buffer_close_icon = "",
+            close_command = "Bdelete %d",
+            close_icon = "",
+            indicator_icon = " ",
+            left_trunc_marker = "",
+            modified_icon = "●",
+            offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+            right_mouse_command = "Bdelete! %d",
+            right_trunc_marker = "",
+            show_close_icon = false,
+            show_tab_indicators = true,
         },
-        background = {
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "StatusLine" },
+        highlights = {
+            fill = {
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "StatusLineNC" },
+            },
+            background = {
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "StatusLine" },
+            },
+            buffer_visible = {
+                gui = "",
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "Normal" },
+            },
+            buffer_selected = {
+                gui = "",
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "Normal" },
+            },
+            separator = {
+                guifg = { attribute = "bg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "StatusLine" },
+            },
+            separator_selected = {
+                guifg = { attribute = "fg", highlight = "Special" },
+                guibg = { attribute = "bg", highlight = "Normal" },
+            },
+            separator_visible = {
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "StatusLineNC" },
+            },
+            close_button = {
+                guifg = { attribute = "fg", highlight = "Normal" },
+                guibg = { attribute = "bg", highlight = "StatusLine" },
+            },
+            close_button_selected = {
+                guifg = { attribute = "fg", highlight = "normal" },
+                guibg = { attribute = "bg", highlight = "normal" },
+            },
+            close_button_visible = {
+                guifg = { attribute = "fg", highlight = "normal" },
+                guibg = { attribute = "bg", highlight = "normal" },
+            },
         },
-        buffer_visible = {
-            gui = "",
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "Normal" },
-        },
-        buffer_selected = {
-            gui = "",
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "Normal" },
-        },
-        separator = {
-            guifg = { attribute = "bg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "StatusLine" },
-        },
-        separator_selected = {
-            guifg = { attribute = "fg", highlight = "Special" },
-            guibg = { attribute = "bg", highlight = "Normal" },
-        },
-        separator_visible = {
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "StatusLineNC" },
-        },
-        close_button = {
-            guifg = { attribute = "fg", highlight = "Normal" },
-            guibg = { attribute = "bg", highlight = "StatusLine" },
-        },
-        close_button_selected = {
-            guifg = { attribute = "fg", highlight = "normal" },
-            guibg = { attribute = "bg", highlight = "normal" },
-        },
-        close_button_visible = {
-            guifg = { attribute = "fg", highlight = "normal" },
-            guibg = { attribute = "bg", highlight = "normal" },
-        },
-    },
-})
+    })
 end
-
--- function config.nvim_bufferline()
---     require("bufferline").setup {
---         options = {
---             separator_style = "slant",
---             show_close_icon = false,
---             custom_areas = {
---                 right = function()
---                     local result = {}
---                     local error = vim.diagnostic.get(0, [[Error]])
---                     local warning = vim.diagnostic.get(0, [[Warning]])
---                     local info = vim.diagnostic.get(0, [[Information]])
---                     local hint = vim.diagnostic.get(0, [[Hint]])
---
---                     if error ~= 0 then
---                         table.insert(result, {
---                             text = "  " .. error,
---                             guifg = "#EC5241"
---                         })
---                     end
---
---                     if warning ~= 0 then
---                         table.insert(result, {
---                             text = "  " .. warning,
---                             guifg = "#EFB839"
---                         })
---                     end
---
---                     if hint ~= 0 then
---                         table.insert(result, {
---                             text = "  " .. hint,
---                             guifg = "#A3BA5E"
---                         })
---                     end
---
---                     if info ~= 0 then
---                         table.insert(result, {
---                             text = "  " .. info,
---                             guifg = "#7EA9A7"
---                         })
---                     end
---                     return result
---                 end
---             }
---         }
---     }
--- end
 
 function config.feline()
     require('modules.ui.feline')
 end
 
 function config.rooter()
-    vim.g.rooter_patterns = {'node_modules', '__vim_project_root', '.git/'}
+    vim.g.rooter_patterns = { 'node_modules', '__vim_project_root', '.git/' }
     vim.g.rooter_silent_chdir = 1
     vim.g.rooter_cd_cmd = 'lcd'
 end
@@ -268,21 +221,21 @@ function config.dashboard()
     vim.g.dashboard_footer_icon = '🐬 '
     vim.g.dashboard_default_executive = 'telescope'
     vim.g.dashboard_footer_icon = '🦸 '
-    vim.g.dashboard_custom_header = {'', '',
-                                     '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
-                                     '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
-                                     '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
-                                     '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
-                                     '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
-                                     '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
-                                     '', '                           [  辩机 ]     '}
+    vim.g.dashboard_custom_header = { '', '',
+        '███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗',
+        '██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║',
+        '█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║',
+        '██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║',
+        '███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║',
+        '╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝',
+        '', '                           [  辩机 ]     ' }
 end
 
 function config.diffview()
     -- Lua
-    local cb = require'diffview.config'.diffview_callback
+    local cb = require 'diffview.config'.diffview_callback
 
-    require'diffview'.setup {
+    require 'diffview'.setup {
         diff_binaries = false, -- Show diffs for binaries
         enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
         use_icons = true, -- Requires nvim-web-devicons

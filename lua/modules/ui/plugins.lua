@@ -22,15 +22,12 @@ local conf = require('modules.ui.config')
 -- }
 --
 ui['Mofiqul/vscode.nvim'] = {
-  config = function ()
-vim.g.vscode_style = "dark"
--- Enable transparent background
-vim.g.vscode_transparent = 1
--- Enable italic comment
-vim.g.vscode_italic_comment = 1
--- Disable nvim-tree background color
-vim.g.vscode_disable_nvimtree_bg = true
-vim.cmd([[colorscheme vscode]])
+  config = function()
+    vim.g.vscode_style = "dark"
+    -- vim.g.vscode_transparent = 1
+    vim.g.vscode_italic_comment = 1
+    vim.g.vscode_disable_nvimtree_bg = true
+    vim.cmd([[colorscheme vscode]])
   end
 }
 
@@ -65,10 +62,10 @@ ui['airblade/vim-rooter'] = {
 }
 
 ui['nvim-lualine/lualine.nvim'] = {
-  config = function ()
-      require('lualine').setup({
-          options = { theme = "vscode" }
-      })
+  config = function()
+    require('lualine').setup({
+      options = { theme = "vscode" }
+    })
   end,
 }
 
@@ -78,25 +75,25 @@ ui['nvim-lualine/lualine.nvim'] = {
 -- }
 
 ui['lewis6991/gitsigns.nvim'] = {
-  event = {'BufRead','BufNewFile'},
+  event = { 'BufRead', 'BufNewFile' },
   config = conf.gitsigns,
-  requires = {'nvim-lua/plenary.nvim',opt=true}
+  requires = { 'nvim-lua/plenary.nvim', opt = true }
 }
 
 ui['sindrets/diffview.nvim'] = {
   config = conf.diffview,
   requires = {
-    {'nvim-lua/plenary.nvim'},
-    {'kyazdani42/nvim-web-devicons'}
+    { 'nvim-lua/plenary.nvim' },
+    { 'kyazdani42/nvim-web-devicons' }
   },
-  cmd={ 'DiffviewOpen',
-      'DiffviewFileHistory',
-      'DiffviewClose',
-      'DiffviewToggleFiles',
-      'DiffviewFocusFiles',
-      'DiffviewRefresh'
+  cmd = { 'DiffviewOpen',
+    'DiffviewFileHistory',
+    'DiffviewClose',
+    'DiffviewToggleFiles',
+    'DiffviewFocusFiles',
+    'DiffviewRefresh'
   },
-  after='plenary.nvim'
+  after = 'plenary.nvim'
 }
 
 return ui
