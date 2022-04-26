@@ -85,7 +85,6 @@ function config.compe()
         }, {
             { name = 'buffer' },
             { name = 'nvim_lsp_signature_help' },
-            { name = 'rg' },
         }),
         formatting = {
             format = function(_, vim_item)

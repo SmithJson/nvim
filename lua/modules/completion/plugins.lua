@@ -37,7 +37,6 @@ completion['hrsh7th/nvim-cmp'] = {
         {'petertriho/cmp-git'},
         {'hrsh7th/cmp-nvim-lsp-signature-help'},
         {'onsails/lspkind-nvim'},
-        {'lukas-reineke/cmp-rg'},
     }
 }
 

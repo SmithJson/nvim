@@ -30,8 +30,8 @@ augroup filetypedetect
     autocmd BufNewFile,BufRead Tmuxfile,tmux/config setfiletype tmux
     autocmd BufNewFile,BufRead Brewfile             setfiletype ruby
 
-    autocmd BufNewFile,BufRead *.html,*.htm,*.gohtml,*.tpl setfiletype html
-    autocmd BufNewFile,BufRead *.vue,*.atom setfiletype vue
+    autocmd BufNewFile,BufRead *.atom,*.html,*.htm,*.gohtml,*.tpl setfiletype html
+    autocmd BufNewFile,BufRead *.vue setfiletype vue
 
 augroup END
 

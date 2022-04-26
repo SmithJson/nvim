@@ -31,11 +31,6 @@ ui['yamatsum/nvim-nonicons'] = {
   requires = 'kyazdani42/nvim-web-devicons'
 }
 
-ui['feline-nvim/feline.nvim'] = {
-  config = conf.feline,
-  requires = 'yamatsum/nvim-nonicons'
-}
-
 ui['lukas-reineke/indent-blankline.nvim'] = {
   event = 'BufRead',
   config = conf.indent_blakline
@@ -55,19 +50,31 @@ ui['airblade/vim-rooter'] = {
   config = conf.rooter,
 }
 
-ui['lewis6991/gitsigns.nvim'] = {
-  event = {'BufRead','BufNewFile'},
-  config = conf.gitsigns,
-  requires = {'nvim-lua/plenary.nvim',opt=true}
+ui['datwaft/bubbly.nvim'] = {
+  config = conf.bubbly,
+  requires = 'nvim-lua/lsp-status.nvim'
 }
 
--- ui['sindrets/diffview.nvim'] = {
---   event = {'BufRead','BufNewFile'},
---   config = conf.diffview,
---   requires = {
---     {'nvim-lua/plenary.nvim'},
---     {'kyazdani42/nvim-web-devicons'}
---   }
--- }
+ui['lewis6991/gitsigns.nvim'] = {
+  event = { 'BufRead', 'BufNewFile' },
+  config = conf.gitsigns,
+  requires = { 'nvim-lua/plenary.nvim', opt = true }
+}
+
+ui['sindrets/diffview.nvim'] = {
+  config = conf.diffview,
+  requires = {
+    { 'nvim-lua/plenary.nvim' },
+    { 'kyazdani42/nvim-web-devicons' }
+  },
+  cmd = { 'DiffviewOpen',
+    'DiffviewFileHistory',
+    'DiffviewClose',
+    'DiffviewToggleFiles',
+    'DiffviewFocusFiles',
+    'DiffviewRefresh'
+  },
+  after = 'plenary.nvim'
+}
 
 return ui
