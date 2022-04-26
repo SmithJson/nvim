@@ -344,15 +344,15 @@ function config.bubbly()
     vim.g.bubbly_statusline = {
         'mode',
         'truncate',
-        'path',
-        'branch',
-
-        'divisor',
-        'lsp_status.messages',
-        'divisor',
-
-        'gitsigns',
         'filetype',
+        'lsp_status.messages',
+
+        'divisor',
+        'path',
+        'divisor',
+
+        'branch',
+        'gitsigns',
         'progress'
     }
     vim.g.bubbly_colors = {
