@@ -30,14 +30,14 @@ local vim_map = {
     ["n|srv"]          = map_cmd('<C-w>b<C-w>H'):with_noremap(),
     ["n|<LEADER><CR>"] = map_cr("nohlsearch"),
     -- Insert
-    ["i|<C-a>"] = map_cmd('<Home>'):with_noremap(),
-    ["i|<C-e>"] = map_cmd('<End>'):with_noremap(),
-    ["i|<C-f>"] = map_cmd('<Right>'):with_noremap(),
-    ["i|<C-b>"] = map_cmd('<Left>'):with_noremap(),
-    ["i|<C-n>"] = map_cmd('<Down>'):with_noremap(),
-    ["i|<C-p>"] = map_cmd('<Up>'):with_noremap(),
-    ["i|<C-j>"] = map_cmd('<Esc>o'):with_noremap(),
-    ["i|<C-k>"] = map_cmd('<Esc>O'):with_noremap(),
+    -- ["i|<C-a>"] = map_cmd('<Home>'):with_noremap(),
+    -- ["i|<C-e>"] = map_cmd('<End>'):with_noremap(),
+    -- ["i|<C-f>"] = map_cmd('<Right>'):with_noremap(),
+    -- ["i|<C-b>"] = map_cmd('<Left>'):with_noremap(),
+    -- ["i|<C-n>"] = map_cmd('<Down>'):with_noremap(),
+    -- ["i|<C-p>"] = map_cmd('<Up>'):with_noremap(),
+    -- ["i|<C-j>"] = map_cmd('<Esc>o'):with_noremap(),
+    -- ["i|<C-k>"] = map_cmd('<Esc>O'):with_noremap(),
     -- Visual
     ["v|Y"] = map_cmd('"+y'):with_noremap(),
     -- Command
