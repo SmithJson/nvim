@@ -23,6 +23,10 @@ tools['folke/todo-comments.nvim'] = {
     }
 }
 
+tools['Shatur/neovim-session-manager'] = {
+    config = conf.session,
+}
+
 tools['nvim-telescope/telescope-fzy-native.nvim'] = {
     opt = true,
     after = 'telescope.nvim'

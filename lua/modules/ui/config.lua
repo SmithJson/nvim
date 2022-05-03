@@ -385,7 +385,7 @@ function config.bubbly()
         "mode",
         "truncate",
         "filetype",
-        "lsp_status.messages",
+        "lsp.service",
         "divisor",
         "path",
         "divisor",
