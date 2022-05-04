@@ -9,10 +9,38 @@ function config.saga()
 end
 
 function config.vsnip()
+    if not packer_plugins["vim-vsnip"].loaded then
+        vim.cmd [[packadd vim-vsnip]]
+    end
     vim.g.vsnip_snippet_dir = os.getenv("HOME") .. "/.config/nvim/snippets"
 end
 
 function config.compe()
+    if not packer_plugins["nvim-cmp"].loaded then
+        vim.cmd [[packadd nvim-cmp]]
+    end
+    if not packer_plugins["cmp-nvim-lsp"].loaded then
+        vim.cmd [[packadd cmp-nvim-lsp]]
+    end
+    if not packer_plugins["cmp-buffer"].loaded then
+        vim.cmd [[packadd cmp-buffer]]
+    end
+    if not packer_plugins["cmp-path"].loaded then
+        vim.cmd [[packadd cmp-path]]
+    end
+    if not packer_plugins["cmp-vsnip"].loaded then
+        vim.cmd [[packadd cmp-vsnip]]
+    end
+    if not packer_plugins["cmp-git"].loaded then
+        vim.cmd [[packadd cmp-git]]
+    end
+    if not packer_plugins["cmp-nvim-lsp-signature-help"].loaded then
+        vim.cmd [[packadd cmp-nvim-lsp-signature-help]]
+    end
+    if not packer_plugins["lspkind-nvim"].loaded then
+        vim.cmd [[packadd lspkind-nvim]]
+    end
+
     local cmp_kinds = {
         Text = " ",
         Method = "  ",

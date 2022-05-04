@@ -70,9 +70,6 @@ tools['hrsh7th/vim-eft'] = {
     end
 }
 
-tools['easymotion/vim-easymotion'] = {
-}
-
 tools["akinsho/toggleterm.nvim"] = {
 	opt = true,
 	event = "BufRead",
