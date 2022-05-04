@@ -10,14 +10,10 @@ completion['williamboman/nvim-lsp-installer'] = {
     cmd = {'LspInstall', 'LspUninstall'}
 }
 
--- completion['j-hui/fidget.nvim'] = {
---     config = function()
---         require"fidget".setup{}
---     end
--- }
-
-completion['rcarriga/nvim-notify'] = {
-    config = conf.notify
+completion['j-hui/fidget.nvim'] = {
+    config = function()
+        require"fidget".setup{}
+    end
 }
 
 completion['tami5/lspsaga.nvim'] = {
