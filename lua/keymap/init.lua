@@ -25,8 +25,6 @@ local plug_map = {
     ["n|<Leader>fv"] = map_cu('Telescope vim_options'):with_noremap():with_silent(),
     ["n|<Leader>fw"] = map_cu('Telescope live_grep'):with_noremap():with_silent(),
     ["n|<Leader>tc"] = map_cu('DashboardChangeColorscheme'):with_noremap(),
-    -- Bufferline
-    ["n|gb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
     -- which-key-map
     ["n|<Leader>"] = map_cu([[WhichKey '<Space>']]):with_noremap():with_silent(),
     -- VimEft

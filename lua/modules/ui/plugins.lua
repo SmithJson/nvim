@@ -35,9 +35,9 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
     config = conf.indent_blakline
 }
 
-ui["akinsho/nvim-bufferline.lua"] = {
-    config = conf.nvim_bufferline,
-    requires = "yamatsum/nvim-nonicons"
+ui["noib3/nvim-cokeline"] = {
+    requires = "kyazdani42/nvim-web-devicons",
+    config = conf.cokeline,
 }
 
 ui["kyazdani42/nvim-tree.lua"] = {
