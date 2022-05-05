@@ -8,10 +8,6 @@ local plug_map = {
     -- toggleterm
     ["n|<Leader>tt"] = map_cmd("<cmd>exe v:count.'ToggleTerm'<CR>"):with_silent(),
     ["n|<Leader>q"] = map_cu("ToggleTermToggleAll"):with_silent(),
-    -- Packer
-    ["n|<Leader>pu"] = map_cr("PackerUpdate"):with_silent():with_noremap():with_nowait(),
-    ["n|<Leader>pi"] = map_cr("PackerInstall"):with_silent():with_noremap():with_nowait(),
-    ["n|<Leader>pc"] = map_cr("PackerCompile"):with_silent():with_noremap():with_nowait(),
     -- Nvim-tree
     ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
     ["n|<Leader>e"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
@@ -61,6 +57,16 @@ local plug_map = {
     ["t|<C-k>"] = map_cu([[<C-\><C-n>:Lspsaga close_floaterm<CR>]]):with_noremap():with_silent(),
     -- SymbolOutline
     ["n|<leader>v"] = map_cr('SymbolsOutline'):with_noremap():with_silent(),
+    -- Barbar
+    ["n|<Tab>"] = map_cr("BufferNext"):with_noremap():with_silent(),
+    ["n|<S-Tab>"] = map_cr("BufferPrevious"):with_noremap():with_silent(),
+    ["n|<C-p>"] = map_cr("BufferPick"):with_noremap():with_silent(),
+    ["n|<A-<>"] = map_cr("BufferMovePrevious"):with_noremap():with_silent(),
+    ["n|<A->>"] = map_cr("BufferMoveNext"):with_noremap():with_silent(),
+    ["n|<A-c>"] = map_cr("BufferClose"):with_noremap():with_silent(),
+    ["n|<Leader>bb"] = map_cr("BufferOrderByBufferNumber"):with_noremap():with_silent(),
+    ["n|<Leader>bd"] = map_cr("BufferOrderByDirectory"):with_noremap():with_silent(),
+    ["n|<Leader>bl"] = map_cr("BufferOrderByLanguage"):with_noremap():with_silent()
 }
 
 bind.nvim_load_mapping(plug_map)

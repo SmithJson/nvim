@@ -7,9 +7,19 @@ local conf = require("modules.ui.config")
 --   end
 -- }
 
-ui["SmithJson/zephyr-nvim"] = {
+-- ui["SmithJson/zephyr-nvim"] = {
+--     config = function()
+--         vim.cmd("colorscheme zephyr")
+--     end
+-- }
+
+ui["Mofiqul/vscode.nvim"] = {
     config = function()
-        vim.cmd("colorscheme zephyr")
+        vim.g.vscode_style = "dark"
+        vim.g.vscode_transparency = 0
+        vim.g.vscode_italic_comment = 1
+        vim.g.vscode_disable_nvimtree_bg = true
+        vim.cmd([[colorscheme vscode]])
     end
 }
 
@@ -25,6 +35,18 @@ ui["glepnir/dashboard-nvim"] = {
     run = "cargo install ripgrep"
 }
 
+ui["Xuyuanp/scrollbar.nvim"] = {
+}
+
+ui["romgrk/barbar.nvim"] = {
+    requires = "kyazdani42/nvim-web-devicons",
+    config = conf.barbar
+}
+
+ui["windwp/windline.nvim"] = {
+    config = conf.windline
+}
+
 ui["yamatsum/nvim-nonicons"] = {
     branch = "main",
     requires = "kyazdani42/nvim-web-devicons"
@@ -35,11 +57,6 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
     config = conf.indent_blakline
 }
 
-ui["noib3/nvim-cokeline"] = {
-    requires = "kyazdani42/nvim-web-devicons",
-    config = conf.cokeline,
-}
-
 ui["kyazdani42/nvim-tree.lua"] = {
     config = conf.nvim_tree,
     requires = "yamatsum/nvim-nonicons"
@@ -47,12 +64,6 @@ ui["kyazdani42/nvim-tree.lua"] = {
 
 ui["airblade/vim-rooter"] = {
     config = conf.rooter
-}
-
-ui["SmithJson/bubbly.nvim"] = {
-    branch = "dev_lsp",
-    config = conf.bubbly,
-    requires = "nvim-lua/lsp-status.nvim"
 }
 
 ui["lewis6991/gitsigns.nvim"] = {

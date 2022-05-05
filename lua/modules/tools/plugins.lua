@@ -76,9 +76,6 @@ tools["akinsho/toggleterm.nvim"] = {
 	config = conf.toggleterm,
 }
 
-tools['ahonn/vim-fileheader'] = {
-}
-
 tools['AndrewRadev/tagalong.vim'] = {
 }
 
