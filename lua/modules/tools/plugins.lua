@@ -27,6 +27,10 @@ tools['Shatur/neovim-session-manager'] = {
     config = conf.session,
 }
 
+tools['chentau/marks.nvim'] = {
+    config = conf.marks,
+}
+
 tools['nvim-telescope/telescope-fzy-native.nvim'] = {
     opt = true,
     after = 'telescope.nvim'

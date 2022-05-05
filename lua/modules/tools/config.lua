@@ -149,70 +149,70 @@ function config.todo_comments()
     local note_green = "#10B981"
 
     todo_comments.setup(
-        {
-            signs = true, -- show icons in the signs column
-            sign_priority = 8, -- sign priority
-            -- keywords recognized as todo comments
-            keywords = {
-                FIX = {
-                    icon = " ", -- icon used for the sign, and in search results
-                    color = error_red, -- can be a hex color, or a named color (see below)
-                    alt = {"FIXME", "BUG", "FIXIT", "ISSUE"} -- a set of other keywords that all map to this FIX keywords
-                    -- signs = false, -- configure signs for some keywords individually
-                },
-                TODO = {icon = " ", color = hint_blue},
-                HACK = {icon = " ", color = info_yellow},
-                WARN = {icon = " ", color = warning_orange, alt = {"WARNING", "XXX"}},
-                PERF = {icon = " ", color = perf_purple, alt = {"OPTIM", "PERFORMANCE", "OPTIMIZE"}},
-                NOTE = {icon = " ", color = note_green, alt = {"INFO"}}
+    {
+        signs = true, -- show icons in the signs column
+        sign_priority = 8, -- sign priority
+        -- keywords recognized as todo comments
+        keywords = {
+            FIX = {
+                icon = " ", -- icon used for the sign, and in search results
+                color = error_red, -- can be a hex color, or a named color (see below)
+                alt = {"FIXME", "BUG", "FIXIT", "ISSUE"} -- a set of other keywords that all map to this FIX keywords
+                -- signs = false, -- configure signs for some keywords individually
             },
-            highlight = {
-                before = "", -- "fg" or "bg" or empty
-                keyword = "wide", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
-                after = "fg", -- "fg" or "bg" or empty
-                pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
-                comments_only = true, -- uses treesitter to match keywords in comments only
-                max_line_len = 400, -- ignore lines longer than this
-                exclude = {} -- list of file types to exclude highlighting
+            TODO = {icon = " ", color = hint_blue},
+            HACK = {icon = " ", color = info_yellow},
+            WARN = {icon = " ", color = warning_orange, alt = {"WARNING", "XXX"}},
+            PERF = {icon = " ", color = perf_purple, alt = {"OPTIM", "PERFORMANCE", "OPTIMIZE"}},
+            NOTE = {icon = " ", color = note_green, alt = {"INFO"}}
+        },
+        highlight = {
+            before = "", -- "fg" or "bg" or empty
+            keyword = "wide", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+            after = "fg", -- "fg" or "bg" or empty
+            pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
+            comments_only = true, -- uses treesitter to match keywords in comments only
+            max_line_len = 400, -- ignore lines longer than this
+            exclude = {} -- list of file types to exclude highlighting
+        },
+        search = {
+            command = "rg",
+            args = {
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column"
             },
-            search = {
-                command = "rg",
-                args = {
-                    "--color=never",
-                    "--no-heading",
-                    "--with-filename",
-                    "--line-number",
-                    "--column"
-                },
-                pattern = [[\b(KEYWORDS):]] -- ripgrep regex
-            }
+            pattern = [[\b(KEYWORDS):]] -- ripgrep regex
         }
+    }
     )
 end
 
 function config.toggleterm()
     require("toggleterm").setup(
-        {
-            -- size can be a number or function which is passed the current terminal
-            size = function(term)
-                if term.direction == "horizontal" then
-                    return 15
-                elseif term.direction == "vertical" then
-                    return vim.o.columns * 0.40
-                end
-            end,
-            open_mapping = [[<c-\>]],
-            hide_numbers = true, -- hide the number column in toggleterm buffers
-            shade_filetypes = {},
-            shade_terminals = false,
-            shading_factor = "1", -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
-            start_in_insert = true,
-            insert_mappings = true, -- whether or not the open mapping applies in insert mode
-            persist_size = true,
-            direction = "horizontal",
-            close_on_exit = true, -- close the terminal window when the process exits
-            shell = vim.o.shell -- change the default shell
-        }
+    {
+        -- size can be a number or function which is passed the current terminal
+        size = function(term)
+            if term.direction == "horizontal" then
+                return 15
+            elseif term.direction == "vertical" then
+                return vim.o.columns * 0.40
+            end
+        end,
+        open_mapping = [[<c-\>]],
+        hide_numbers = true, -- hide the number column in toggleterm buffers
+        shade_filetypes = {},
+        shade_terminals = false,
+        shading_factor = "1", -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+        start_in_insert = true,
+        insert_mappings = true, -- whether or not the open mapping applies in insert mode
+        persist_size = true,
+        direction = "horizontal",
+        close_on_exit = true, -- close the terminal window when the process exits
+        shell = vim.o.shell -- change the default shell
+    }
     )
 end
 
@@ -222,20 +222,25 @@ function config.session()
     end
     local Path = require("plenary.path")
     require("session_manager").setup(
-        {
-            sessions_dir = Path:new(vim.fn.stdpath("data"), "sessions"),
-            path_replacer = "__",
-            colon_replacer = "++",
-            autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
-            autosave_last_session = true,
-            autosave_ignore_not_normal = true,
-            autosave_ignore_filetypes = {
-                "gitcommit"
-            },
-            autosave_only_in_session = false,
-            max_path_length = 80
-        }
+    {
+        sessions_dir = Path:new(vim.fn.stdpath("data"), "sessions"),
+        path_replacer = "__",
+        colon_replacer = "++",
+        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
+        autosave_last_session = true,
+        autosave_ignore_not_normal = true,
+        autosave_ignore_filetypes = {
+            "gitcommit"
+        },
+        autosave_only_in_session = false,
+        max_path_length = 80
+    }
     )
+end
+
+function config.marks()
+    require'marks'.setup {
+    }
 end
 
 return config
