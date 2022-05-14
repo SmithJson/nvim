@@ -23,6 +23,14 @@ tools['folke/todo-comments.nvim'] = {
     }
 }
 
+tools['Shatur/neovim-session-manager'] = {
+    config = conf.session,
+}
+
+tools['chentoast/marks.nvim'] = {
+    config = conf.marks,
+}
+
 tools['nvim-telescope/telescope-fzy-native.nvim'] = {
     opt = true,
     after = 'telescope.nvim'
@@ -66,16 +74,10 @@ tools['hrsh7th/vim-eft'] = {
     end
 }
 
-tools['easymotion/vim-easymotion'] = {
-}
-
 tools["akinsho/toggleterm.nvim"] = {
 	opt = true,
 	event = "BufRead",
 	config = conf.toggleterm,
-}
-
-tools['ahonn/vim-fileheader'] = {
 }
 
 tools['AndrewRadev/tagalong.vim'] = {

@@ -24,29 +24,27 @@ completion['tami5/lspsaga.nvim'] = {
 
 completion['hrsh7th/nvim-cmp'] = {
     opt = true,
-    event = 'InsertEnter',
+    event = 'InsertCharPre',
     config = conf.compe,
     requires = {
         {'hrsh7th/cmp-nvim-lsp'},
         {'hrsh7th/cmp-buffer'},
         {'hrsh7th/cmp-path'},
         {'hrsh7th/cmp-cmdline'},
-
         {'hrsh7th/cmp-vsnip'},
-        {'hrsh7th/vim-vsnip'},
         {'petertriho/cmp-git'},
         {'hrsh7th/cmp-nvim-lsp-signature-help'},
         {'onsails/lspkind-nvim'},
     }
 }
 
-
 completion['hrsh7th/vim-vsnip-integ'] = {
     opt = true,
     after = 'nvim-cmp',
     config=conf.vsnip,
     requires = {
-        {'rafamadriz/friendly-snippets', opt = true, event = 'InsertCharPre'},
+        {'hrsh7th/vim-vsnip', opt = true},
+        {'rafamadriz/friendly-snippets', opt = true},
     }
 }
 
