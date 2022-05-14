@@ -27,7 +27,7 @@ tools['Shatur/neovim-session-manager'] = {
     config = conf.session,
 }
 
-tools['chentau/marks.nvim'] = {
+tools['chentoast/marks.nvim'] = {
     config = conf.marks,
 }
 
