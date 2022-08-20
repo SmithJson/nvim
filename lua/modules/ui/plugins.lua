@@ -7,28 +7,28 @@ local conf = require("modules.ui.config")
 --   end
 -- }
 
--- ui["SmithJson/zephyr-nvim"] = {
---     config = function()
---         vim.cmd("colorscheme zephyr")
---     end
--- }
+--[[ ui["SmithJson/zephyr-nvim"] = { ]]
+--[[     config = function() ]]
+--[[         vim.cmd("colorscheme zephyr") ]]
+--[[     end ]]
+--[[ } ]]
 
--- ui["Mofiqul/vscode.nvim"] = {
---     config = function()
---         vim.g.vscode_style = "dark"
---         vim.g.vscode_transparency = 0
---         vim.g.vscode_italic_comment = 1
---         vim.g.vscode_disable_nvimtree_bg = true
---         vim.cmd([[colorscheme vscode]])
---     end
--- }
-
-ui['ayu-theme/ayu-vim'] = {
-  config = function ()
-      vim.cmd('let ayucolor="mirage"')
-      vim.cmd('colorscheme ayu')
-  end
+ui["Mofiqul/vscode.nvim"] = {
+    config = function()
+        vim.g.vscode_style = "dark"
+        vim.g.vscode_transparency = 0
+        vim.g.vscode_italic_comment = 1
+        vim.g.vscode_disable_nvimtree_bg = true
+        vim.cmd([[colorscheme vscode]])
+    end
 }
+
+-- ui['ayu-theme/ayu-vim'] = {
+--   config = function ()
+--       vim.cmd('let ayucolor="mirage"')
+--       vim.cmd('colorscheme ayu')
+--   end
+-- }
 
 ui["glepnir/dashboard-nvim"] = {
     config = conf.dashboard,
