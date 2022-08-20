@@ -31,9 +31,6 @@ function config.compe()
     if not packer_plugins["cmp-vsnip"].loaded then
         vim.cmd [[packadd cmp-vsnip]]
     end
-    if not packer_plugins["cmp-git"].loaded then
-        vim.cmd [[packadd cmp-git]]
-    end
     if not packer_plugins["cmp-nvim-lsp-signature-help"].loaded then
         vim.cmd [[packadd cmp-nvim-lsp-signature-help]]
     end
@@ -87,7 +84,7 @@ function config.compe()
                 end
             },
             mapping = {
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm({select = true}),
                 ["<Tab>"] = cmp.mapping(
                     function(fallback)
                         if cmp.visible() then
@@ -100,7 +97,7 @@ function config.compe()
                             fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
                         end
                     end,
-                    {"i", "s"}
+                    {"i", "s", "c"}
                 ),
                 ["<S-Tab>"] = cmp.mapping(
                     function()
@@ -110,17 +107,15 @@ function config.compe()
                             feedkey("<Plug>(vsnip-jump-prev)", "")
                         end
                     end,
-                    {"i", "s"}
+                    {"i", "s", "c"}
                 )
             },
             sources = cmp.config.sources(
                 {
                     {name = "nvim_lsp"},
-                    {name = "vsnip"}
-                },
-                {
                     {name = "buffer"},
                     {name = "path"},
+                    {name = "vsnip"},
                     {name = "nvim_lsp_signature_help"}
                 }
             ),
@@ -133,20 +128,6 @@ function config.compe()
         }
     )
 
-    cmp.setup.filetype(
-        "gitcommit",
-        {
-            sources = cmp.config.sources(
-                {
-                    {name = "cmp_git"}
-                },
-                {
-                    {name = "buffer"}
-                }
-            )
-        }
-    )
-
     cmp.setup.cmdline(
         "/",
         {
@@ -156,7 +137,15 @@ function config.compe()
             }
         }
     )
-
+    cmp.setup.cmdline(
+        "?",
+        {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                {name = "buffer"}
+            }
+        }
+    )
     cmp.setup.cmdline(
         ":",
         {
