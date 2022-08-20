@@ -31,9 +31,7 @@ editor['numToStr/Comment.nvim'] = {
 editor['Chiel92/vim-autoformat'] = {
     run = {
         'npm install -g fixjson',
-        'npm install -g eslint',
         'npm install -g lua-fmt',
-        'npm install -g stylelint stylelint-config-standard',
         'pip3 install --upgrade autopep8'
     }
 }

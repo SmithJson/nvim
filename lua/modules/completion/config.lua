@@ -97,7 +97,7 @@ function config.compe()
                             fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
                         end
                     end,
-                    {"i", "s"}
+                    {"i", "s", "c"}
                 ),
                 ["<S-Tab>"] = cmp.mapping(
                     function()
@@ -107,7 +107,7 @@ function config.compe()
                             feedkey("<Plug>(vsnip-jump-prev)", "")
                         end
                     end,
-                    {"i", "s"}
+                    {"i", "s", "c"}
                 )
             },
             sources = cmp.config.sources(
