@@ -74,7 +74,7 @@ function config.nvim_tree()
     update_cwd = false,
     view = {
         width = 30,
-        height = 30,
+        -- height = 30,
         hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
@@ -231,10 +231,40 @@ function config.rooter()
 end
 
 function config.dashboard()
-    vim.g.dashboard_footer_icon = "🐬 "
-    vim.g.dashboard_default_executive = "telescope"
-    vim.g.dashboard_footer_icon = "🦸 "
-    vim.g.dashboard_custom_header = {
+  local home = os.getenv('HOME')
+  local db = require('dashboard')
+  -- macos
+  --[[ db.preview_command = 'cat | lolcat -F 0.3' ]]
+  --[[ db.preview_file_path = home .. '/.config/nvim/static/neovim.cat' ]]
+  --[[ db.preview_file_height = 11 ]]
+  --[[ db.preview_file_width = 70 ]]
+  db.custom_center = {
+      {icon = '  ',
+      desc = 'Recently latest session                  ',
+      shortcut = 'SPC s l',
+      action ='SessionLoad'},
+      {icon = '  ',
+      desc = 'Recently opened files                   ',
+      action =  'Telescope search_history',
+      shortcut = 'SPC f h'},
+      {icon = '  ',
+      desc = 'Find  File                              ',
+      action = 'Telescope find_files find_command=rg,--hidden,--files',
+      shortcut = 'SPC f f'},
+      {icon = '  ',
+      desc ='File Browser                            ',
+      action =  'Telescope file_browser',
+      shortcut = 'SPC f b'},
+      {icon = '  ',
+      desc = 'Find  word                              ',
+      action = 'Telescope live_grep',
+      shortcut = 'SPC f w'},
+      {icon = '  ',
+      desc = 'Open Personal dotfiles                  ',
+      action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+      shortcut = 'SPC f d'},
+    }
+    db.custom_header = {
         "",
         "",
         "███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗",

@@ -13,7 +13,7 @@ end
 -- local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 saga.init_lsp_saga({
     code_action_icon = ' ',
