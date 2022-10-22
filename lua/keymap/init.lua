@@ -13,14 +13,10 @@ local plug_map = {
     ["n|<Leader>e"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
     -- Dashboard
     ['n|<Leader>os'] = map_cu('Dashboard'):with_noremap():with_silent(),
-    ["n|<Leader>cn"] = map_cu('DashboardNewFile'):with_noremap():with_silent(),
-    ["n|<Leader>fa"] = map_cu('DashboardFindWord'):with_noremap():with_silent(),
-    ["n|<Leader>ff"] = map_cu('DashboardFindFile'):with_noremap():with_silent(),
-    ["n|<Leader>fh"] = map_cu('DashboardFindHistory'):with_noremap():with_silent(),
+    ["n|<Leader>ff"] = map_cu('Telescope find_files find_command=rg,--hidden,--files'):with_noremap():with_silent(),
+    ["n|<Leader>fh"] = map_cu('Telescope search_history'):with_noremap():with_silent(),
     ["n|<Leader>fb"] = map_cu('Telescope buffers'):with_noremap():with_silent(),
-    ["n|<Leader>fv"] = map_cu('Telescope vim_options'):with_noremap():with_silent(),
     ["n|<Leader>fw"] = map_cu('Telescope live_grep'):with_noremap():with_silent(),
-    ["n|<Leader>tc"] = map_cu('DashboardChangeColorscheme'):with_noremap(),
     -- which-key-map
     ["n|<Leader>"] = map_cu([[WhichKey '<Space>']]):with_noremap():with_silent(),
     -- VimEft

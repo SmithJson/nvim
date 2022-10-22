@@ -20,8 +20,6 @@ function config.emmet()
 end
 
 function config.comment()
-    local comment_string = require("ts_context_commentstring")
-
     require("Comment").setup(
     {
         toggler = {

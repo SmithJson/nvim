@@ -24,8 +24,10 @@ editor['rhysd/vim-operator-surround'] = {
 }
 
 editor['numToStr/Comment.nvim'] = {
-    config = conf.comment,
-    requires = {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
+    config = conf.comment
+}
+
+editor['JoosepAlviste/nvim-ts-context-commentstring'] = {
 }
 
 editor['Chiel92/vim-autoformat'] = {
