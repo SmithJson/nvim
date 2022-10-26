@@ -1,32 +1,41 @@
-local lang = {}
+local package = require('core.pack').package
 local conf = require('modules.lang.config')
 
-lang['iamcco/markdown-preview.nvim'] = {
-    opt = true,
-    ft = "markdown",
-    cmd = 'MarkdownPreview',
-    run = 'cd app && npm install'
-}
+package({
+    'editorconfig/editorconfig-vim',
+    ft = { 'go', 'typescript', 'javascript', 'vim', 'rust', 'zig', 'c', 'cpp' },
+})
 
-lang['dhruvasagar/vim-table-mode'] = {
-    opt = true,
-    ft = {'text', 'markdown'}
-}
+package({
+    'nvim-treesitter/nvim-treesitter',
+    event = 'BufRead',
+    run = ':TSUpdate',
+    after = 'telescope.nvim',
+    config = conf.nvim_treesitter,
+})
 
-lang['mzlogin/vim-markdown-toc'] = {
-    opt = true,
-    ft = {'gitignore', 'markdown'}
-}
+package({
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter'
+})
 
-lang['dkarter/bullets.vim'] = {
-}
+package({
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+})
 
-lang['nvim-treesitter/nvim-treesitter'] = {
-  config = conf.nvim_treesitter,
-}
+package({
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    after = 'nvim-treesitter'
+})
 
-lang['nvim-treesitter/nvim-treesitter-textobjects'] = {
-  after = 'nvim-treesitter'
-}
-
-return lang
+package({
+    'folke/todo-comments.nvim',
+    config = conf.todo_comments,
+    requires = {
+        {'nvim-lua/popup.nvim', opt = true},
+        {'nvim-lua/plenary.nvim', opt = true}
+    }
+})
