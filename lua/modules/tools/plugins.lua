@@ -24,6 +24,7 @@ package({
   end
 })
 
+<<<<<<< HEAD
 package({
   'chentoast/marks.nvim',
   config = function()
@@ -42,4 +43,6 @@ package({
   config = conf.toggleterm
 })
 
+=======
+>>>>>>> 7ad35742ed8b84558596553c4c741eb96a268202
 package({'liuchengxu/vim-which-key'})
