@@ -169,27 +169,42 @@ nvim
 
 ## 插件列表
 
-| 名称                                                                         | 功能                   |
-| ---------------------------------------------------------------------------- | ---------------------- |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)        | 函数高亮               |
-| [oceanic-material](https://github.com/glepnir/oceanic-material)              | VIM 主题               |
-| [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim)                | 状态栏主题             |
-| [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)         | Icon 字体              |
-| [barbar.nvim](https://github.com/romgrk/barbar.nvim)                         | Tabbar 主题            |
-| [rainbow](https://github.com/luochen1990/rainbow)                            | 彩虹括号               |
-| [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)             | 颜色显示               |
-| [vim-illuminate](https://github.com/RRethy/vim-illuminate)                   | 高亮当前行所在单词     |
-| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                  | Dashboard 欢迎页       |
-| [yajs.vim](https://github.com/othree/yajs-core.vim)                          | JavaScript 高亮        |
-| [yats.vim](https://github.com/HerringtonDarkholme/yats.vim)                  | TypeScript 高亮        |
-| [html5.vim](https://github.com/othree/html5.vim)                             | Html 高亮              |
-| [coc.nvim](https://github.com/neoclide/coc.nvim)                             | 代码片段提示           |
-| [CompleteParameter.vim](https://github.com/tenfyzhong/CompleteParameter.vim) | 代码补全               |
-| [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.vim)      | Markdown 实时预览      |
-| [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode)              | Markdown Table 格式化  |
-| [vim-markdown-toc](https://github.com/dhruvasagar/vim-table-mode)            | 创建 Markdown TOC 目录 |
-| [bullets.vim](https://github.com/dkarter/bullets.vim)                        | 创建 Markdown 有序序列 |
-| [md-img-paste.vim](https://github.com/ferrine/md-img-paste.vim)              | 图片粘贴               |
+### UI
+
+| 名称                                | 功能             |
+| ----------------------------------- | ---------------- |
+| glepnir/zephyr-nvim                 | zephry 主题      |
+| glepnir/galaxyline.nvim             | status状态栏     |
+| glepnir/dashboard-nvim              | 启动面板         |
+| lukas-reineke/indent-blankline.nvim | 缩进高亮         |
+| lewis6991/gitsigns.nvim             | git 记录信息显示 |
+| petertriho/nvim-scrollbar           | 滚动条           |
+
+### Tools
+
+| 名称                          | 功能         |
+| ----------------------------- | ------------ |
+| nvim-telescope/telescope.nvim | 文件查找     |
+| Shatur/neovim-session-manager | Session 管理 |
+
+### Lang
+
+| 名称                                        | 功能                      |
+| ------------------------------------------- | ------------------------- |
+| editorconfig/editorconfig-vim               | .editorconfig 格式化      |
+| nvim-treesitter/nvim-treesitter             | 提供丰富                  |
+| nvim-treesitter/nvim-treesitter-textobjects | 提供 treesitter 文本对象 |
+
+### Completion
+
+| 名称                                                           | 功能                       |
+| -------------------------------------------------------------- | -------------------------- |
+| neovim/nvim-lspconfig                                          | 快速配置&启动 LSP Client |
+| williamboman/mason.nvim<br />williamboman/mason-lspconfig.nvim | 管理 LSP Client            |
+| glepnir/lspsaga.nvim                                           | highly performant UI       |
+| hrsh7th/nvim-cmp                                               | 补全插件                   |
+| hrsh7th/vim-vsnip                                              | snippets 代码片段          |
+| windwp/nvim-autopairs                                          | 自动补全括号               |
 
 ## 好玩的终端工具
 

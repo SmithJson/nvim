@@ -1,45 +1,80 @@
-local completion = {}
-local conf = require("modules.completion.config")
+local package = require('core.pack').package
+local conf = require('modules.completion.config')
 
-completion["neovim/nvim-lspconfig"] = {
+local enable_lsp_filetype = {
+    'go',
+    'lua',
+    'sh',
+    'rust',
+    'c',
+    'cpp',
+    'zig',
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+    'json',
+    'python',
+    'vue'
+}
+package({
+    'neovim/nvim-lspconfig',
+    ft = enable_lsp_filetype,
     config = conf.nvim_lsp,
-    requires = {
-        {"hrsh7th/nvim-cmp", config = conf.compe},
-        {"hrsh7th/vim-vsnip-integ", config = conf.vsnip},
-        {"hrsh7th/cmp-nvim-lsp"},
-        {"hrsh7th/cmp-buffer"},
-        {"hrsh7th/cmp-path"},
-        {"hrsh7th/cmp-cmdline"},
-        {"hrsh7th/cmp-vsnip"},
-        {"hrsh7th/cmp-nvim-lsp-signature-help"},
-        {"onsails/lspkind-nvim"},
-        {"hrsh7th/vim-vsnip"},
-        {"rafamadriz/friendly-snippets"}
-    }
-}
+})
 
-completion["williamboman/nvim-lsp-installer"] = {
-    opt = true,
-    cmd = {"LspInstall", "LspUninstall"}
-}
-
-completion["j-hui/fidget.nvim"] = {
+package({
+    'williamboman/mason.nvim',
     config = function()
-        require "fidget".setup {}
+        require('mason').setup()
     end
-}
+})
 
-completion["tami5/lspsaga.nvim"] = {
-    opt = true,
-    cmd = "Lspsaga",
-    config = conf.saga
-}
+package({
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+        require('mason-lspconfig').setup({
+            ensure_installed = { 'sumneko_lua', 'rust_analyzer', 'tsserver', 'vuels' },
+            automatic_installation = true
+        })
+    end
+})
 
-completion["windwp/nvim-autopairs"] = {
-    opt = true,
-    event = "InsertCharPre",
-    after = "nvim-lspconfig",
-    config = conf.autopairs
-}
+package({
+    'glepnir/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = conf.lspsaga
+})
 
-return completion
+package({
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    config = conf.nvim_cmp,
+    requires = {
+      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
+      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp'},
+      { 'hrsh7th/cmp-vsnip', after = 'vim-vsnip' },
+      { 'onsails/lspkind.nvim' }
+    },
+})
+
+package({
+    'hrsh7th/vim-vsnip',
+    event = 'InsertCharPre',
+    config = conf.vsnip
+})
+
+package({
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = conf.auto_pairs
+})
+
+package({
+    'j-hui/fidget.nvim',
+    config = function()
+        require"fidget".setup {}
+    end
+})

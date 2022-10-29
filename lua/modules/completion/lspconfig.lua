@@ -1,57 +1,78 @@
-if not packer_plugins['nvim-lspconfig'].loaded then
-    vim.cmd [[packadd nvim-lspconfig]]
-end
+local lspconfig = require('lspconfig')
 
-if not packer_plugins['lspsaga.nvim'].loaded then
-    vim.cmd [[packadd lspsaga.nvim]]
-end
-
-if not packer_plugins['nvim-lsp-installer'].loaded then
-    vim.cmd [[packadd nvim-lsp-installer]]
-end
-
--- local nvim_lsp = require('lspconfig')
-local saga = require('lspsaga')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+if not packer_plugins['cmp-nvim-lsp'].loaded then
+  vim.cmd([[packadd cmp-nvim-lsp]])
+end
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-saga.init_lsp_saga({
-    code_action_icon = ' ',
-    code_action_prompt = {
-        enable = true,
-        sign = false,
-        virtual_text = true,
-    }
-})
-
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {'documentation', 'detail', 'additionalTextEdits'}
+local signs = {
+  Error = ' ',
+  Warn = ' ',
+  Info = ' ',
+  Hint = ' ',
 }
-
-local function setup_servers()
-    local lsp_installer_servers = require'nvim-lsp-installer.servers'
-    local lsp_servers = {"clangd", "cssls", "dockerls", "html", "jsonls", "tsserver", "sumneko_lua", "intelephense", "jedi_language_server", "rust_analyzer", "vuels"}
-
-    for _, lsp in ipairs(lsp_servers) do
-        local server_available, requested_server = lsp_installer_servers.get_server(lsp)
-        if server_available then
-            requested_server:on_ready(function ()
-                local opts = {
-                    capabilities = capabilities,
-                    flags = {
-                        debounce_text_changes = 0,
-                    },
-                }
-                requested_server:setup(opts)
-            end)
-            if not requested_server:is_installed() then
-                -- Queue the server to be installed
-                requested_server:install()
-            end
-        end
-    end
+for type, icon in pairs(signs) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-setup_servers()
+vim.diagnostic.config({
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  virtual_text = {
+    prefix = '🔥',
+    source = true,
+  },
+})
 
+lspconfig.sumneko_lua.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        enable = true,
+        globals = { 'vim', 'packer_plugins' },
+      },
+      runtime = { version = 'LuaJIT' },
+      workspace = {
+        library = vim.list_extend({ [vim.fn.expand('$VIMRUNTIME/lua')] = true }, {}),
+      },
+    },
+  },
+})
+
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+  settings = {
+    imports = {
+      granularity = {
+        group = 'module',
+      },
+      prefix = 'self',
+    },
+    cargo = {
+      buildScripts = {
+        enable = true,
+      },
+    },
+    procMacro = {
+      enable = true,
+    },
+  },
+})
+
+local servers = {
+  'dockerls',
+  'pyright',
+  'bashls',
+  'zls',
+  'tsserver',
+  'vuels'
+}
+
+for _, server in ipairs(servers) do
+  lspconfig[server].setup({})
+end
