@@ -6,7 +6,22 @@ end
 
 function config.dashboard()
     local db = require('dashboard')
-    local z = require('zephyr')
+    local z = {
+      red = "#e95678",
+      redwine = "#d16d9e",
+      orange = "#FF8700",
+      yellow = "#f7bb3b",
+      green = "#afd700",
+      dark_green = "#98be65",
+      cyan = "#36d0e0",
+      blue = "#61afef",
+      violet = "#CBA6F7",
+      magenta = "#c678dd",
+      teal = "#1abc9c",
+      grey = "#928374",
+      brown = "#c78665",
+      black = "#000000"
+    }    
     db.custom_center = {
       {
         icon = '  ',

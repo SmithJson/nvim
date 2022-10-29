@@ -2,9 +2,9 @@ local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
 package({
-    'glepnir/zephyr-nvim',
+    'navarasu/onedark.nvim',
     config = function()
-        vim.cmd('colorscheme zephyr')
+        require('onedark').load()
     end
 })
 
@@ -60,13 +60,6 @@ package({
         {'nvim-lua/plenary.nvim', opt = true},
         {'kyazdani42/nvim-web-devicons', opt = true}
     }
-})
-
-package({
-    'petertriho/nvim-scrollbar',
-    config = function()
-        require("scrollbar").setup()
-    end
 })
 
 package({

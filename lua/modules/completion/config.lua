@@ -18,6 +18,7 @@ function config.nvim_cmp()
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
     end
 
+    local lspkind = require('lspkind')
     local cmp = require('cmp')
     cmp.setup({
         preselect = cmp.PreselectMode.Item,
@@ -26,7 +27,14 @@ function config.nvim_cmp()
             documentation = cmp.config.window.bordered()
         },
         formatting = {
-            fields = {'abbr', 'kind', 'menu'}
+            format = lspkind.cmp_format({
+              mode = 'symbol_text',
+              maxwidth = 50,
+              ellipsis_char = '...',
+              before = function (entry, vim_item)
+                return vim_item
+              end
+            })
         },
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({

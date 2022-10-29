@@ -39,3 +39,22 @@ package({
         {'nvim-lua/plenary.nvim', opt = true}
     }
 })
+
+package({
+    'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
+    cmd = 'MarkdownPreview',
+    run = 'cd app && npm install'
+})
+
+package({
+    'dhruvasagar/vim-table-mode',
+    ft = { 'markdown', 'text' }
+})
+
+package({
+    'mzlogin/vim-markdown-toc',
+    ft = { 'markdown', 'gitignore' }
+})
+
+package({ 'dkarter/bullets.vim' })

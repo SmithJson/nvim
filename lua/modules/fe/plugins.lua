@@ -25,5 +25,18 @@ package({
     end,
 })
 
+package({
+    'ray-x/web-tools.nvim',
+    cmd = 'npm install -g browser-sync vscode-langservers-extracted',
+    config = function()
+        require'web-tools'.setup({
+            keymaps = {
+              rename = nil,
+              repeat_rename = '.',
+            },
+        })
+    end,
+})
+
 package({'AndrewRadev/tagalong.vim'})
 package({'dense-analysis/ale'})

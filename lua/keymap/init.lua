@@ -45,7 +45,6 @@ local plug_map = {
     ['n|gd']= map_cr('Lspsaga peek_definition'):with_noremap():with_silent(),
     ['n|gD']= map_cmd('<cmd>lua vim.lsp.buf.implementation()<CR>'):with_noremap():with_silent(),
     ['n|gt']= map_cmd('<cmd>lua vim.lsp.buf.type_definition()<CR>'):with_noremap():with_silent(),
-    ['n|gs']= map_cr('Lspsaga signature_help'):with_noremap():with_silent(),
     ['n|gr']= map_cr('Lspsaga rename'):with_noremap():with_silent(),
     ['n|gh']= map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
     ['n|<Leader>o'] = map_cu('LSoutlineToggle'):with_noremap(),
