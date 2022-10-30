@@ -15,7 +15,7 @@ function config.lint()
         typescriptreact = {'eslint'},
         vue = {'eslint'}
      }
-    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    vim.api.nvim_create_autocmd({ "BufReadPost" }, {
         callback = function()
           require("lint").try_lint()
         end,
