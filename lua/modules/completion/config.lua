@@ -14,10 +14,6 @@ function config.lspsaga()
 end
 
 function config.nvim_cmp()
-    local feedkey = function(key, mode)
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-    end
-
     local lspkind = require('lspkind')
     local cmp = require('cmp')
     cmp.setup({
@@ -32,6 +28,12 @@ function config.nvim_cmp()
               maxwidth = 50,
               ellipsis_char = '...',
               before = function (entry, vim_item)
+                   vim_item.menu = ({
+                        nvim_lsp = "[LSP]",
+                        vsnip = "[Snippet]",
+                        buffer = "[Buffer]",
+                        path = "[Path]"
+                    })[entry.source.name]
                 return vim_item
               end
             })
@@ -44,24 +46,8 @@ function config.nvim_cmp()
             ["<CR>"] = cmp.mapping.confirm({
                 select = true
             }),
-            ["<Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                elseif vim.fn["vsnip#jumpable"](1) == 1 then
-                    feedkey("<Plug>(vsnip-jump-next)", "")
-                else
-                    fallback()
-                end
-            end, {"i", "s"}),
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-                    feedkey("<Plug>(vsnip-jump-prev)", "")
-                else
-                    fallback()
-                end
-            end, {"i", "s"})
+            ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+            ["<Tab>"] = cmp.mapping.select_next_item()
         }),
         snippet = {
             expand = function(args)
@@ -71,8 +57,8 @@ function config.nvim_cmp()
         sources = {
           { name = 'nvim_lsp' },
           { name = 'vsnip' },
-          { name = 'path' },
-          { name = 'buffer' }
+          { name = 'buffer' },
+          { name = 'path' }
         }
     })
 

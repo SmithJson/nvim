@@ -38,10 +38,5 @@ package({
     end,
 })
 
-package({
-    'mfussenegger/nvim-lint',
-    config = conf.lint
-})
-
 package({'AndrewRadev/tagalong.vim'})
 
