@@ -57,4 +57,9 @@ package({
     ft = { 'markdown', 'gitignore' }
 })
 
+package({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = conf.null_ls
+})
+
 package({ 'dkarter/bullets.vim' })
