@@ -9,6 +9,7 @@ function config.telescope()
     local fb_actions = require('telescope').extensions.file_browser.actions
     require('telescope').setup({
       defaults = {
+        file_ignore_patterns = {'node_modules', 'doc', '.git'},
         prompt_prefix = '🔭 ',
         selection_caret = ' ',
         layout_config = {

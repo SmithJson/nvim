@@ -91,21 +91,17 @@ function config.todo_comments()
 end
 
 function config.null_ls()
-    local null_ls = require("null-ls")
+        local null_ls = require("null-ls")
 
     local sources = {
-        -- Code Actions
-        null_ls.builtins.code_actions.eslint,
-        -- Completion
-        -- Diagnostics
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.diagnostics.stylelint,
-        -- Formatting
-        null_ls.builtins.formatting.eslint,
-        null_ls.builtins.formatting.stylelint,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.formatting.eslint_d
     }
 
-    null_ls.setup({ sources = sources })
+    null_ls.setup({
+        sources = sources
+    })
 end
 
 return config

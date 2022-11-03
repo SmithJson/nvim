@@ -70,7 +70,7 @@ local servers = {
   'bashls',
   'zls',
   'tsserver',
-  'vuels'
+  'volar'
 }
 
 for _, server in ipairs(servers) do
