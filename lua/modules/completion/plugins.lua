@@ -48,7 +48,7 @@ package({
 
 package({
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
+    event = 'BufEnter',
     config = conf.nvim_cmp,
     requires = {
       { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
