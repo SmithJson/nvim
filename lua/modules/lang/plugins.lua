@@ -2,11 +2,6 @@ local package = require('core.pack').package
 local conf = require('modules.lang.config')
 
 package({
-    'editorconfig/editorconfig-vim',
-    ft = { 'go', 'typescript', 'javascript', 'vim', 'rust', 'zig', 'c', 'cpp' },
-})
-
-package({
     'nvim-treesitter/nvim-treesitter',
     event = 'BufRead',
     run = ':TSUpdate',
