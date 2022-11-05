@@ -29,8 +29,22 @@ function config.nvim_treesitter()
     'java',
   }
 
+  local ensure_installed = {
+    'vue',
+    'json',
+    'jsonc',
+    'javascript',
+    'typescript',
+    'html',
+    'vim',
+    'bash',
+    'c',
+    'cpp',
+    'css'
+  }
+
   require('nvim-treesitter.configs').setup({
-    ensure_installed = 'all',
+    ensure_installed = ensure_installed,
     ignore_install = ignored,
     highlight = {
       enable = true,
