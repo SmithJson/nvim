@@ -2,13 +2,6 @@ local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
 package({
-    'navarasu/onedark.nvim',
-    config = function()
-        require('onedark').load()
-    end
-})
-
-package({
   'glepnir/zephyr-nvim',
   config = function ()
     vim.cmd([[colorscheme zephyr]])
