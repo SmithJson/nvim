@@ -9,6 +9,13 @@ package({
 })
 
 package({
+  'glepnir/zephyr-nvim',
+  config = function ()
+    vim.cmd([[colorscheme zephyr]])
+  end
+})
+
+package({
     'glepnir/dashboard-nvim',
     config = conf.dashboard
 })
