@@ -30,12 +30,10 @@ function config.nvim_treesitter()
   }
 
   local ensure_installed = {
-    'vue',
     'json',
     'jsonc',
     'javascript',
     'typescript',
-    'html',
     'vim',
     'bash',
     'c',
