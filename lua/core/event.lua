@@ -43,7 +43,8 @@ local definitions = {
     },
 
     filetype = {
-        {'FileType', 'dashboard', [[set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2]]}
+        {'FileType', 'dashboard', [[set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2]]},
+        {'BufWrite', '*.md', 'TableModeRealign'}
     },
 
     yank = {

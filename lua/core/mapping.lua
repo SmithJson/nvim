@@ -1,10 +1,3 @@
---[[
-Author      : zhanglei103
-Date        : 2021-09-28 00:54:41
-LastEditors : zhanglei103
-LastEditTime: 2021-09-28 00:54:42
-Description : Vim Keymap
---]]
 local bind    = require('keymap.bind')
 local map_cr  = bind.map_cr
 local map_cmd = bind.map_cmd
