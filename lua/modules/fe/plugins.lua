@@ -27,7 +27,7 @@ package({
 
 package({
     'ray-x/web-tools.nvim',
-    cmd = 'npm install -g browser-sync vscode-langservers-extracted',
+    run = 'npm install -g browser-sync vscode-langservers-extracted',
     config = function()
         require'web-tools'.setup({
             keymaps = {

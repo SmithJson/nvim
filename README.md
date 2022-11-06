@@ -1,203 +1,181 @@
 # Welcome to Stone's Neovim Configuration 👋
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+![Neovim](https://img.shields.io/badge/Neovim-0.8-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/SmithJson/nvim/blob/master/doc/index.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/SmithJson/nvim/blob/master/LICENSE)
-[![Twitter: Stone73665345](https://img.shields.io/twitter/follow/Stone73665345.svg?style=social)](https://twitter.com/Stone73665345)
 
-> 致力于将 Neovim 打造为适用于开发的编辑器
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/718612906eff41439970aee8928f477c~tplv-k3u1fbpfcp-watermark.image?)
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7b4f96270d14ee69df21c49828540a7~tplv-k3u1fbpfcp-watermark.image)
-
-### 🏠 [Homepage](https://github.com/SmithJson/nvim)
-
-### ✨ [Demo](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ff7679f79d4344518c1ea2c5c5c4b621~tplv-k3u1fbpfcp-watermark.image)
+## Table of contents
 
 <!-- vim-markdown-toc Redcarpet -->
 
-* [特性](#特性)
-* [Env](#env)
-* [依赖](#依赖)
-* [Ternimal 配置](#ternimal-配置)
-  * [Homebrew 安装](#homebrew-安装)
-  * [ZSH 安装](#zsh-安装)
-    * [zsh](#zsh)
-    * [修改 paths](#修改-paths)
-    * [修改默认 shell](#修改默认-shell)
-    * [on-my-zsh](#on-my-zsh)
-    * [Neord Font](#neord-font)
-    * [powerlevel9k 主题](#powerlevel9k-主题)
-* [Vim 配置](#vim-配置)
-  * [Node](#node)
-  * [Python](#python)
-  * [指令下载](#指令下载)
-  * [Neovim 下载](#neovim-下载)
-  * [My Neovim config](#my-neovim-config)
-  * [启动 Neovim](#启动-neovim)
-* [插件列表](#插件列表)
-* [好玩的终端工具](#好玩的终端工具)
-* [TODO](#todo)
+* [Features](#features)
+* [Environment](#environment)
+* [Downloads](#downloads)
+  * [Neovim](#neovim)
+  * [Neovim Configuration](#neovim-configuration)
+* [Usuage](#usuage)
+  * [Start Neovim](#start-neovim)
+  * [Install Plugin](#install-plugin)
+* [Keymappings](#keymappings)
+  * [Leader Key](#leader-key)
+  * [VIM Keymap](#vim-keymap)
+  * [Plugins Keymap](#plugins-keymap)
+* [Plugins](#plugins)
+  * [UI](#ui)
+  * [Tools](#tools)
+  * [Lang](#lang)
+  * [Completion](#completion)
+* [Interesting Terminal Tools](#interesting-terminal-tools)
 * [Author](#author)
-* [🤝 Contributing](#🤝-contributing)
 * [Show your support](#show-your-support)
-* [📝 License](#📝-license)
+* [Licenese MIT](#licenese-mit)
 
 <!-- vim-markdown-toc -->
 
-## 特性
+## Features
 
-1. 多语言文件添加头部信息
-2. 多语言代码高亮
-3. 多语言代码注释
-4. 多语言代码片段提示
-5. 文件导航
-6. 英文翻译
-7. 前端工作流
-8. 平滑滚动
-9. 中英输入法自动切换
-10. Html 标签自动补全
-11. Html 文件实时预览
-12. Markdown 实时预览
-13. Markdown Table 自动格式化
-14. Git history
+1. Syntax Highlighting
+2. Language Server Protocol
+3. Language Snippets Completion
+4. Front-end Workflow
+5. Fuzzy File Finder
+6. Visual File Navigation
 
-## Env
+## Environment
 
-- macOS Mojave v10.14.0
-- Kitty v0.17.4
+- macOS  Mojave v10.14.0
+- Kitty  v0.22.2
+- Nvim   v0.8.0-1210-gd367ed9b2
+- LuaJIT v2.1.0-beta3
+- Node   v14.20.0
 
-## 依赖
+## Downloads
 
-- NVIM v0.5.0-dev+ce976bf
-- LuaJIT 2.1.0-beta3
-- Ranger v1.9.3
-- Node v10.12.0+
-- Python v3+
-- pynvim
+### [Neovim](https://github.com/neovim/neovim/releases)
 
-## Ternimal 配置
-
-### [Homebrew 安装](https://brew.idayer.com/)
-
-### ZSH 安装
-
-#### zsh
-
-```
-brew install zsh
+```bash
+Download nvim-macos.tar.gz
+Run xattr -c ./nvim-macos.tar.gz (to avoid "unknown developer" warning)
+Extract: tar xzvf nvim-macos.tar.gz
+Run ./nvim-macos/bin/nvim
 ```
 
-#### 修改 paths
+### Neovim Configuration
 
-```
-vim /etc/paths
-
-将/usr/local/bin 放在 /usr/bin前
-/usr/local/bin
-/usr/bin
-/bin
-/usr/sbin
-/sbin
-```
-
-#### [修改默认 shell](https://www.jianshu.com/p/e328f5d83191)
-
-#### on-my-zsh
-
-```
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-source ~/.zshrc
-```
-
-#### [Neord Font](https://github.com/ryanoasis/nerd-fonts#option-3-install-script)
-
-#### powerlevel9k 主题
-
-```
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-```
-
-```
-vim ~/.zshrc
-
-# 下列代码粘贴到 ZSH_THEME
-POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-source ~/.zshrc
-```
-
-## Vim 配置
-
-### Node
-
-```
-brew install n
-n 10.12.0
-```
-
-### Python
-
-```
-pip3 install ranger-fm pynvim pillow
-```
-
-### 指令下载
-
-```
-brew install fd ripgrep lazygit
-```
-
-### [Neovim 下载](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-
-### My Neovim config
-
-```
+```bash
 git clone https://github.com/SmithJson/nvim.git ~/.config/nvim
 ```
 
-### 启动 Neovim
+## Usuage
 
-```
-# 一开始会因为插件缺失而报红，一直按 Enter 就行了，等待自动安装玩插件完毕后，重启 Neovim 即可
+### Start Neovim
+
+```bash
 nvim
 ```
 
-## 插件列表
+### Install Plugin
+
+```bash
+:PackerSync
+```
+
+## Keymappings
+
+### Leader Key
+
+- space
+
+### VIM Keymap
+
+| Mode   | Key | Function           |
+| ------ | --- | ------------------ |
+| Normal | sh  | 向左垂直分割窗口   |
+| Normal | sl  | 向右垂直分割窗口   |
+| Normal | sj  | 向下水平分割窗口   |
+| Normal | sk  | 向上水平分割窗口   |
+| Normal | srh | 旋转成水平分割布局 |
+| Normal | srv | 旋转成垂直分割布局 |
+| Visual | Y   | 复制到系统粘贴板   |
+
+### Plugins Keymap
+
+| Mode   | Key         | Function                            |
+| ------ | ----------- | ----------------------------------- |
+| Normal | Ctrl + `    | 切换 ToggleTerm 显示/隐藏           |
+| Normal | Leader + F  | 定位当前文件在 nvim-tree 的位置     |
+| Normal | Leader + e  | 切换 nvim-tree 显示/隐藏            |
+| Normal | Leader + os | 打开 Dashboard 启动页               |
+| Normal | Leader + ff | 模糊查找文件（全局）                |
+| Normal | Leader + fh | 模糊查找历史文件                    |
+| Normal | Leader + fb | 模糊查找文件（局部）                |
+| Normal | Leader + fw | 模糊查找关键字                      |
+| Normal | [ + e       | 跳转到到上一个诊断(info/warn/error) |
+| Normal | ] + e       | 跳转到到下一个诊断                  |
+| Normal | K           | 查看函数/方法的说明文档             |
+| Normal | ga          | 查看诊断结果的解决方案              |
+| Normal | gd          | 打开变量定义文件                    |
+| Normal | gr          | 修改当前文件某个变量名              |
+| Normal | gh          | 查看变量定义/引用文件               |
+| Normal | Tab         | 切换到下个 Tab                      |
+| Normal | Alt + Tab   | 切换到上个 Tab                      |
+| Normal | Ctrl + p    | 开启 Tab 匹配跳转                   |
+
+## Plugins
 
 ### UI
 
-| 名称                                | 功能             |
+| Name                                | Function         |
 | ----------------------------------- | ---------------- |
-| glepnir/zephyr-nvim                 | zephry 主题      |
-| glepnir/galaxyline.nvim             | status状态栏     |
+| glepnir/zephyr-nvim                 | Neovim 主题      |
+| glepnir/galaxyline.nvim             | Status状态栏     |
 | glepnir/dashboard-nvim              | 启动面板         |
 | lukas-reineke/indent-blankline.nvim | 缩进高亮         |
-| lewis6991/gitsigns.nvim             | git 记录信息显示 |
-| petertriho/nvim-scrollbar           | 滚动条           |
+| lewis6991/gitsigns.nvim             | Git 记录信息显示 |
+| sindrets/diffview.nvim              | 文件 Diff 记录   |
+| romgrk/barbar.nvim                  | Tab bar          |
+| nvim-tree/nvim-tree.lua             | 文件目录树       |
 
 ### Tools
 
-| 名称                          | 功能         |
-| ----------------------------- | ------------ |
-| nvim-telescope/telescope.nvim | 文件查找     |
-| Shatur/neovim-session-manager | Session 管理 |
+| Name                          | Function            |
+| ----------------------------- | ------------------- |
+| nvim-telescope/telescope.nvim | 文件查找            |
+| Shatur/neovim-session-manager | Session 管理        |
+| hrsh7th/vim-eft               | 高亮 f/F/b/B 操作   |
+| chentoast/marks.nvim          | 显示 mark 操作字母 |
+| segeljakt/vim-silicon         | 截图 code           |
+| akinsho/toggleterm.nvim       | Neovim 中打开终端   |
+| liuchengxu/vim-which-key      | Leader 建命令提示   |
 
 ### Lang
 
-| 名称                                        | 功能                      |
-| ------------------------------------------- | ------------------------- |
-| editorconfig/editorconfig-vim               | .editorconfig 格式化      |
-| nvim-treesitter/nvim-treesitter             | 提供丰富                  |
-| nvim-treesitter/nvim-treesitter-textobjects | 提供 treesitter 文本对象 |
+| Name                                        | Funciton                   |
+| ------------------------------------------- | -------------------------- |
+| nvim-treesitter/nvim-treesitter             | 语法高亮增强               |
+| numToStr/Comment.nvim                       | 代码注释                   |
+| JoosepAlviste/nvim-ts-context-commentstring | 注释 jsx/tsx               |
+| folke/todo-comments.nvim                    | 管理 TODO List             |
+| iamcco/markdown-preview.nvim                | Markdown 预览              |
+| dhruvasagar/vim-table-mode                  | 格式化 Markdown 表格       |
+| mzlogin/vim-markdown-toc                    | 自动生成 Markdown 目录     |
+| dkarter/bullets.vim                         | 自动增加 Markdown 有序列表 |
+| jose-elias-alvarez/null-ls.nvim             | 开发语言问题诊断           |
+
+### FE
+
+| Name                        | Function                |
+| --------------------------- | ----------------------- |
+| mattn/emmet-vim             | emment                  |
+| norcalli/nvim-colorizer.lua | 颜色预览                |
+| ray-x/web-tools.nvim        | 与 Live Server 插件相同 |
+| AndrewRadev/tagalong.vim    | 与 auto-close 插件相同  |
 
 ### Completion
 
-| 名称                                                           | 功能                       |
+| Name                                                           | Function                   |
 | -------------------------------------------------------------- | -------------------------- |
 | neovim/nvim-lspconfig                                          | 快速配置&启动 LSP Client |
 | williamboman/mason.nvim<br />williamboman/mason-lspconfig.nvim | 管理 LSP Client            |
@@ -205,10 +183,11 @@ nvim
 | hrsh7th/nvim-cmp                                               | 补全插件                   |
 | hrsh7th/vim-vsnip                                              | snippets 代码片段          |
 | windwp/nvim-autopairs                                          | 自动补全括号               |
+| j-hui/fidget.nvim                                              | 显示 LSP 启动信息          |
 
-## 好玩的终端工具
+## Interesting Terminal Tools
 
-| 名称       | 描述                               |
+| Name       | Function                           |
 | ---------- | ---------------------------------- |
 | FZF        | 终端文件查找                       |
 | mdp        | 终端 PPT                           |
@@ -219,36 +198,17 @@ nvim
 | youtube-dl | 视频下载指令                       |
 | ranger     | 终端下的文件管理系系统【五星推荐】 |
 
-## TODO
-
-- [ ] 一键安装配置
-- [ ] JS Debug
-- [ ] 预览图像文件
-
 ## Author
 
-👤 **辩机**
+👤 **辩机 (SmithJson)**
 
-- 掘金: [辩机](https://juejin.im/user/2999123452636631)
-- 牛客：[辩机](https://www.nowcoder.com/profile/3264712)
+- [掘金](https://juejin.im/user/2999123452636631)
+- [牛客](https://www.nowcoder.com/profile/3264712)
 - Email：[stone_fe@163.com](stone_fe@163.com)
 - Github: [@SmithJson](https://github.com/SmithJson)
-- Twitter: [@Stone73665345](https://twitter.com/Stone73665345)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check [issues page](https://github.com/SmithJson/nvim/issues).
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-## 📝 License
-
-Copyright © 2021 [辩机](https://github.com/SmithJson).
-
-This project is [MIT](https://github.com/SmithJson/nvim/blob/master/LICENSE) licensed.
-
----
+## Licenese MIT

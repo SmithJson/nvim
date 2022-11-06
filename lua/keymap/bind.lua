@@ -1,10 +1,3 @@
---[[
-Author      : zhanglei103
-Date        : 2021-09-27 23: 20: 27
-LastEditors : zhanglei103
-LastEditTime: 2021-09-27 23: 20: 29
-Description : Bind Keymap Utility Function
---]]
 local rhs_options = {}
 
 function rhs_options:new()

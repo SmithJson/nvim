@@ -176,7 +176,7 @@ function config.barbar()
       tabpages = true,
 
       -- Enable/disable close button
-      closable = false,
+      closable = true,
 
       -- Enables/disable clickable tabs
       --  - left-click: go to buffer
