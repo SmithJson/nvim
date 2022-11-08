@@ -27,7 +27,6 @@ local enable_indent_filetype = {
     'rust',
     'cpp',
     'typescript',
-    'typescriptreact',
     'javascript',
     'json',
     'python',
