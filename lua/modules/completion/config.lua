@@ -14,29 +14,26 @@ function config.lspsaga()
 end
 
 function config.nvim_cmp()
-    local lspkind = require('lspkind')
     local cmp = require('cmp')
     cmp.setup({
         preselect = cmp.PreselectMode.Item,
         window = {
-            completion = cmp.config.window.bordered(),
+            completion = {
+              winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+              col_offset = -3,
+              side_padding = 0
+            },
             documentation = cmp.config.window.bordered()
         },
         formatting = {
-            format = lspkind.cmp_format({
-              mode = 'symbol_text',
-              maxwidth = 50,
-              ellipsis_char = '...',
-              before = function (entry, vim_item)
-                   vim_item.menu = ({
-                        nvim_lsp = "[LSP]",
-                        vsnip = "[Snippet]",
-                        buffer = "[Buffer]",
-                        path = "[Path]"
-                    })[entry.source.name]
-                return vim_item
-              end
-            })
+            fields = { "kind", "abbr", "menu" },
+            format = function(entry, vim_item)
+              local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+              local strings = vim.split(kind.kind, "%s", { trimempty = true })
+              kind.kind = " " .. strings[1] .. " "
+              kind.menu = "    (" .. strings[2] .. ")"
+              return kind
+            end,
         },
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({

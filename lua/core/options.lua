@@ -54,6 +54,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 
 -- wrap
+opt.wrap = false
 opt.linebreak = true
 opt.whichwrap = 'h,l,<,>,[,],~'
 opt.breakindentopt = 'shift:2,min:20'

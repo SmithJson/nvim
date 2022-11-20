@@ -1,10 +1,17 @@
 local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
+-- package({
+--   'Shatur/neovim-ayu',
+--   config = function ()
+--       vim.cmd([[colorscheme ayu-mirage]])
+--   end
+-- })
+
 package({
-  'Shatur/neovim-ayu',
+  'glepnir/zephyr-nvim',
   config = function ()
-      vim.cmd([[colorscheme ayu-mirage]])
+      vim.cmd([[colorscheme zephyr]])
   end
 })
 
