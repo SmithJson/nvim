@@ -63,6 +63,7 @@ opt.foldlevelstart = 99
 opt.foldmethod = 'marker'
 
 opt.number = true
+opt.relativenumber = true
 opt.signcolumn = 'yes'
 opt.spelloptions = 'camel'
 

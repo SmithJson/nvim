@@ -33,6 +33,7 @@ local enable_indent_filetype = {
     'sh',
     'rust',
     'cpp',
+    'vue',
     'typescript',
     'javascript',
     'json',
