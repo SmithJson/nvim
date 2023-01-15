@@ -10,6 +10,7 @@ local enable_emmet_filetype = {
     'typescript',
     'typescriptreact'
 }
+
 package({
     'mattn/emmet-vim',
     event = 'InsertEnter',
@@ -26,17 +27,23 @@ package({
 })
 
 package({
-    'ray-x/web-tools.nvim',
-    run = 'npm install -g browser-sync vscode-langservers-extracted',
-    config = function()
-        require'web-tools'.setup({
-            keymaps = {
-              rename = nil,
-              repeat_rename = '.',
-            },
-        })
-    end,
+    'kkoomen/vim-doge',
+    event = 'BufRead',
+    run = ':call doge#install()',
 })
 
 package({'AndrewRadev/tagalong.vim'})
+
+-- package({
+--     'ray-x/web-tools.nvim',
+--     run = 'npm install -g browser-sync vscode-langservers-extracted',
+--     config = function()
+--         require'web-tools'.setup({
+--             keymaps = {
+--               rename = nil,
+--               repeat_rename = '.',
+--             },
+--         })
+--     end,
+-- })
 
