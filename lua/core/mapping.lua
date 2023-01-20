@@ -4,11 +4,6 @@ local map_cmd = bind.map_cmd
 
 local vim_map = {
     -- Nomal
-    ["n|<LEADER>w"]    = map_cmd('<C-w>w'):with_noremap(),
-    ["n|<LEADER>k"]    = map_cmd('<C-w>k'):with_noremap(),
-    ["n|<LEADER>j"]    = map_cmd('<C-w>j'):with_noremap(),
-    ["n|<LEADER>h"]    = map_cmd('<C-w>h'):with_noremap(),
-    ["n|<LEADER>l"]    = map_cmd('<C-w>l'):with_noremap(),
     ["n|s"]            = map_cmd('<nop>'),
     ["n|sj"]           = map_cmd(':set nosplitbelow<CR>:split<CR>:set splitbelow<CR>'):with_noremap(),
     ["n|sk"]           = map_cmd(':set splitbelow<CR>:split<CR>'):with_noremap(),

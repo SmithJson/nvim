@@ -25,10 +25,7 @@ package({
 })
 
 package({
-  'chentoast/marks.nvim',
-  config = function()
-    require'marks'.setup {}
-  end
+  'christoomey/vim-tmux-navigator',
 })
 
 -- package({

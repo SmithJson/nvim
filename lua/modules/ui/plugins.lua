@@ -22,12 +22,12 @@ package({
     require('vscode').setup({
         transparent = false,
         italic_comments = true,
-        disable_nvimtree_bg = true,
+        disable_nvimtree_bg = false,
         color_overrides = {
             vscLightBlue = '#03acf1',
             vscBlue = '#FB678E',
             vscYellow = '#feb380',
-            vscPink = '#CC99EC',
+            vscPink = '#FB678E',
             vscBlueGreen = '#80cc91'
         }
     })

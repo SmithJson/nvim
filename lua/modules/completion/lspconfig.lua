@@ -44,35 +44,37 @@ lspconfig.sumneko_lua.setup({
   },
 })
 
-lspconfig.rust_analyzer.setup({
-  capabilities = capabilities,
-  settings = {
-    imports = {
-      granularity = {
-        group = 'module',
-      },
-      prefix = 'self',
-    },
-    cargo = {
-      buildScripts = {
-        enable = true,
-      },
-    },
-    procMacro = {
-      enable = true,
-    },
-  },
-})
+-- lspconfig.rust_analyzer.setup({
+--   capabilities = capabilities,
+--   settings = {
+--     imports = {
+--       granularity = {
+--         group = 'module',
+--       },
+--       prefix = 'self',
+--     },
+--     cargo = {
+--       buildScripts = {
+--         enable = true,
+--       },
+--     },
+--     procMacro = {
+--       enable = true,
+--     },
+--   },
+-- })
 
 local servers = {
-  'dockerls',
-  'pyright',
-  'bashls',
+  -- 'dockerls',
+  -- 'pyright',
+  -- 'bashls',
   'zls',
   'tsserver',
   'vuels'
 }
 
 for _, server in ipairs(servers) do
-  lspconfig[server].setup({})
+  lspconfig[server].setup({
+    capabilities = capabilities
+  })
 end
