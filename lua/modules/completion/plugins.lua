@@ -42,13 +42,14 @@ package({
 
 package({
     'glepnir/lspsaga.nvim',
-    after = 'nvim-lspconfig',
+    event = 'BufRead',
+    branch = "main",
     config = conf.lspsaga
 })
 
 package({
     'hrsh7th/nvim-cmp',
-    event = 'BufEnter',
+    event = 'BufRead',
     config = conf.nvim_cmp,
     requires = {
       { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },

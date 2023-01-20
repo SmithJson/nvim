@@ -2,16 +2,35 @@ local package = require('core.pack').package
 local conf = require('modules.ui.config')
 
 -- package({
---   'Shatur/neovim-ayu',
+--     'Shatur/neovim-ayu',
+--     config = function ()
+--         vim.cmd([[colorscheme ayu-mirage]])
+--     end
+-- })
+
+-- package({
+--   'glepnir/zephyr-nvim',
 --   config = function ()
---       vim.cmd([[colorscheme ayu-mirage]])
+--       vim.cmd([[colorscheme zephyr]])
 --   end
 -- })
 
 package({
-  'glepnir/zephyr-nvim',
+  'Mofiqul/vscode.nvim',
   config = function ()
-      vim.cmd([[colorscheme zephyr]])
+    local c = require('vscode.colors').get_colors()
+    require('vscode').setup({
+        transparent = false,
+        italic_comments = true,
+        disable_nvimtree_bg = true,
+        color_overrides = {
+            vscLightBlue = '#03acf1',
+            vscBlue = '#FB678E',
+            vscYellow = '#feb380',
+            vscPink = '#CC99EC',
+            vscBlueGreen = '#80cc91'
+        }
+    })
   end
 })
 

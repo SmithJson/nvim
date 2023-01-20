@@ -45,7 +45,7 @@ local plug_map = {
     ['n|gd']= map_cr('Lspsaga peek_definition'):with_noremap():with_silent(),
     ['n|gr']= map_cr('Lspsaga rename'):with_noremap():with_silent(),
     ['n|gh']= map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
-    ['n|<Leader>o'] = map_cu('LSoutlineToggle'):with_noremap(),
+    ['n|<Leader>o'] = map_cu('Lspsaga outline'):with_noremap(),
 
     -- Barbar
     ["n|<Tab>"] = map_cr("BufferNext"):with_noremap():with_silent(),

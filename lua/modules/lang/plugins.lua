@@ -31,10 +31,10 @@ package({
     config = conf.nvim_treesitter,
 })
 
-package({
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter'
-})
+-- package({
+--     'nvim-treesitter/nvim-treesitter-textobjects',
+--     after = 'nvim-treesitter'
+-- })
 
 package({
     'numToStr/Comment.nvim',
@@ -77,9 +77,9 @@ package({
     ft = { 'markdown', 'gitignore' }
 })
 
-package({
-    'jose-elias-alvarez/null-ls.nvim',
-    config = conf.null_ls
-})
+-- package({
+--     'jose-elias-alvarez/null-ls.nvim',
+--     config = conf.null_ls
+-- })
 
 package({ 'dkarter/bullets.vim' })

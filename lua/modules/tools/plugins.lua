@@ -31,10 +31,10 @@ package({
   end
 })
 
-package({
-  'segeljakt/vim-silicon',
-  run = 'cargo install silicon'
-})
+-- package({
+--   'segeljakt/vim-silicon',
+--   run = 'cargo install silicon'
+-- })
 
 package({
   'akinsho/toggleterm.nvim',
