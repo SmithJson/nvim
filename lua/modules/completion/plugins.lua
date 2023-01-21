@@ -47,17 +47,17 @@ package({
     config = conf.lspsaga
 })
 
+
 package({
     'hrsh7th/nvim-cmp',
     event = 'BufRead',
     config = conf.nvim_cmp,
     requires = {
-      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp'},
-      { 'hrsh7th/cmp-vsnip', after = 'vim-vsnip' },
-      { 'onsails/lspkind.nvim' }
+        { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
+        { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+        { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+        { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp'},
+        { 'hrsh7th/cmp-vsnip', after = 'vim-vsnip' }
     },
 })
 

@@ -9,25 +9,62 @@ function config.lspsaga()
 end
 
 function config.nvim_cmp()
+    local border_opts = { border = "single", winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None" }
+    local symbol_map = {
+        Text          = "",
+        Method        = "",
+        Function      = "",
+        Field         = "",
+        Variable      = "",
+        Interface     = "",
+        Module        = "",
+        Value         = "",
+        Enum          = "了",
+        Keyword       = "",
+        Color         = "",
+        File          = "",
+        Folder        = "",
+        EnumMember    = "",
+        Constant      = "",
+        Struct        = "",
+        Event         = "",
+        Operator      = "",
+        Array = "",
+        Boolean = "",
+        Class = "",
+        Constructor = "",
+        Key = "",
+        Namespace = "",
+        Null = "",
+        Number = "",
+        Object = "",
+        Package = "",
+        Property = "",
+        Reference = "",
+        Snippet = "",
+        String = "𝓐",
+        TypeParameter = "",
+        Unit = "",
+    }
     local cmp = require('cmp')
+
     cmp.setup({
-        preselect = cmp.PreselectMode.Item,
+        preselect = cmp.PreselectMode.None,
         window = {
-            completion = {
-              winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-              col_offset = -3,
-              side_padding = 0
-            },
-            documentation = cmp.config.window.bordered()
+            completion = cmp.config.window.bordered(border_opts),
+            documentation = cmp.config.window.bordered(border_opts),
         },
         formatting = {
-            fields = { "kind", "abbr", "menu" },
             format = function(entry, vim_item)
-              local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-              local strings = vim.split(kind.kind, "%s", { trimempty = true })
-              kind.kind = " " .. strings[1] .. " "
-              kind.menu = "    (" .. strings[2] .. ")"
-              return kind
+                print(entry.source.name);
+                vim_item.kind = string.format("%s %s", symbol_map[vim_item.kind], vim_item.kind)
+                vim_item.menu = ({
+                    buffer   = "[BUF]",
+                    nvim_lsp = "[LSP]",
+                    vsnip  = "[VSP]",
+                    cmdline = "[CMD]"
+                })[entry.source.name]
+                return vim_item
             end,
         },
         -- You can set mappings if you want
@@ -57,22 +94,22 @@ function config.nvim_cmp()
     cmp.setup.cmdline("/", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources(
-          {{ name = "buffer" }},
-          {{ name = "cmdline" }}
+            { { name = "buffer" } },
+            { { name = "cmdline" } }
         )
     })
     cmp.setup.cmdline("?", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources(
-          {{ name = "buffer" }},
-          {{ name = "cmdline" }}
+            { { name = "buffer" } },
+            { { name = "cmdline" } }
         )
     })
     cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources(
-          {{ name = "path" }},
-          {{ name = "cmdline" }}
+            { { name = "path" } },
+            { { name = "cmdline" } }
         )
     })
 end

@@ -28,6 +28,13 @@ package({
   'christoomey/vim-tmux-navigator',
 })
 
+package({
+  'adelarsq/image_preview.nvim',
+  config = function ()
+    require("image_preview").setup({})
+  end
+})
+
 -- package({
 --   'segeljakt/vim-silicon',
 --   run = 'cargo install silicon'
