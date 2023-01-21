@@ -97,10 +97,11 @@ function config.todo_comments()
 end
 
 function config.null_ls()
-        local null_ls = require("null-ls")
+    local null_ls = require("null-ls")
 
     local sources = {
-        null_ls.builtins.diagnostics.eslint
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.stylelint
     }
 
     null_ls.setup({

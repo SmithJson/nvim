@@ -50,6 +50,7 @@ opt.undofile = true
 opt.smarttab = true
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 
