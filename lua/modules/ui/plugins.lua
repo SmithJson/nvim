@@ -102,7 +102,8 @@ package({
 })
 
 package({
-    'romgrk/barbar.nvim',
-    config = conf.barbar,
+    'akinsho/bufferline.nvim',
+    event = "BufReadPre",
+    config = conf.bufferline,
     requires = {{ 'kyazdani42/nvim-web-devicons' }}
 })

@@ -47,16 +47,10 @@ local plug_map = {
     ['n|gh']= map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
     ['n|<Leader>o'] = map_cu('Lspsaga outline'):with_noremap(),
 
-    -- Barbar
-    ["n|<Tab>"] = map_cr("BufferNext"):with_noremap():with_silent(),
-    ["n|<S-Tab>"] = map_cr("BufferPrevious"):with_noremap():with_silent(),
-    ["n|<C-p>"] = map_cr("BufferPick"):with_noremap():with_silent(),
-    ["n|<A-<>"] = map_cr("BufferMovePrevious"):with_noremap():with_silent(),
-    ["n|<A->>"] = map_cr("BufferMoveNext"):with_noremap():with_silent(),
-    ["n|<A-c>"] = map_cr("BufferClose"):with_noremap():with_silent(),
-    ["n|<Leader>bb"] = map_cr("BufferOrderByBufferNumber"):with_noremap():with_silent(),
-    ["n|<Leader>bd"] = map_cr("BufferOrderByDirectory"):with_noremap():with_silent(),
-    ["n|<Leader>bl"] = map_cr("BufferOrderByLanguage"):with_noremap():with_silent()
+    -- BufferLine
+    ["n|<Tab>"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),
+    ["n|<S-Tab>"] = map_cr("BufferLineCyclePrev"):with_noremap():with_silent(),
+    ["n|<C-p>"] = map_cr("BufferLinePick"):with_noremap():with_silent()
 }
 
 bind.nvim_load_mapping(plug_map)

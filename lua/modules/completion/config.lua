@@ -62,6 +62,7 @@ function config.nvim_cmp()
                     buffer   = "[BUF]",
                     nvim_lsp = "[LSP]",
                     vsnip  = "[VSP]",
+                    path = "[PATH]",
                     cmdline = "[CMD]"
                 })[entry.source.name]
                 return vim_item
@@ -91,14 +92,7 @@ function config.nvim_cmp()
         }
     })
 
-    cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources(
-            { { name = "buffer" } },
-            { { name = "cmdline" } }
-        )
-    })
-    cmp.setup.cmdline("?", {
+    cmp.setup.cmdline({"/", "?"}, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources(
             { { name = "buffer" } },

@@ -50,7 +50,7 @@ package({
 
 package({
     'hrsh7th/nvim-cmp',
-    event = 'BufRead',
+    event = { "InsertEnter", "CmdlineEnter" },
     config = conf.nvim_cmp,
     requires = {
         { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
