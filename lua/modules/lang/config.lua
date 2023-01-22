@@ -4,73 +4,24 @@ function config.nvim_treesitter()
   vim.api.nvim_command('set foldmethod=expr')
   vim.api.nvim_command('set foldexpr=nvim_treesitter#foldexpr()')
 
-  local ignored = {
-    'phpdoc',
-    'astro',
-    'beancount',
-    'bibtex',
-    'bluprint',
-    'eex',
-    'embedded_template',
-    'vala',
-    'wgsl',
-    'verilog',
-    'twig',
-    'turtle',
-    'm68k',
-    'hocon',
-    'lalrpop',
-    'meson',
-    'mehir',
-    'rasi',
-    'rego',
-    'racket',
-    'pug',
-    'java',
-  }
-
-  local ensure_installed = {
-    'json',
-    'jsonc',
-    'vue',
-    'html',
-    'javascript',
-    'typescript',
-    'vim',
-    'bash',
-    'c',
-    'cpp',
-    'css'
-  }
+  local ensure_installed = { 'json', 'jsonc', 'vue', 'html', 'javascript', 'typescript', 'vim', 'bash', 'c', 'cpp', 'css' }
 
   require('nvim-treesitter.configs').setup({
     ensure_installed = ensure_installed,
-    ignore_install = ignored,
     highlight = {
       enable = true,
     },
     context_commentstring = {
-        enable = true,
-        enable_autocmd = false
-   },
-    textobjects = {
-      select = {
-        enable = true,
-        keymaps = {
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-        },
-      },
-    },
+      enable = true,
+      enable_autocmd = false
+    }
   })
 end
 
 function config.todo_comments()
   local status_ok, todo_comments = pcall(require, "todo-comments")
   if not status_ok then
-      return
+    return
   end
 
   local error_red = "#DB4B4B"
@@ -81,32 +32,36 @@ function config.todo_comments()
   local note_green = "#10B981"
 
   todo_comments.setup({
-      keywords = {
-          FIX = {
-              icon = " ",
-              color = error_red,
-              alt = {"FIXME", "BUG", "FIXIT", "ISSUE"}
-          },
-          TODO = {icon = " ", color = hint_blue},
-          HACK = {icon = " ", color = info_yellow},
-          WARN = {icon = " ", color = warning_orange, alt = {"WARNING", "XXX"}},
-          PERF = {icon = " ", color = perf_purple, alt = {"OPTIM", "PERFORMANCE", "OPTIMIZE"}},
-          NOTE = {icon = " ", color = note_green, alt = {"INFO"}}
-      }
+    keywords = {
+      FIX = {
+        icon = " ",
+        color = error_red,
+        alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }
+      },
+      TODO = { icon = " ", color = hint_blue },
+      HACK = { icon = " ", color = info_yellow },
+      WARN = { icon = " ", color = warning_orange, alt = { "WARNING", "XXX" } },
+      PERF = { icon = " ", color = perf_purple, alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+      NOTE = { icon = " ", color = note_green, alt = { "INFO" } }
+    }
   })
 end
 
 function config.null_ls()
-    local null_ls = require("null-ls")
+  local null_ls = require("null-ls")
 
-    local sources = {
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.diagnostics.stylelint
-    }
+  local sources = {
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.diagnostics.stylelint,
 
-    null_ls.setup({
-        sources = sources
-    })
+    null_ls.builtins.code_actions.eslint,
+    null_ls.builtins.code_actions.stylelint,
+  }
+
+  null_ls.setup({
+    debounce = 150,
+    sources = sources
+  })
 end
 
 return config

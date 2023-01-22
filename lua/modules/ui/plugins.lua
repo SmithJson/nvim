@@ -21,14 +21,15 @@ package({
     local c = require('vscode.colors').get_colors()
     require('vscode').setup({
         transparent = false,
-        italic_comments = true,
+        italic_comments = false,
         disable_nvimtree_bg = false,
         color_overrides = {
             vscLightBlue = '#03acf1',
             vscBlue = '#FB678E',
             vscYellow = '#feb380',
             vscPink = '#FB678E',
-            vscBlueGreen = '#80cc91'
+            vscOrange = '#80cc91',
+            vscBlueGreen = '#6fc6ec'
         }
     })
   end

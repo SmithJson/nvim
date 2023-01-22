@@ -1,15 +1,7 @@
 local package = require('core.pack').package
 local conf = require('modules.fe.config')
 
-local enable_emmet_filetype = {
-    'html',
-    'css',
-    'javascript',
-    'javascriptreact',
-    'vue',
-    'typescript',
-    'typescriptreact'
-}
+local enable_emmet_filetype = { 'html', 'css', 'javascript', 'javascriptreact', 'vue', 'typescript', 'typescriptreact' }
 
 package({
     'mattn/emmet-vim',

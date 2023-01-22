@@ -17,6 +17,8 @@ package({
   config = conf.session
 })
 
+package({ 'ahonn/vim-fileheader' })
+
 package({
   'hrsh7th/vim-eft',
   config = function()

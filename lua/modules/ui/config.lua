@@ -174,13 +174,9 @@ function config.bufferline()
       },
       separator_style   = 'none',
       buffer_close_icon = '',
-      offsets           = {
-        {
-          filetype = "NvimTree",
-          text = "Explore",
-          highlight = 'NvimTreeNormal'
-        }
-      },
+      offsets = {
+        { filetype = "NvimTree", text = "EXPLORER", text_align = "center" }
+      }
     },
   })
 end

@@ -1,24 +1,11 @@
 local package = require('core.pack').package
 local conf = require('modules.completion.config')
 
-local enable_lsp_filetype = {
-    'go',
-    'lua',
-    'sh',
-    'rust',
-    'c',
-    'cpp',
-    'zig',
-    'javascript',
-    'javascriptreact',
-    'typescript',
-    'typescriptreact',
-    'json',
-    'python',
-    'vue'
-}
+local enable_lsp_filetype = { 'go', 'lua', 'sh', 'rust', 'c', 'cpp', 'zig', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json', 'python', 'vue' }
+
 package({
     'neovim/nvim-lspconfig',
+    event = "BufReadPre",
     ft = enable_lsp_filetype,
     config = conf.nvim_lsp,
 })
@@ -34,7 +21,7 @@ package({
     'williamboman/mason-lspconfig.nvim',
     config = function()
         require('mason-lspconfig').setup({
-            ensure_installed = { 'sumneko_lua', 'rust_analyzer', 'tsserver', 'vuels' },
+            ensure_installed = { 'sumneko_lua', 'tsserver', 'vuels' },
             automatic_installation = true
         })
     end

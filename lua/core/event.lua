@@ -36,7 +36,7 @@ local definitions = {
         {'WinEnter,BufEnter,InsertLeave', '*', [[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]]},
         {'WinLeave,BufLeave,InsertEnter', '*', [[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]]},
         -- Force write shada on leaving nvim
-        {'VimResized', '*', [[tabdo wincmd =]]}, 
+        {'VimResized', '*', [[tabdo wincmd =]]},
         {'VimLeave', '*', [[if has('nvim') | wshada! | else | wviminfo! | endif]]},
         -- Check if file changed when its window is focus, more eager than 'autoread'
         {'FocusGained', '*', [[checktime]]}
