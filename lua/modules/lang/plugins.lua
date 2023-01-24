@@ -13,22 +13,10 @@ package({
     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup({
-            pre_hook = function(ctx)
-                local utils = require "Comment.utils"
-                local location = nil
-                if ctx.ctype == utils.ctype.blockwise then
-                    location = require("ts_context_commentstring.utils").get_cursor_location()
-                elseif ctx.cmotion == utils.cmotion.v or ctx.cmotion == utils.cmotion.V then
-                    location = require("ts_context_commentstring.utils").get_visual_start_location()
-                end
-
-                return require("ts_context_commentstring.internal").calculate_commentstring {
-                    key = ctx.ctype == utils.ctype.linewise and "__default" or "__multiline",
-                    location = location,
-                }
-            end
+            pre_hook =  require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
         })
     end,
+    after = 'nvim-ts-context-commentstring',
     requires = {{ 'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter' }}
 })
 

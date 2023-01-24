@@ -56,7 +56,6 @@ function config.nvim_cmp()
         },
         formatting = {
             format = function(entry, vim_item)
-                print(entry.source.name);
                 vim_item.kind = string.format("%s %s", symbol_map[vim_item.kind], vim_item.kind)
                 vim_item.menu = ({
                     buffer   = "[BUF]",
