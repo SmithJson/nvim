@@ -54,8 +54,8 @@ function config.null_ls()
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.diagnostics.stylelint,
 
-    null_ls.builtins.code_actions.eslint,
-    null_ls.builtins.code_actions.stylelint,
+    -- null_ls.builtins.code_actions.eslint,
+    -- null_ls.builtins.code_actions.stylelint,
   }
 
   null_ls.setup({
