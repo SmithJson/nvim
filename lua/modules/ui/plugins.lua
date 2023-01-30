@@ -37,6 +37,7 @@ package({
 
 package({
     'glepnir/dashboard-nvim',
+    event = 'VimEnter',
     config = conf.dashboard
 })
 

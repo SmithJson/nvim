@@ -32,9 +32,6 @@ local definitions = {
     },
 
     window = {
-        -- Highlight current line only on focused window
-        {'WinEnter,BufEnter,InsertLeave', '*', [[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]]},
-        {'WinLeave,BufLeave,InsertEnter', '*', [[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]]},
         -- Force write shada on leaving nvim
         {'VimResized', '*', [[tabdo wincmd =]]},
         {'VimLeave', '*', [[if has('nvim') | wshada! | else | wviminfo! | endif]]},
@@ -43,7 +40,6 @@ local definitions = {
     },
 
     filetype = {
-        {'FileType', 'dashboard', [[set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2]]},
         {'BufWrite', '*.md', 'TableModeRealign'}
     },
 

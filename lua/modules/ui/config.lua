@@ -6,78 +6,47 @@ end
 
 function config.dashboard()
   local db = require('dashboard')
-  local z = {
-    red = "#e95678",
-    redwine = "#d16d9e",
-    orange = "#FF8700",
-    yellow = "#f7bb3b",
-    green = "#afd700",
-    dark_green = "#98be65",
-    cyan = "#36d0e0",
-    blue = "#61afef",
-    violet = "#CBA6F7",
-    magenta = "#c678dd",
-    teal = "#1abc9c",
-    grey = "#928374",
-    brown = "#c78665",
-    black = "#000000"
-  }
-  db.custom_center = {
-    {
-      icon = '  ',
-      icon_hl = { fg = z.red },
-      desc = 'Update Plugins                          ',
-      shortcut = 'SPC p u',
-      action = 'PackerUpdate',
+  db.setup({
+    theme = 'hyper',
+    disable_move = true,
+    config = {
+        footer = {""},
+        header = {
+            "███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗",
+            "██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║",
+            "█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║",
+            "██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║",
+            "███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║",
+            "╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝",
+            "",
+            "[  辩机 ]     ",
+            ""
+        },
+      week_header = {
+       enable = false,
+      },
+      shortcut = {
+        {
+            desc = ' Update',
+            group = '@property',
+            action = 'PackerSync',
+            key = 'u'
+        },
+        {
+          desc = ' Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Recently',
+          group = 'Number',
+          action = ':SessionManager load_current_dir_session',
+          key = 'l',
+        }
+      },
     },
-    {
-      icon = '  ',
-      icon_hl = { fg = z.yellow },
-      desc = 'Recently opened files                   ',
-      action = 'Telescope oldfiles',
-      shortcut = 'SPC f h',
-    },
-    {
-      icon = '  ',
-      icon_hl = { fg = z.cyan },
-      desc = 'Find  File                              ',
-      action = 'Telescope find_files find_command=rg,--hidden,--files',
-      shortcut = 'SPC f f',
-    },
-    {
-      icon = '  ',
-      icon_hl = { fg = z.blue },
-      desc = 'File Browser                            ',
-      action = 'Telescope file_browser',
-      shortcut = 'SPC f b',
-    },
-    {
-      icon = '  ',
-      icon_hl = { fg = z.oragne },
-      desc = 'Find  word                              ',
-      action = 'Telescope live_grep',
-      shortcut = 'SPC f w',
-    },
-    {
-      icon = '  ',
-      icon_hl = { fg = z.redwine },
-      desc = 'Open Personal dotfiles                  ',
-      action = 'Telescope dotfiles path=' .. vim.env.HOME .. '/.dotfiles',
-      shortcut = 'SPC f d',
-    },
-  }
-  db.custom_header = {
-    "",
-    "",
-    "███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗",
-    "██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║",
-    "█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║",
-    "██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║",
-    "███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║",
-    "╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝",
-    "",
-    "[  辩机 ]     "
-  }
+  })
 end
 
 function config.indent_blankline()
