@@ -15,7 +15,9 @@ end
 
 local definitions = {
     buffers = {
-        -- Reload vim config automatically
+        -- Highlight current line only on focused window
+        {'WinEnter,BufEnter,InsertLeave', '*', [[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]]},
+        {'WinLeave,BufLeave,InsertEnter', '*', [[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]]},        -- Reload vim config automatically
         {'BufWritePost', [[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]]},
         -- Reload Vim script automatically if setlocal autoread
         {'BufWritePost,FileWritePost', '*.vim',
