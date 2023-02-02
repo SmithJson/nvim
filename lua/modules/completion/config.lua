@@ -5,13 +5,7 @@ function config.nvim_lsp()
 end
 
 function config.lspsaga()
-    require('lspsaga').setup({
-        outline = {
-            keys = {
-              jump = ","
-            }
-        }
-    })
+    require('lspsaga').setup({})
 end
 
 function config.nvim_cmp()

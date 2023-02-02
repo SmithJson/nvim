@@ -53,4 +53,7 @@ package({
 })
 
 -- 与 lspsaga outline 的 o 键位冲突
-package({ 'dkarter/bullets.vim' })
+package({
+    'dkarter/bullets.vim',
+    ft = 'markdown'
+})
