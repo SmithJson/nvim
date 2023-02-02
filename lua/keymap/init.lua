@@ -32,11 +32,6 @@ local plug_map = {
     ["x|F"]= map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["o|F"]= map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
 
-    -- VimOperatorSurround
-    -- ["v|sa"] = map_cmd("<Plug>(operator-surround-append)"):with_silent(),
-    -- ["v|sd"] = map_cmd("<Plug>(operator-surround-delete)"):with_silent(),
-    -- ["v|sr"] = map_cmd("<Plug>(operator-surround-replace)"):with_silent(),
-
     -- Lspsaga
     ['n|[e']= map_cr('Lspsaga diagnostic_jump_next'):with_noremap():with_silent(),
     ['n|]e']= map_cr('Lspsaga diagnostic_jump_prev'):with_noremap():with_silent(),
@@ -45,7 +40,7 @@ local plug_map = {
     ['n|gd']= map_cr('Lspsaga peek_definition'):with_noremap():with_silent(),
     ['n|gr']= map_cr('Lspsaga rename'):with_noremap():with_silent(),
     ['n|gh']= map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
-    ['n|<Leader>o'] = map_cu('Lspsaga outline'):with_noremap(),
+    ['n|<Leader>o'] = map_cu('Lspsaga term_toggle'):with_noremap(),
 
     -- BufferLine
     ["n|<Tab>"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),

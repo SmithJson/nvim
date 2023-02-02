@@ -10,27 +10,27 @@ function config.dashboard()
     theme = 'hyper',
     disable_move = true,
     config = {
-        footer = {""},
-        header = {
-            "███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗",
-            "██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║",
-            "█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║",
-            "██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║",
-            "███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║",
-            "╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝",
-            "",
-            "[  辩机 ]     ",
-            ""
-        },
+      footer = { "" },
+      header = {
+        "███████╗██╗   ██╗ █████╗     ██╗     ██╗██╗     ██╗████████╗██╗  ██╗",
+        "██╔════╝██║   ██║██╔══██╗    ██║     ██║██║     ██║╚══██╔══╝██║  ██║",
+        "█████╗  ██║   ██║███████║    ██║     ██║██║     ██║   ██║   ███████║",
+        "██╔══╝  ╚██╗ ██╔╝██╔══██║    ██║     ██║██║     ██║   ██║   ██╔══██║",
+        "███████╗ ╚████╔╝ ██║  ██║    ███████╗██║███████╗██║   ██║   ██║  ██║",
+        "╚══════╝  ╚═══╝  ╚═╝  ╚═╝    ╚══════╝╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝",
+        "",
+        "[  辩机 ]     ",
+        ""
+      },
       week_header = {
-       enable = false,
+        enable = false,
       },
       shortcut = {
         {
-            desc = ' Update',
-            group = '@property',
-            action = 'PackerSync',
-            key = 'u'
+          desc = ' Update',
+          group = '@property',
+          action = 'PackerSync',
+          key = 'u'
         },
         {
           desc = ' Files',
@@ -60,7 +60,6 @@ function config.indent_blankline()
     "packer",
     "vimwiki",
     "markdown",
-    "json",
     "txt",
     "vista",
     "help",
@@ -143,7 +142,7 @@ function config.bufferline()
       },
       separator_style   = 'none',
       buffer_close_icon = '',
-      offsets = {
+      offsets           = {
         { filetype = "NvimTree", text = "EXPLORER", text_align = "center" }
       }
     },

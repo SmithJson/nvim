@@ -52,4 +52,5 @@ package({
     after = 'nvim-lspconfig'
 })
 
+-- 与 lspsaga outline 的 o 键位冲突
 package({ 'dkarter/bullets.vim' })
