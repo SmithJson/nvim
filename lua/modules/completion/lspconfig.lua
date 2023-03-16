@@ -1,11 +1,12 @@
 local lspconfig = require('lspconfig')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 if not packer_plugins['cmp-nvim-lsp'].loaded then
   vim.cmd([[packadd cmp-nvim-lsp]])
 end
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local signs = {
   Error = ' ',
@@ -29,21 +30,6 @@ vim.diagnostic.config({
   },
 })
 
-lspconfig.sumneko_lua.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        enable = true,
-        globals = { 'vim', 'packer_plugins' },
-      },
-      runtime = { version = 'LuaJIT' },
-      workspace = {
-        library = vim.list_extend({ [vim.fn.expand('$VIMRUNTIME/lua')] = true }, {}),
-      },
-    },
-  },
-})
-
 local servers = {
   'tsserver',
   'vuels'
@@ -51,6 +37,7 @@ local servers = {
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
-    capabilities = capabilities
+    capabilities = capabilities,
+    single_file_support = true
   })
 end

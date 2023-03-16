@@ -21,7 +21,7 @@ package({
     'williamboman/mason-lspconfig.nvim',
     config = function()
         require('mason-lspconfig').setup({
-            ensure_installed = { 'sumneko_lua', 'tsserver', 'vuels' },
+            ensure_installed = { 'tsserver', 'vuels' },
             automatic_installation = true
         })
     end

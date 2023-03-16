@@ -49,17 +49,24 @@ end
 
 function config.null_ls()
   local null_ls = require("null-ls")
+  local diagnostics = null_ls.builtins.diagnostics
 
   local sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.diagnostics.stylelint,
+    diagnostics.eslint.with({
+        prefer_local = "node_modules/.bin",
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE
+    }),
+    diagnostics.stylelint.with({
+        prefer_local = "node_modules/.bin",
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE
+    }),
 
     -- null_ls.builtins.code_actions.eslint,
     -- null_ls.builtins.code_actions.stylelint,
   }
 
   null_ls.setup({
-    debounce = 150,
+    default_timeout = 31000,
     sources = sources
   })
 end

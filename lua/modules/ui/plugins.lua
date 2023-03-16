@@ -9,6 +9,13 @@ local conf = require('modules.ui.config')
 -- })
 
 -- package({
+--     'navarasu/onedark.nvim',
+--     config = function ()
+--         vim.cmd([[colorscheme ayu-mirage]])
+--     end
+-- })
+
+-- package({
 --   'glepnir/zephyr-nvim',
 --   config = function ()
 --       vim.cmd([[colorscheme zephyr]])
@@ -18,20 +25,27 @@ local conf = require('modules.ui.config')
 package({
   'Mofiqul/vscode.nvim',
   config = function ()
-    local c = require('vscode.colors').get_colors()
     require('vscode').setup({
         transparent = false,
         italic_comments = false,
         disable_nvimtree_bg = false,
         color_overrides = {
+            -- vscLightBlue = '#03acf1',
+            -- vscBlue = '#FB678E',
+            -- vscYellow = '#feb380',
+            -- vscPink = '#FB678E',
+            -- vscOrange = '#2b9970',
+            -- vscBlueGreen = '#03acf1'
+
             vscLightBlue = '#03acf1',
-            vscBlue = '#FB678E',
+            vscBlue = '#e3616b',
             vscYellow = '#feb380',
-            vscPink = '#FB678E',
-            vscOrange = '#80cc91',
-            vscBlueGreen = '#6fc6ec'
+            vscPink = '#e3616b',
+            vscOrange = '#2b9970',
+            vscBlueGreen = '#d8b1d4'
         }
     })
+    require('vscode').load()
   end
 })
 
