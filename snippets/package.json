@@ -1,0 +1,22 @@
+{
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "javascript",
+                    "typescript",
+                    "vue"
+                ],
+                "path": "./javascript.json"
+            },
+            {
+                "language": [
+                    "less",
+                    "sass",
+                    "scss"
+                ],
+                "path": "./css.json"
+            }
+        ]
+    }
+}
