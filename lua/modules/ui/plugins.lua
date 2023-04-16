@@ -16,38 +16,45 @@ local conf = require('modules.ui.config')
 -- })
 
 -- package({
---   'glepnir/zephyr-nvim',
+--   'glepnir/oceanic-material',
 --   config = function ()
---       vim.cmd([[colorscheme zephyr]])
+--       vim.cmd([[colorscheme oceanic_material]])
 --   end
 -- })
 
 package({
-  'Mofiqul/vscode.nvim',
+  'glepnir/zephyr-nvim',
   config = function ()
-    require('vscode').setup({
-        transparent = false,
-        italic_comments = false,
-        disable_nvimtree_bg = false,
-        color_overrides = {
-            -- vscLightBlue = '#03acf1',
-            -- vscBlue = '#FB678E',
-            -- vscYellow = '#feb380',
-            -- vscPink = '#FB678E',
-            -- vscOrange = '#2b9970',
-            -- vscBlueGreen = '#03acf1'
-
-            vscLightBlue = '#03acf1',
-            vscBlue = '#e3616b',
-            vscYellow = '#feb380',
-            vscPink = '#e3616b',
-            vscOrange = '#2b9970',
-            vscBlueGreen = '#d8b1d4'
-        }
-    })
-    require('vscode').load()
+      vim.cmd([[colorscheme zephyr]])
   end
 })
+
+-- package({
+--   'Mofiqul/vscode.nvim',
+--   config = function ()
+--     require('vscode').setup({
+--         transparent = false,
+--         italic_comments = false,
+--         disable_nvimtree_bg = false,
+--         color_overrides = {
+--             -- vscLightBlue = '#03acf1',
+--             -- vscBlue = '#FB678E',
+--             -- vscYellow = '#feb380',
+--             -- vscPink = '#FB678E',
+--             -- vscOrange = '#2b9970',
+--             -- vscBlueGreen = '#03acf1'
+--
+--             vscLightBlue = '#03acf1',
+--             vscBlue = '#e3616b',
+--             vscYellow = '#feb380',
+--             vscPink = '#e3616b',
+--             vscOrange = '#2b9970',
+--             vscBlueGreen = '#d8b1d4'
+--         }
+--     })
+--     require('vscode').load()
+--   end
+-- })
 
 package({
     'glepnir/dashboard-nvim',

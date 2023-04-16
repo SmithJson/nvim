@@ -5,9 +5,6 @@ local map_cmd = bind.map_cmd
 require('keymap.config')
 
 local plug_map = {
-    -- toggleterm
-    ["n|<C-`>"] = map_cu("ToggleTermToggleAll"):with_silent(),
-
     -- Nvim-tree
     ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
     ["n|<Leader>e"] = map_cmd("<cmd>call v:lua.nvim_tree_toggle()<CR>"):with_silent():with_noremap():with_nowait(),
@@ -32,12 +29,21 @@ local plug_map = {
     ["x|F"]= map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
     ["o|F"]= map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
 
+    -- Leap
+    ["x|s"]= map_cmd("<Plug>(leap-forward-to)"),
+    ["o|s"]= map_cmd("<Plug>(leap-forward-to)"),
+    ["n|s"]= map_cmd("<Plug>(leap-forward-to)"),
+    ["x|S"]= map_cmd("<Plug>(leap-backward-to)"),
+    ["o|S"]= map_cmd("<Plug>(leap-backward-to)"),
+    ["n|S"]= map_cmd("<Plug>(leap-backward-to)"),
+
     -- Lspsaga
     ['n|[e']= map_cr('Lspsaga diagnostic_jump_next'):with_noremap():with_silent(),
     ['n|]e']= map_cr('Lspsaga diagnostic_jump_prev'):with_noremap():with_silent(),
     ['n|K'] = map_cr('Lspsaga hover_doc'):with_noremap():with_silent(),
     ['n|ga']= map_cr('Lspsaga code_action'):with_noremap():with_silent(),
     ['n|gd']= map_cr('Lspsaga peek_definition'):with_noremap():with_silent(),
+    ['n|gD']= map_cr('Lspsaga goto_definition'):with_noremap():with_silent(),
     ['n|gr']= map_cr('Lspsaga rename'):with_noremap():with_silent(),
     ['n|gh']= map_cr('Lspsaga lsp_finder'):with_noremap():with_silent(),
     ['n|<Leader>o'] = map_cu('Lspsaga term_toggle'):with_noremap(),

@@ -59,10 +59,7 @@ function config.null_ls()
     diagnostics.stylelint.with({
         prefer_local = "node_modules/.bin",
         method = null_ls.methods.DIAGNOSTICS_ON_SAVE
-    }),
-
-    -- null_ls.builtins.code_actions.eslint,
-    -- null_ls.builtins.code_actions.stylelint,
+    })
   }
 
   null_ls.setup({

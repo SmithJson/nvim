@@ -70,14 +70,14 @@ function config.toggleterm()
   require("toggleterm").setup({
     size = function(term)
       if term.direction == "horizontal" then
-          return 15
+          return 30
       elseif term.direction == "vertical" then
           return vim.o.columns * 0.40
       end
     end,
-    hide_numbers = false,
+    hide_numbers = true,
     start_in_insert = false,
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<c-]>]],
     direction = "vertical",
   })
 end
