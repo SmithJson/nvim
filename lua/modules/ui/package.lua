@@ -14,15 +14,19 @@ packadd({
 })
 
 packadd({
-    'nvimdev/zephyr-nvim',
-    config = function ()
-        vim.cmd.colorscheme('zephyr')
+    'navarasu/onedark.nvim',
+    config = function()
+        require('onedark').setup {
+            style = 'cool',
+            code_style = { keywords = 'bold' }
+        }
+        require('onedark').load()
     end
 })
 
 packadd({
     'nvim-tree/nvim-tree.lua',
-    config = function ()
+    config = function()
         require('nvim-tree').setup({
             trash = {
                 cmd = "trash",
@@ -38,4 +42,15 @@ packadd({
     event = "BufReadPre",
     config = conf.bufferline,
     dependencies = { 'nvim-tree/nvim-web-devicons' }
+})
+
+packadd({
+    'nvimdev/galaxyline.nvim',
+    config = conf.galaxyline,
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+})
+
+packadd({
+    'lukas-reineke/indent-blankline.nvim',
+    config = conf.indent_blankline,
 })
