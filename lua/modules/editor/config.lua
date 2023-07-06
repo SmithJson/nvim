@@ -1,9 +1,7 @@
 local config = {}
 
 function config.auto_pairs()
-  require('nvim-autopairs').setup({
-    map_cr = false,
-  })
+  require('nvim-autopairs').setup()
 end
 
 function config.telescope()
@@ -20,6 +18,11 @@ function config.telescope()
       file_previewer = require('telescope.previewers').vim_buffer_cat.new,
       grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
       qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+    },
+    pickers = {
+        find_files = {
+          theme = "dropdown",
+        }
     },
     extensions = {
       fzy_native = {
@@ -48,13 +51,12 @@ function config.nvim_treesitter()
   vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'json', 'jsonc', 'vue', 'html', 'javascript', 'typescript', 'vim', 'bash', 'c', 'cpp', 'css' },
+    ensure_installed = { 'json', 'jsonc', 'vue', 'html', 'javascript', 'typescript', 'vim', 'bash', 'c', 'cpp', 'css', 'markdown', 'markdown_inline' },
     highlight = {
       enable = true,
     },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false
+    indent = {
+        enable = true
     }
   })
 end

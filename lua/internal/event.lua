@@ -18,6 +18,12 @@ nvim_create_autocmd({ 'BufWritePre' }, {
   command = 'setlocal noundofile',
 })
 
+nvim_create_autocmd({ 'BufWritePre' }, {
+  group = my_group,
+  pattern = { '*.md' },
+  command = 'TableModeRealign',
+})
+
 nvim_create_autocmd('BufRead', {
   group = my_group,
   pattern = '*.conf',

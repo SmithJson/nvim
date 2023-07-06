@@ -68,6 +68,9 @@ function config.nvim_cmp()
         },
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({
+            ['<C-e>'] = cmp.config.disable,
+            ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+            ['<C-f>'] = cmp.mapping.scroll_docs(4),
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
             ["<S-Tab>"] = cmp.mapping.select_prev_item(),
             ["<Tab>"] = cmp.mapping.select_next_item()
@@ -117,17 +120,15 @@ function config.null_ls()
 
     local sources = {
         diagnostics.eslint.with({
-            prefer_local = "node_modules/.bin",
             method = null_ls.methods.DIAGNOSTICS_ON_SAVE
         }),
         diagnostics.stylelint.with({
-            prefer_local = "node_modules/.bin",
+            filetypes = {'scss', 'less', 'css', 'sass', 'vue'},
             method = null_ls.methods.DIAGNOSTICS_ON_SAVE
         })
     }
 
     null_ls.setup({
-        default_timeout = 31000,
         sources = sources
     })
 end

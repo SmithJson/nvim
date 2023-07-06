@@ -13,14 +13,19 @@ packadd({
     config = conf.gitsigns,
 })
 
+-- packadd({
+--     'sainnhe/everforest',
+--     config = function ()
+--         vim.cmd[[colorscheme everforest]]
+--     end
+-- })
+
 packadd({
-    'navarasu/onedark.nvim',
-    config = function()
-        require('onedark').setup {
-            style = 'cool',
-            code_style = { keywords = 'bold' }
-        }
-        require('onedark').load()
+    'glepnir/zephyr-nvim',
+    lazy = false,
+    priority = 1000,
+    config = function ()
+        vim.cmd[[colorscheme zephyr]]
     end
 })
 

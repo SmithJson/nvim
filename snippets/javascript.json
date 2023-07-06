@@ -66,7 +66,6 @@
       ],
       "description": "consolelog"
     },
-
     "vue模板(智能家居)": {
       "prefix": "vtmp",
       "body": [
@@ -75,7 +74,7 @@
         "        class=\"$TM_FILENAME_BASE-wrapper\"",
         "        title=\"$TM_FILENAME\"",
         "    >",
-        "        <div>$TM_FILENAME $0</div>",
+        "        <div>$TM_FILENAME</div>",
         "    </page-wrapper>",
         "</template>",
         "",
@@ -92,18 +91,20 @@
         "    },",
         "    computed: {",
         "    },",
-        "    methods: {",
-        "    },",
         "    created() {",
+        "        console.error('$TM_FILENAME_BASE created');$0",
         "    },",
         "    mounted() {",
+        "        console.error('$TM_FILENAME_BASE mounted');",
+        "    },",
+        "    methods: {",
         "    }",
         "};",
         "</script>",
         "",
         "<style lang=\"scss\" scoped>",
         ".$TM_FILENAME_BASE-wrapper {",
-        "    padding: rem(30) rem(30) rem(164);",
+        "    padding: rem(24) rem(30) rem(164);",
         "}",
         "</style>"
       ],

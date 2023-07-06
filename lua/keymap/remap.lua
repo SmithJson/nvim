@@ -12,8 +12,10 @@ map.n({
     ['srh'] = cmd('<C-w>b<C-w>K'),
     ['srv'] = cmd('<C-w>b<C-w>H'),
     ['<LEADER><CR>'] = cmd('nohlsearch'),
-    ['<A-[>'] = cmd('vertical resize -5'),
-    ['<A-]>'] = cmd('vertical resize +5')
+    ['<left>'] = cmd('vertical resize -5'),
+    ['<right>'] = cmd('vertical resize +5'),
+    ['<up>'] = cmd('res +5'),
+    ['<down>'] = cmd('res -5'),
 })
 
 map.v({
