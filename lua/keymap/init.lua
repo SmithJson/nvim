@@ -1,11 +1,10 @@
 require('keymap.remap')
-require('keymap.config')
 local map = require('core.keymap')
 local cmd = map.cmd
 
 map.n({
     -- nvim-tree
-    ['<Leader>e'] = cmd('call v:lua.nvim_tree_toggle()'),
+    ['<Leader>e'] = cmd('NvimTreeFindFileToggle'),
 
     -- Dashboard
     ['<Leader>os'] = cmd('Dashboard'),
@@ -36,7 +35,3 @@ map.n({
     ['<Leader>dw'] = cmd('Lspsaga show_workspace_diagnostics'),
     ['<Leader>db'] = cmd('Lspsaga show_buf_diagnostics'),
 })
-
--- leap
-map.nxo('s', "<Plug>(leap-forward-to)")
-map.nxo('S', "<Plug>(leap-backward-to)")

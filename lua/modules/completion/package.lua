@@ -55,6 +55,7 @@ packadd({
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-cmdline',
         'saadparwaiz1/cmp_luasnip',
+        'onsails/lspkind.nvim'
     },
 })
 
@@ -98,9 +99,29 @@ packadd({
     config = conf.null_ls
 })
 
+-- packadd({
+--     'j-hui/fidget.nvim',
+--     config = function()
+--         require "fidget".setup {}
+--     end
+-- })
+
 packadd({
-    'j-hui/fidget.nvim',
+    'folke/noice.nvim',
     config = function()
-        require "fidget".setup {}
-    end
+        require("noice").setup({
+            lsp = {
+                progress = {
+                    enable = false
+                }
+            },
+            messages = {
+                enabled = false
+            }
+        })
+    end,
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+    }
 })

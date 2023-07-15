@@ -9,43 +9,8 @@ function config.nvim_cmp()
         border = "single",
         winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None"
     }
-    local symbol_map = {
-        Text          = "",
-        Method        = "",
-        Function      = "",
-        Field         = "",
-        Variable      = "",
-        Interface     = "",
-        Module        = "",
-        Value         = "",
-        Enum          = "了",
-        Keyword       = "",
-        Color         = "",
-        File          = "",
-        Folder        = "",
-        EnumMember    = "",
-        Constant      = "",
-        Struct        = "",
-        Event         = "",
-        Operator      = "",
-        Array         = "",
-        Boolean       = "",
-        Class         = "",
-        Constructor   = "",
-        Key           = "",
-        Namespace     = "",
-        Null          = "",
-        Number        = "",
-        Object        = "",
-        Package       = "",
-        Property      = "",
-        Reference     = "",
-        Snippet       = "",
-        String        = "𝓐",
-        TypeParameter = "",
-        Unit          = "",
-    }
     local cmp = require('cmp')
+    local lspkind = require('lspkind')
 
     cmp.setup({
         preselect = cmp.PreselectMode.None,
@@ -54,8 +19,11 @@ function config.nvim_cmp()
             documentation = cmp.config.window.bordered(border_opts),
         },
         formatting = {
-            format = function(entry, vim_item)
-                vim_item.kind = string.format("%s %s", symbol_map[vim_item.kind], vim_item.kind)
+            format = lspkind.cmp_format({
+              mode = 'symbol_text',
+              maxwidth = 50,
+              ellipsis_char = '...',
+              before = function (entry, vim_item)
                 vim_item.menu = ({
                     buffer   = "[BUF]",
                     nvim_lsp = "[LSP]",
@@ -64,7 +32,8 @@ function config.nvim_cmp()
                     cmdline  = "[CMD]"
                 })[entry.source.name]
                 return vim_item
-            end,
+              end
+            })
         },
         -- You can set mappings if you want
         mapping = cmp.mapping.preset.insert({

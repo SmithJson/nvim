@@ -13,13 +13,6 @@ packadd({
     config = conf.gitsigns,
 })
 
--- packadd({
---     'sainnhe/everforest',
---     config = function ()
---         vim.cmd[[colorscheme everforest]]
---     end
--- })
-
 packadd({
     'glepnir/zephyr-nvim',
     lazy = false,
@@ -56,6 +49,18 @@ packadd({
 })
 
 packadd({
-    'lukas-reineke/indent-blankline.nvim',
-    config = conf.indent_blankline,
+    'echasnovski/mini.indentscope',
+    config = function ()
+        require("mini.indentscope").setup({
+            draw = {
+                delay = 300,
+                priority = 2
+            }
+        })
+    end
 })
+
+-- packadd({
+--     'lukas-reineke/indent-blankline.nvim',
+--     config = conf.indent_blankline,
+-- })

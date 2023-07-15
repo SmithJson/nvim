@@ -5,14 +5,13 @@ packadd({
   config = conf.neovim_session_manager
 })
 
-packadd({
-  'ggandor/leap.nvim',
-  config = function()
-    require('leap').add_default_mappings()
-    require('leap').opts.highlight_unlabeled_phase_one_targets = true
-  end,
-  dependencies = { 'tpope/vim-repeat' }
-})
+-- packadd({
+--   'folke/flash.nvim',
+--   event = "VeryLazy",
+--   opts = {
+--     jump_labels = true
+--   }
+-- })
 
 packadd({
   'numToStr/Comment.nvim',
